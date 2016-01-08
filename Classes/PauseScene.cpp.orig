@@ -24,6 +24,11 @@ bool Pause::init()
     if ( !Layer::init() )
     {
         return false;
+<<<<<<< HEAD
+        return false;
+=======
+        return true;
+>>>>>>> testbranch1
     }
     
     // Init scene here
