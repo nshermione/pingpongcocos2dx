@@ -24,6 +24,7 @@ bool Pause::init()
     if ( !Layer::init() )
     {
         return false;
+        return false;
     }
     
     // Init scene here
