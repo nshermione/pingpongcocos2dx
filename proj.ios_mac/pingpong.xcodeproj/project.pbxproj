@@ -33,6 +33,9 @@
 		4A6A3D851C3FBE3F006E1185 /* menu_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6A3D831C3FBE3F006E1185 /* menu_btn_bg.png */; };
 		4A6A3D861C3FBE3F006E1185 /* PlayScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 4A6A3D841C3FBE3F006E1185 /* PlayScene.csb */; };
 		4A6A3D891C3FC015006E1185 /* PauseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A3D871C3FC015006E1185 /* PauseScene.cpp */; };
+		4A7722231C4190180095C22B /* PauseScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 4A7722221C4190180095C22B /* PauseScene.csb */; };
+		4A7722251C4193D70095C22B /* GameOverScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 4A7722241C4193D70095C22B /* GameOverScene.csb */; };
+		4A7722281C4194780095C22B /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A7722261C4194780095C22B /* GameOverScene.cpp */; };
 		4AD3B2B31C3E574200DFA5FC /* LoadingBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B21C3E574200DFA5FC /* LoadingBar.png */; };
 		4AD3B2B61C3E64C500DFA5FC /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B41C3E64C400DFA5FC /* MainMenuScene.cpp */; };
 		4AD3B2BA1C3E6C4A00DFA5FC /* button_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B81C3E6C4A00DFA5FC /* button_bg.png */; };
@@ -120,7 +123,7 @@
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* hellococos2dx-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hellococos2dx-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* pingpong-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pingpong-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
@@ -145,6 +148,10 @@
 		4A6A3D841C3FBE3F006E1185 /* PlayScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlayScene.csb; sourceTree = "<group>"; };
 		4A6A3D871C3FC015006E1185 /* PauseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PauseScene.cpp; sourceTree = "<group>"; };
 		4A6A3D881C3FC015006E1185 /* PauseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseScene.h; sourceTree = "<group>"; };
+		4A7722221C4190180095C22B /* PauseScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = PauseScene.csb; sourceTree = "<group>"; };
+		4A7722241C4193D70095C22B /* GameOverScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = GameOverScene.csb; sourceTree = "<group>"; };
+		4A7722261C4194780095C22B /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverScene.cpp; sourceTree = "<group>"; };
+		4A7722271C4194780095C22B /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		4AD3B2B21C3E574200DFA5FC /* LoadingBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadingBar.png; sourceTree = "<group>"; };
 		4AD3B2B41C3E64C400DFA5FC /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuScene.cpp; sourceTree = "<group>"; };
 		4AD3B2B51C3E64C400DFA5FC /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
@@ -163,7 +170,7 @@
 		503AE10417EB98FF00D1A890 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = mac/Prefix.pch; sourceTree = "<group>"; };
 		503AE11117EB99EE00D1A890 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		503AE11A17EB9C5A00D1A890 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		5087E76F17EB910900C73F5D /* hellococos2dx-desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hellococos2dx-desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5087E76F17EB910900C73F5D /* pingpong-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pingpong-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5087E77217EB970100C73F5D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5087E77317EB970100C73F5D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5087E77417EB970100C73F5D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -260,8 +267,8 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* hellococos2dx-mobile.app */,
-				5087E76F17EB910900C73F5D /* hellococos2dx-desktop.app */,
+				1D6058910D05DD3D006BFB54 /* pingpong-mobile.app */,
+				5087E76F17EB910900C73F5D /* pingpong-mobile.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +325,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A7722241C4193D70095C22B /* GameOverScene.csb */,
+				4A7722221C4190180095C22B /* PauseScene.csb */,
 				4A6A3D831C3FBE3F006E1185 /* menu_btn_bg.png */,
 				4A6A3D841C3FBE3F006E1185 /* PlayScene.csb */,
 				4AD3B2BD1C3E6D2300DFA5FC /* Marker Felt.ttf */,
@@ -351,6 +360,8 @@
 		4A121FD31C3D81AE00C04849 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4A7722261C4194780095C22B /* GameOverScene.cpp */,
+				4A7722271C4194780095C22B /* GameOverScene.h */,
 				4A6A3D871C3FC015006E1185 /* PauseScene.cpp */,
 				4A6A3D881C3FC015006E1185 /* PauseScene.h */,
 				4A6A3D801C3FA766006E1185 /* PlayScene.cpp */,
@@ -426,9 +437,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* hellococos2dx-mobile */ = {
+		1D6058900D05DD3D006BFB54 /* pingpong-mobile */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "hellococos2dx-mobile" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "pingpong-mobile" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -439,14 +450,14 @@
 			dependencies = (
 				1AC6FB25180E99E1004C840B /* PBXTargetDependency */,
 			);
-			name = "hellococos2dx-mobile";
+			name = "pingpong-mobile";
 			productName = iphone;
-			productReference = 1D6058910D05DD3D006BFB54 /* hellococos2dx-mobile.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* pingpong-mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5087E73D17EB910900C73F5D /* hellococos2dx-desktop */ = {
+		5087E73D17EB910900C73F5D /* pingpong-desktop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "hellococos2dx-desktop" */;
+			buildConfigurationList = 5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "pingpong-desktop" */;
 			buildPhases = (
 				5087E74817EB910900C73F5D /* Resources */,
 				5087E75617EB910900C73F5D /* Sources */,
@@ -457,9 +468,9 @@
 			dependencies = (
 				1AC6FB16180E9959004C840B /* PBXTargetDependency */,
 			);
-			name = "hellococos2dx-desktop";
+			name = "pingpong-desktop";
 			productName = iphone;
-			productReference = 5087E76F17EB910900C73F5D /* hellococos2dx-desktop.app */;
+			productReference = 5087E76F17EB910900C73F5D /* pingpong-mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -475,7 +486,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "hellococos2dx" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "pingpong" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -495,8 +506,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* hellococos2dx-mobile */,
-				5087E73D17EB910900C73F5D /* hellococos2dx-desktop */,
+				1D6058900D05DD3D006BFB54 /* pingpong-mobile */,
+				5087E73D17EB910900C73F5D /* pingpong-desktop */,
 			);
 		};
 /* End PBXProject section */
@@ -523,6 +534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7722231C4190180095C22B /* PauseScene.csb in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
@@ -550,6 +562,7 @@
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
+				4A7722251C4193D70095C22B /* GameOverScene.csb in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				4A121FC31C3D7A1E00C04849 /* SplashScene.csb in Resources */,
@@ -587,6 +600,7 @@
 				4A171F9A1C3D83F7000CAE3C /* EmptyScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4A171F991C3D83F7000CAE3C /* CSBHelper.cpp in Sources */,
+				4A7722281C4194780095C22B /* GameOverScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +662,8 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamestop.pingpong;
+				PRODUCT_NAME = "pingpong-mobile";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -685,6 +701,8 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamestop.pingpong;
+				PRODUCT_NAME = "pingpong-mobile";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -722,6 +740,7 @@
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
 				);
+				PRODUCT_NAME = "pingpong-mobile";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
 			name = Debug;
@@ -753,6 +772,7 @@
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
 				);
+				PRODUCT_NAME = "pingpong-mobile";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
 			name = Release;
@@ -823,7 +843,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "hellococos2dx-mobile" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "pingpong-mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -832,7 +852,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "hellococos2dx-desktop" */ = {
+		5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "pingpong-desktop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5087E76D17EB910900C73F5D /* Debug */,
@@ -841,7 +861,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "hellococos2dx" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "pingpong" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

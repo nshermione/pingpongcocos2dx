@@ -27,9 +27,17 @@ bool Empty::init()
     }
     
     // Init scene here
-//    auto rootNode = CSBHelper::createNode("EmptyScene.csb");
-//    this->addChild(rootNode);
+    auto rootNode = CSBHelper::createNode("EmptyScene.csb");
+    this->addChild(rootNode);
+    this->bindButtons(rootNode);
     // End init scene
     return true;
+}
+
+
+void Empty::bindButtons(Node* rootNode) {
+//    auto resumeButton = (Button *) rootNode->getChildByName("resumeButton");
+//    
+//    quitButton->addClickEventListener(CC_CALLBACK_0(Pause::quitGame, this));
 }
 

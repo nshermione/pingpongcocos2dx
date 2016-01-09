@@ -13,6 +13,7 @@
         <Project Name="PlayScene.csd" Type="Scene" />
         <Image Name="menu_btn_bg.png" />
         <Project Name="PauseScene.csd" Type="Scene" />
+        <Project Name="GameOverScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -11,6 +11,8 @@ public:
     
     virtual bool init();
     
+    void bindButtons(Node* rootNode) ;
+    
     // implement the "static create()" method manually
     CREATE_FUNC(Empty);
 };
