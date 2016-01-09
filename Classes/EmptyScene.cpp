@@ -38,6 +38,6 @@ bool Empty::init()
 void Empty::bindButtons(Node* rootNode) {
 //    auto resumeButton = (Button *) rootNode->getChildByName("resumeButton");
 //    
-//    quitButton->addClickEventListener(CC_CALLBACK_0(Pause::quitGame, this));
+//    quitButton->addClickEventListener(CC_CALLBACK_0(Empty::quitGame, this));
 }
 

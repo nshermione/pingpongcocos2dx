@@ -13,15 +13,14 @@ public:
     
     virtual bool init();
     
-    void quitGame();
-    void playGame();
-    void settings();
-    
     // implement the "static create()" method manually
     CREATE_FUNC(MainMenu);
     
 private:
     void bindButtons(Node* rootNode);
+    void quitGame();
+    void playGame();
+    void settings();
 };
 
 #endif // __MainMenu_SCENE_H__

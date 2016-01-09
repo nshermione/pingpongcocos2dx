@@ -11,10 +11,12 @@ public:
     
     virtual bool init();
     
-    void bindButtons(Node* rootNode) ;
-    
     // implement the "static create()" method manually
     CREATE_FUNC(Empty);
+    
+private:
+    void bindButtons(Node* rootNode);
+    
 };
 
 #endif // __EMPTY_SCENE_H__

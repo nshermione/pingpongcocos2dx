@@ -11,14 +11,16 @@ public:
     
     virtual bool init();
     
+    
+    // implement the "static create()" method manually
+    CREATE_FUNC(Pause);
+    
+private:
     void bindButtons(Node* rootNode);
     
     void resumeGame();
     void quitGame();
     void goToMainMenu();
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(Pause);
 };
 
 #endif // __Pause_SCENE_H__

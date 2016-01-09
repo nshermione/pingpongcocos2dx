@@ -11,13 +11,14 @@ public:
     
     virtual bool init();
     
-    void goToPauseScene();
     
     // implement the "static create()" method manually
     CREATE_FUNC(Play);
     
 private:
     void bindButtons(Node* rootNode);
+    void goToPauseScene();
+    void goToGameOverScene();
 };
 
 #endif // __Play_SCENE_H__
