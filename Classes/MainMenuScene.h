@@ -1,23 +1,19 @@
 #ifndef __MainMenu_SCENE_H__
 #define __MainMenu_SCENE_H__
 
-#include "cocos2d.h"
-#include "ui/CocosGUI.h"
+#include "BaseScene.h"
 
 using namespace cocos2d::ui;
 
-class MainMenu : public cocos2d::Layer
-{
+class MainMenu : public BaseScene {
 public:
-    static cocos2d::Scene* createScene();
+    // implement the "static create()" and "static createScene()" methods manually
+    CREATE_FUNC_SCENE(MainMenu, "MainMenuScene.csb");
     
-    virtual bool init();
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(MainMenu);
+protected:
+    bool init(std::string csbFile);
     
 private:
-    void bindButtons(Node* rootNode);
     void quitGame();
     void playGame();
     void settings();

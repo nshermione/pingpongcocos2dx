@@ -1,50 +1,19 @@
 #include "MainMenuScene.h"
 #include "SettingsScene.h"
 #include "PlayScene.h"
-#include "CSBHelper.h"
 
-#include "ui/CocosGUI.h"
-
-USING_NS_CC;
-
-using namespace cocos2d::ui;
-
-Scene* MainMenu::createScene()
-{
-    auto scene = Scene::create();
-    auto layer = MainMenu::create();
-    scene->addChild(layer);
-    
-    // return the scene
-    return scene;
-}
 
 // on "init" you need to initialize your instance
-bool MainMenu::init()
+bool MainMenu::init(std::string csbFile)
 {
-    if ( !Layer::init() )
-    {
-        return false;
-    }
+    BaseScene::init(csbFile);
     
-    // Init scene here
-    auto rootNode = CSBHelper::createNode("MainMenuScene.csb");
-    this->addChild(rootNode);
-    
-    bindButtons(rootNode);
+    bindButton("playButton", CC_CALLBACK_0(MainMenu::playGame, this));
+    bindButton("settingButton", CC_CALLBACK_0(MainMenu::settings, this));
+    bindButton("quitButton", CC_CALLBACK_0(MainMenu::quitGame, this));
     
     // End init scene
     return true;
-}
-
-void MainMenu::bindButtons(Node* rootNode) {
-    auto playButton = (Button *) rootNode->getChildByName("playButton");
-    auto settingButton = (Button *) rootNode->getChildByName("settingButton");
-    auto quitButton = (Button *) rootNode->getChildByName("quitButton");
-    
-    playButton->addClickEventListener(CC_CALLBACK_0(MainMenu::playGame, this));
-    settingButton->addClickEventListener(CC_CALLBACK_0(MainMenu::settings, this));
-    quitButton->addClickEventListener(CC_CALLBACK_0(MainMenu::quitGame, this));
 }
 
 void MainMenu::quitGame() {

@@ -1,18 +1,16 @@
 #ifndef __Settings_SCENE_H__
 #define __Settings_SCENE_H__
 
-#include "cocos2d.h"
+#include "BaseScene.h"
 
 
-class Settings : public cocos2d::Layer
-{
+class Settings : public BaseScene {
 public:
-    static cocos2d::Scene* createScene();
+    // implement the "static create()" and "static createScene()" methods manually
+    CREATE_FUNC_SCENE(Settings, "SettingsScene.csb");
     
-    virtual bool init();
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(Settings);
+protected:
+    bool init(std::string csbFile);
 };
 
 #endif // __Settings_SCENE_H__

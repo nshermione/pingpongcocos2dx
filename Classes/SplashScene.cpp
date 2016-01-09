@@ -1,34 +1,12 @@
 #include "SplashScene.h"
 #include "MainMenuScene.h"
-#include "CSBHelper.h"
-#include "ui/CocosGUI.h"
-
-USING_NS_CC;
-using namespace cocos2d::ui;
-
-Scene* Splash::createScene()
-{
-    auto scene = Scene::create();
-    auto layer = Splash::create();
-    scene->addChild(layer);
-    
-    // return the scene
-    return scene;
-}
 
 LoadingBar* loadingBar;
 
 // on "init" you need to initialize your instance
-bool Splash::init()
+bool Splash::init(std::string csbFile)
 {
-    if ( !Layer::init() )
-    {
-        return false;
-    }
-    
-    auto rootNode = CSBHelper::createNode("SplashScene.csb");
-    this->addChild(rootNode);
-    
+    BaseScene::init(csbFile);
     loadingBar = (LoadingBar *)rootNode->getChildByName("loadingBar");
     this->schedule(schedule_selector(Splash::updateProgress), 0.01f);
 

@@ -14,6 +14,7 @@
         <Image Name="menu_btn_bg.png" />
         <Project Name="PauseScene.csd" Type="Scene" />
         <Project Name="GameOverScene.csd" Type="Scene" />
+        <Image Name="check.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

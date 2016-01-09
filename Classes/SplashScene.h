@@ -2,17 +2,17 @@
 #define __Splash_SCENE_H__
 
 #include "cocos2d.h"
+#include "BaseScene.h"
 
 
-class Splash : public cocos2d::Layer
+class Splash : public BaseScene
 {
 public:
-    static cocos2d::Scene* createScene();
-
-    virtual bool init();
+    // implement the "static create()" and "static createScene()" methods manually
+    CREATE_FUNC_SCENE(Splash, "SplashScene.csb");
     
-    // implement the "static create()" method manually
-    CREATE_FUNC(Splash);
+protected:
+    bool init(std::string csbFile);
    
 private:
     void nextScene(float dt);

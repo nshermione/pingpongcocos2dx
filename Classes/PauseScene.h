@@ -1,23 +1,18 @@
 #ifndef __Pause_SCENE_H__
 #define __Pause_SCENE_H__
 
-#include "cocos2d.h"
+#include "BaseScene.h"
 
 
-class Pause : public cocos2d::Layer
-{
+class Pause : public BaseScene{
 public:
-    static cocos2d::Scene* createScene();
+    // implement the "static create()" and "static createScene()" methods manually
+    CREATE_FUNC_SCENE(Pause, "PauseScene.csb");
     
-    virtual bool init();
-    
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(Pause);
+protected:
+    bool init(std::string csbFile);
     
 private:
-    void bindButtons(Node* rootNode);
-    
     void resumeGame();
     void quitGame();
     void goToMainMenu();

@@ -1,24 +1,26 @@
 #ifndef __Play_SCENE_H__
 #define __Play_SCENE_H__
 
-#include "cocos2d.h"
+#include "BaseScene.h"
 
 
-class Play : public cocos2d::Layer
+class Play : public BaseScene
 {
 public:
-    static cocos2d::Scene* createScene();
+    // implement the "static create()" and "static createScene()" methods manually
+    CREATE_FUNC_SCENE(Play, "PlayScene.csb");
     
-    virtual bool init();
-    
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(Play);
+protected:
+    bool init(std::string csbFile);
     
 private:
-    void bindButtons(Node* rootNode);
     void goToPauseScene();
     void goToGameOverScene();
+    
+    // UI
+    void updatePlayerUI();
+    void updateClockUI();
+    
 };
 
 #endif // __Play_SCENE_H__

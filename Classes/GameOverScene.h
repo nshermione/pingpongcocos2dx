@@ -1,21 +1,19 @@
 #ifndef __GameOver_SCENE_H__
 #define __GameOver_SCENE_H__
 
-#include "cocos2d.h"
+#include "BaseScene.h"
 
 
-class GameOver : public cocos2d::Layer
+class GameOver : public BaseScene
 {
 public:
-    static cocos2d::Scene* createScene();
+    // implement the "static create()" and "static createScene()" methods manually
+    CREATE_FUNC_SCENE(GameOver, "GameOverScene.csb");
     
-    virtual bool init();
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(GameOver);
+protected:
+    bool init(std::string csbFile);
     
 private:
-    void bindButtons(Node* rootNode);
     void retryGame();
     void goToMainMenu();
 };
