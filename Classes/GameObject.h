@@ -11,16 +11,25 @@
 
 #include "cocos2d.h"
 
-class GameObject : public cocos2d::Ref {
+USING_NS_CC;
+
+class GameObject : public Ref {
     
 public:
     
-    // implement the "static create()" and "static createScene()" methods manually
+
+    //Getter & Setter
+    void setName(std::string const& name);
+    std::string const& getName();
+    
+    // implement the "static create()" method manually
     CREATE_FUNC(GameObject);
+    
 protected:
     virtual bool init();
     
 private:
+    std::string _name;
     
 };
 

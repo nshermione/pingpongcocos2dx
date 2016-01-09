@@ -16,10 +16,10 @@ Node* CSBHelper::createNode(const std::string& csbFile) {
     auto deviceSize = Director::getInstance()->getVisibleSize();
     auto origin = Director::getInstance()->getVisibleOrigin();
 
-    auto rootNode = CSLoader::createNode(csbFile);
-    auto sceneSize = rootNode->getBoundingBox().size;
+    auto _rootNode = CSLoader::createNode(csbFile);
+    auto sceneSize = _rootNode->getBoundingBox().size;
     
-    rootNode->setScale(deviceSize.width/sceneSize.width, deviceSize.height/sceneSize.height);
-    rootNode->setPosition(origin);
-    return rootNode;
+    _rootNode->setScale(deviceSize.width/sceneSize.width, deviceSize.height/sceneSize.height);
+    _rootNode->setPosition(origin);
+    return _rootNode;
 }

@@ -15,7 +15,7 @@ public:
     CREATE_FUNC_SCENE(BaseScene, "");
     
 protected:
-    Node* rootNode;
+    Node* _rootNode;
     
     virtual bool init(std::string csbFile);
     virtual void bindButton(std::string buttonName, const ui::Widget::ccWidgetClickCallback &callback);

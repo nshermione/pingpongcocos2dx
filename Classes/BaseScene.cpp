@@ -14,14 +14,14 @@ bool BaseScene::init(std::string csbFile)
     }
     
     // Init scene here
-    this->rootNode = CSBHelper::createNode(csbFile);
-    this->addChild(rootNode);
+    this->_rootNode = CSBHelper::createNode(csbFile);
+    this->addChild(_rootNode);
     // End init scene
     return true;
 }
 
 void BaseScene::bindButton(std::string buttonName, const ui::Widget::ccWidgetClickCallback &callback) {
-    auto button = (Button *) rootNode->getChildByName(buttonName);
+    auto button = (Button *) _rootNode->getChildByName(buttonName);
     button->addClickEventListener(callback);
 }
 

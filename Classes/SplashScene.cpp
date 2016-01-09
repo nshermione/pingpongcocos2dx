@@ -7,7 +7,7 @@ LoadingBar* loadingBar;
 bool Splash::init(std::string csbFile)
 {
     BaseScene::init(csbFile);
-    loadingBar = (LoadingBar *)rootNode->getChildByName("loadingBar");
+    loadingBar = (LoadingBar *)_rootNode->getChildByName("loadingBar");
     this->schedule(schedule_selector(Splash::updateProgress), 0.01f);
 
     return true;

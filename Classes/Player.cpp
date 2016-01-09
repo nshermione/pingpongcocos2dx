@@ -8,7 +8,6 @@
 
 #include "Player.h"
 
-USING_NS_CC;
 
 bool Player::init() {
     // Init start

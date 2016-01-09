@@ -9,15 +9,15 @@
 #ifndef Player_h
 #define Player_h
 
-#include "cocos2d.h"
+#include "GameObject.h"
 
-class Player : public cocos2d::Ref {
+class Player : public GameObject {
     
 public:
     
-    virtual bool init();
+    bool init();
     
-    // implement the "static create()" and "static createScene()" methods manually
+    // implement the "static create()" method manually
     CREATE_FUNC(Player);
     
 private:
