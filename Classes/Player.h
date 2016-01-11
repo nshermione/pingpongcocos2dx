@@ -11,17 +11,21 @@
 
 #include "GameObject.h"
 
-class Player : public GameObject {
+class Player {
     
 public:
+    Player();
+    ~Player();
     
-    bool init();
+    static Player* getInstance();
+    std::string name;
     
-    // implement the "static create()" method manually
-    CREATE_FUNC(Player);
+    ValueMap const& getSaveData();
+    void loadSavedData(ValueMap const& savedData);
     
 private:
-    
+    static Player* _instance;
+    ValueMap _saveData;
 };
 
 #endif /* Player_h */

@@ -8,10 +8,30 @@
 
 #include "Player.h"
 
+Player* Player::_instance = 0;
 
-bool Player::init() {
-    // Init start
+Player::Player() {
+}
+
+Player::~Player() {
+}
+
+
+Player* Player::getInstance() {
+    if (!_instance) {
+        _instance = new Player();
+    }
     
-    // Init end
-    return true;
+    return _instance;
+}
+
+ValueMap const& Player::getSaveData() {
+    _saveData["name"] = name;
+    return _saveData;
+}
+
+void Player::loadSavedData(ValueMap const& savedData) {
+    if (savedData.find("name") != savedData.end()) {
+        name = savedData.at("name").asString();
+    }
 }

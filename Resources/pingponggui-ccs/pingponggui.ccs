@@ -15,6 +15,7 @@
         <Project Name="PauseScene.csd" Type="Scene" />
         <Project Name="GameOverScene.csd" Type="Scene" />
         <Image Name="check.png" />
+        <Project Name="EnterNameScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

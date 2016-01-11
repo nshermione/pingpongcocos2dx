@@ -7,7 +7,7 @@ bool Pause::init(std::string csbFile)
     BaseScene::init(csbFile);
     
     bindButton("resumeButton", CC_CALLBACK_0(Pause::resumeGame, this));
-    bindButton("menuButton", CC_CALLBACK_0(Pause::resumeGame, this));
+    bindButton("menuButton", CC_CALLBACK_0(Pause::goToMainMenu, this));
     bindButton("quitButton", CC_CALLBACK_0(Pause::quitGame, this));
 
     // End init scene

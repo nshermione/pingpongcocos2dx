@@ -16,20 +16,18 @@ USING_NS_CC;
 class GameObject : public Ref {
     
 public:
-    
+    GameObject();
+    ~GameObject();
 
-    //Getter & Setter
-    void setName(std::string const& name);
-    std::string const& getName();
+    // Properties
+    std::string name;
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameObject);
     
 protected:
     virtual bool init();
-    
-private:
-    std::string _name;
+
     
 };
 

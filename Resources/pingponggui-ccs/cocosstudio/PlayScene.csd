@@ -54,7 +54,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="playerWin" ActionTag="-778210254" Tag="14" IconVisible="False" LeftMargin="186.8012" RightMargin="917.1987" TopMargin="39.9952" BottomMargin="575.0048" Scale9Width="32" Scale9Height="25" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="playerWin" ActionTag="-778210254" Tag="14" IconVisible="False" LeftMargin="186.8012" RightMargin="917.1988" TopMargin="39.9952" BottomMargin="575.0048" Scale9Width="32" Scale9Height="25" ctype="ImageViewObjectData">
             <Size X="32.0000" Y="25.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="202.8012" Y="587.5048" />

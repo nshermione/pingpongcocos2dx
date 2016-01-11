@@ -8,6 +8,14 @@
 
 #include "GameObject.h"
 
+GameObject::GameObject()
+:name("") {
+    
+}
+
+GameObject::~GameObject() {
+    
+}
 
 bool GameObject::init() {
     // Init start
@@ -16,16 +24,3 @@ bool GameObject::init() {
     return true;
 }
 
-
-/**
- * Getters & Setters
- */
-
-// NAME
-void GameObject::setName(std::string const& name) {
-    this->_name = name;
-}
-
-std::string const&  GameObject::getName() {
-    return this->_name;
-}
