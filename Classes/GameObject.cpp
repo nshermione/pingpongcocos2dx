@@ -17,10 +17,3 @@ GameObject::~GameObject() {
     
 }
 
-bool GameObject::init() {
-    // Init start
-    
-    // Init end
-    return true;
-}
-

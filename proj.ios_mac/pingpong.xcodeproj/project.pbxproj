@@ -27,6 +27,7 @@
 		4A04CFA11C44013B0048C2C8 /* EnterNameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A04CF9F1C44013B0048C2C8 /* EnterNameScene.cpp */; };
 		4A04CFA31C4402AE0048C2C8 /* EnterNameScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 4A04CFA21C4402AE0048C2C8 /* EnterNameScene.csb */; };
 		4A04CFA61C44034F0048C2C8 /* GameSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A04CFA41C44034F0048C2C8 /* GameSettings.cpp */; };
+		4A0AF34F1C45891A00790E44 /* PlayClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AF34D1C45891A00790E44 /* PlayClock.cpp */; };
 		4A121FC31C3D7A1E00C04849 /* SplashScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 4A121FC21C3D7A1E00C04849 /* SplashScene.csb */; };
 		4A121FCE1C3D7AF700C04849 /* waltograph42.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A121FCD1C3D7AF700C04849 /* waltograph42.ttf */; };
 		4A171F991C3D83F7000CAE3C /* CSBHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A171F951C3D83F7000CAE3C /* CSBHelper.cpp */; };
@@ -42,6 +43,8 @@
 		4A77222A1C41A38C0095C22B /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7722291C41A38C0095C22B /* check.png */; };
 		4A77222E1C41A4680095C22B /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A77222C1C41A4680095C22B /* Player.cpp */; };
 		4A7722311C41A6330095C22B /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A77222F1C41A6330095C22B /* GameObject.cpp */; };
+		4A9DA3F91C45B1DC0056AF7C /* Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DA3F71C45B1DC0056AF7C /* Table.cpp */; };
+		4A9DA3FB1C45B2B10056AF7C /* table_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9DA3FA1C45B2B10056AF7C /* table_bg.png */; };
 		4AD3B2B31C3E574200DFA5FC /* LoadingBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B21C3E574200DFA5FC /* LoadingBar.png */; };
 		4AD3B2B61C3E64C500DFA5FC /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B41C3E64C400DFA5FC /* MainMenuScene.cpp */; };
 		4AD3B2BA1C3E6C4A00DFA5FC /* button_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B81C3E6C4A00DFA5FC /* button_bg.png */; };
@@ -145,6 +148,8 @@
 		4A04CFA21C4402AE0048C2C8 /* EnterNameScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = EnterNameScene.csb; sourceTree = "<group>"; };
 		4A04CFA41C44034F0048C2C8 /* GameSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameSettings.cpp; sourceTree = "<group>"; };
 		4A04CFA51C44034F0048C2C8 /* GameSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettings.h; sourceTree = "<group>"; };
+		4A0AF34D1C45891A00790E44 /* PlayClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayClock.cpp; sourceTree = "<group>"; };
+		4A0AF34E1C45891A00790E44 /* PlayClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayClock.h; sourceTree = "<group>"; };
 		4A121FC21C3D7A1E00C04849 /* SplashScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = SplashScene.csb; sourceTree = "<group>"; };
 		4A121FCD1C3D7AF700C04849 /* waltograph42.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = waltograph42.ttf; sourceTree = "<group>"; };
 		4A171F951C3D83F7000CAE3C /* CSBHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSBHelper.cpp; sourceTree = "<group>"; };
@@ -169,6 +174,9 @@
 		4A77222F1C41A6330095C22B /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
 		4A7722301C41A6330095C22B /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
 		4A7722331C41BBAC0095C22B /* GameMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameMacro.h; sourceTree = "<group>"; };
+		4A9DA3F71C45B1DC0056AF7C /* Table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Table.cpp; sourceTree = "<group>"; };
+		4A9DA3F81C45B1DC0056AF7C /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
+		4A9DA3FA1C45B2B10056AF7C /* table_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_bg.png; sourceTree = "<group>"; };
 		4AD3B2B21C3E574200DFA5FC /* LoadingBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadingBar.png; sourceTree = "<group>"; };
 		4AD3B2B41C3E64C400DFA5FC /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuScene.cpp; sourceTree = "<group>"; };
 		4AD3B2B51C3E64C400DFA5FC /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
@@ -342,6 +350,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A9DA3FA1C45B2B10056AF7C /* table_bg.png */,
 				4A04CFA21C4402AE0048C2C8 /* EnterNameScene.csb */,
 				4A7722291C41A38C0095C22B /* check.png */,
 				4A7722241C4193D70095C22B /* GameOverScene.csb */,
@@ -367,6 +376,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4A9DA3F61C45B1C60056AF7C /* objects */,
 				4A77222B1C41A4560095C22B /* player */,
 				4A171F9B1C3D84E5000CAE3C /* gamelib */,
 				4A121FD31C3D81AE00C04849 /* scenes */,
@@ -410,6 +420,8 @@
 				4A7722331C41BBAC0095C22B /* GameMacro.h */,
 				4A04CFA41C44034F0048C2C8 /* GameSettings.cpp */,
 				4A04CFA51C44034F0048C2C8 /* GameSettings.h */,
+				4A0AF34D1C45891A00790E44 /* PlayClock.cpp */,
+				4A0AF34E1C45891A00790E44 /* PlayClock.h */,
 			);
 			name = gamelib;
 			sourceTree = "<group>";
@@ -421,6 +433,15 @@
 				4A77222D1C41A4680095C22B /* Player.h */,
 			);
 			name = player;
+			sourceTree = "<group>";
+		};
+		4A9DA3F61C45B1C60056AF7C /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				4A9DA3F71C45B1DC0056AF7C /* Table.cpp */,
+				4A9DA3F81C45B1DC0056AF7C /* Table.h */,
+			);
+			name = objects;
 			sourceTree = "<group>";
 		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
@@ -573,6 +594,7 @@
 				4A7722231C4190180095C22B /* PauseScene.csb in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				4A9DA3FB1C45B2B10056AF7C /* table_bg.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				4AD3B2BE1C3E6D2300DFA5FC /* Marker Felt.ttf in Resources */,
@@ -634,8 +656,10 @@
 				4AD3B2B61C3E64C500DFA5FC /* MainMenuScene.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* SplashScene.cpp in Sources */,
 				4A6A3D821C3FA766006E1185 /* PlayScene.cpp in Sources */,
+				4A9DA3F91C45B1DC0056AF7C /* Table.cpp in Sources */,
 				4A7722311C41A6330095C22B /* GameObject.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				4A0AF34F1C45891A00790E44 /* PlayClock.cpp in Sources */,
 				4A171F9A1C3D83F7000CAE3C /* BaseScene.cpp in Sources */,
 				4A77222E1C41A4680095C22B /* Player.cpp in Sources */,
 				4A04CFA11C44013B0048C2C8 /* EnterNameScene.cpp in Sources */,

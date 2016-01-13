@@ -13,7 +13,7 @@
 
 USING_NS_CC;
 
-class GameObject : public Ref {
+class GameObject {
     
 public:
     GameObject();
@@ -21,13 +21,6 @@ public:
 
     // Properties
     std::string name;
-    
-    // implement the "static create()" method manually
-    CREATE_FUNC(GameObject);
-    
-protected:
-    virtual bool init();
-
     
 };
 

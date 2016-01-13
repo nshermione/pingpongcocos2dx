@@ -16,6 +16,7 @@
         <Project Name="GameOverScene.csd" Type="Scene" />
         <Image Name="check.png" />
         <Project Name="EnterNameScene.csd" Type="Scene" />
+        <Image Name="table_bg.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -2,7 +2,8 @@
 #define __Play_SCENE_H__
 
 #include "BaseScene.h"
-
+#include "PlayClock.h"
+#include "Table.h"
 
 class Play : public BaseScene
 {
@@ -19,8 +20,10 @@ private:
     
     // UI
     void updatePlayerUI();
-    void updateClockUI();
+    void updateClockUI(float dt);
     
+    PlayClock playClock;
+    std::shared_ptr<Table> table;
 };
 
 #endif // __Play_SCENE_H__
