@@ -39,7 +39,7 @@ void Play::updateClockUI(float dt) {
     int minute = (int)playClock.totalTime / 60;
     int second = (int)playClock.totalTime % 60;
     auto clockText = (ui::Text *) _rootNode->getChildByName("clock");
-    auto timeString = string_snprintf("%02d:%f", minute, second);
+    auto timeString = string_snprintf("%02d:%02d", minute, second);
     clockText->setString(timeString);
 }
 

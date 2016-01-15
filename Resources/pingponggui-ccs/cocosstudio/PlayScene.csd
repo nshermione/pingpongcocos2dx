@@ -74,14 +74,14 @@
             <PreSize X="0.0282" Y="0.0391" />
             <FileData Type="Normal" Path="check.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="table" ActionTag="-1989902959" Tag="12" IconVisible="False" LeftMargin="504.8700" RightMargin="503.1300" TopMargin="301.4523" BottomMargin="210.5477" ctype="SpriteObjectData">
-            <Size X="128.0000" Y="128.0000" />
+          <AbstractNodeData Name="table" ActionTag="-1989902959" Tag="12" IconVisible="False" LeftMargin="4.5795" RightMargin="-4.5796" TopMargin="34.3361" BottomMargin="-34.3361" ctype="SpriteObjectData">
+            <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="568.8700" Y="274.5477" />
-            <Scale ScaleX="6.3108" ScaleY="2.8371" />
+            <Position X="572.5795" Y="285.6639" />
+            <Scale ScaleX="0.8045" ScaleY="0.6169" />
             <CColor A="255" R="84" G="226" B="216" />
-            <PrePosition X="0.5008" Y="0.4290" />
-            <PreSize X="0.1127" Y="0.2000" />
+            <PrePosition X="0.5040" Y="0.4463" />
+            <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="table_bg.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
