@@ -45,6 +45,8 @@
 		4A7722311C41A6330095C22B /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A77222F1C41A6330095C22B /* GameObject.cpp */; };
 		4A9DA3F91C45B1DC0056AF7C /* Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DA3F71C45B1DC0056AF7C /* Table.cpp */; };
 		4A9DA3FB1C45B2B10056AF7C /* table_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9DA3FA1C45B2B10056AF7C /* table_bg.png */; };
+		4AC145041C492E0D007D40DA /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AC145021C492E0D007D40DA /* Ball.cpp */; };
+		4AC145061C49365F007D40DA /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC145051C49365F007D40DA /* ball.png */; };
 		4AD3B2B31C3E574200DFA5FC /* LoadingBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B21C3E574200DFA5FC /* LoadingBar.png */; };
 		4AD3B2B61C3E64C500DFA5FC /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B41C3E64C400DFA5FC /* MainMenuScene.cpp */; };
 		4AD3B2BA1C3E6C4A00DFA5FC /* button_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B81C3E6C4A00DFA5FC /* button_bg.png */; };
@@ -177,6 +179,10 @@
 		4A9DA3F71C45B1DC0056AF7C /* Table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Table.cpp; sourceTree = "<group>"; };
 		4A9DA3F81C45B1DC0056AF7C /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
 		4A9DA3FA1C45B2B10056AF7C /* table_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_bg.png; sourceTree = "<group>"; };
+		4AC145021C492E0D007D40DA /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
+		4AC145031C492E0D007D40DA /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
+		4AC145051C49365F007D40DA /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		4AC145081C495397007D40DA /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		4AD3B2B21C3E574200DFA5FC /* LoadingBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadingBar.png; sourceTree = "<group>"; };
 		4AD3B2B41C3E64C400DFA5FC /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuScene.cpp; sourceTree = "<group>"; };
 		4AD3B2B51C3E64C400DFA5FC /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
@@ -350,6 +356,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4AC145051C49365F007D40DA /* ball.png */,
 				4A9DA3FA1C45B2B10056AF7C /* table_bg.png */,
 				4A04CFA21C4402AE0048C2C8 /* EnterNameScene.csb */,
 				4A7722291C41A38C0095C22B /* check.png */,
@@ -422,6 +429,7 @@
 				4A04CFA51C44034F0048C2C8 /* GameSettings.h */,
 				4A0AF34D1C45891A00790E44 /* PlayClock.cpp */,
 				4A0AF34E1C45891A00790E44 /* PlayClock.h */,
+				4AC145081C495397007D40DA /* game.h */,
 			);
 			name = gamelib;
 			sourceTree = "<group>";
@@ -438,6 +446,8 @@
 		4A9DA3F61C45B1C60056AF7C /* objects */ = {
 			isa = PBXGroup;
 			children = (
+				4AC145021C492E0D007D40DA /* Ball.cpp */,
+				4AC145031C492E0D007D40DA /* Ball.h */,
 				4A9DA3F71C45B1DC0056AF7C /* Table.cpp */,
 				4A9DA3F81C45B1DC0056AF7C /* Table.h */,
 			);
@@ -610,6 +620,7 @@
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
+				4AC145061C49365F007D40DA /* ball.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				4A6A3D861C3FBE3F006E1185 /* PlayScene.csb in Resources */,
@@ -661,6 +672,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				4A0AF34F1C45891A00790E44 /* PlayClock.cpp in Sources */,
 				4A171F9A1C3D83F7000CAE3C /* BaseScene.cpp in Sources */,
+				4AC145041C492E0D007D40DA /* Ball.cpp in Sources */,
 				4A77222E1C41A4680095C22B /* Player.cpp in Sources */,
 				4A04CFA11C44013B0048C2C8 /* EnterNameScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,

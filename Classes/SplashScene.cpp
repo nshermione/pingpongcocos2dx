@@ -1,8 +1,6 @@
 #include "SplashScene.h"
 #include "MainMenuScene.h"
 #include "EnterNameScene.h"
-#include "GameSettings.h"
-#include "Player.h"
 
 LoadingBar* loadingBar;
 

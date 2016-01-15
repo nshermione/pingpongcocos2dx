@@ -1,8 +1,9 @@
 #ifndef __EnterName_SCENE_H__
 #define __EnterName_SCENE_H__
 
-#include "BaseScene.h"
+#include "game.h"
 
+USING_NS_GAME;
 
 class EnterName : public BaseScene {
 public:

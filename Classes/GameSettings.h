@@ -14,6 +14,8 @@
 
 USING_NS_CC;
 
+START_GAME_NS
+
 class GameSettings {
 public:
     GameSettings();
@@ -36,5 +38,7 @@ private:
     ValueMap data;
     std::string filePath;
 };
+
+END_GAME_NS
 
 #endif /* GameSettings_h */

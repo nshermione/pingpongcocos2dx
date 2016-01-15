@@ -1,8 +1,9 @@
 #ifndef __Pause_SCENE_H__
 #define __Pause_SCENE_H__
 
-#include "BaseScene.h"
+#include "game.h"
 
+USING_NS_GAME;
 
 class Pause : public BaseScene{
 public:

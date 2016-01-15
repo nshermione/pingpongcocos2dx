@@ -9,23 +9,34 @@
 #ifndef Player_h
 #define Player_h
 
-#include "GameObject.h"
+#include "GameMacro.h"
+#include "cocos2d.h"
+
+START_GAME_NS
 
 class Player {
-    
 public:
     Player();
     ~Player();
     
     static Player* getInstance();
-    std::string name;
     
-    ValueMap const& getSaveData();
-    void loadSavedData(ValueMap const& savedData);
+    cocos2d::ValueMap const& getSaveData();
+    void loadSavedData(cocos2d::ValueMap const& savedData);
+    
+    /*
+     Properties
+     */
+    
+    const std::string& getName();
+    void setName(const std::string& name);
     
 private:
     static Player* _instance;
-    ValueMap _saveData;
+    cocos2d::ValueMap _saveData;
+    std::string _name;
 };
+
+END_GAME_NS
 
 #endif /* Player_h */

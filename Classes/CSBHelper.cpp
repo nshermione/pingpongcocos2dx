@@ -11,6 +11,8 @@
 
 USING_NS_CC;
 
+START_GAME_NS
+
 // PATCH - sprite from csb file use content scale factor
 void fixSpriteContentScale(Node* parentNode) {
     auto childrenNodes = parentNode->getChildren();
@@ -43,3 +45,5 @@ Node* CSBHelper::createNode(const std::string& csbFile) {
     _rootNode->setPosition(origin);
     return _rootNode;
 }
+
+END_GAME_NS

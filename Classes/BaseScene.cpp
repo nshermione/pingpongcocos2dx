@@ -1,9 +1,7 @@
 #include "BaseScene.h"
 #include "CSBHelper.h"
 
-
-using namespace cocos2d::ui;
-
+START_GAME_NS
 
 // on "init" you need to initialize your instance
 bool BaseScene::init(std::string csbFile)
@@ -21,7 +19,9 @@ bool BaseScene::init(std::string csbFile)
 }
 
 void BaseScene::bindButton(std::string buttonName, const ui::Widget::ccWidgetClickCallback &callback) {
-    auto button = (Button *) _rootNode->getChildByName(buttonName);
+    auto button = (ui::Button *) _rootNode->getChildByName(buttonName);
     button->addClickEventListener(callback);
 }
+
+END_GAME_NS
 

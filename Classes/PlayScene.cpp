@@ -1,7 +1,8 @@
 #include "PlayScene.h"
 #include "PauseScene.h"
-#include "Player.h"
 #include "Table.h"
+
+USING_NS_GAME;
 
 // on "init" you need to initialize your instance
 bool Play::init(std::string csbFile)
@@ -12,7 +13,7 @@ bool Play::init(std::string csbFile)
     
     // set player name
     auto playerLabel = (ui::Text *) _rootNode->getChildByName("playerName");
-    auto playerName = Player::getInstance()->name;
+    auto playerName = Player::getInstance()->getName();
     playerLabel->setString(playerName);
     
     // init clock
@@ -20,11 +21,7 @@ bool Play::init(std::string csbFile)
     playClock.start();
     
     // init table
-    auto tableSprite = (Sprite *) _rootNode->getChildByName("table");
     table = std::make_shared<Table>();
-    
-    // TODO: fix bug - sprite of table is weird in scheduler
-    table->setSprite(tableSprite);
     
     return true;
 }

@@ -74,15 +74,26 @@
             <PreSize X="0.0282" Y="0.0391" />
             <FileData Type="Normal" Path="check.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="table" ActionTag="-1989902959" Tag="12" IconVisible="False" LeftMargin="4.5795" RightMargin="-4.5796" TopMargin="34.3361" BottomMargin="-34.3361" ctype="SpriteObjectData">
+          <AbstractNodeData Name="table" ActionTag="-1989902959" Tag="12" IconVisible="False" LeftMargin="4.5780" RightMargin="-4.5780" TopMargin="34.3362" BottomMargin="-34.3362" ctype="SpriteObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="572.5795" Y="285.6639" />
-            <Scale ScaleX="0.8045" ScaleY="0.6169" />
+            <Position X="572.5780" Y="285.6638" />
+            <Scale ScaleX="0.4841" ScaleY="0.7168" />
             <CColor A="255" R="84" G="226" B="216" />
             <PrePosition X="0.5040" Y="0.4463" />
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="table_bg.png" Plist="" />
+            <BlendFunc Src="770" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Sprite_1" ActionTag="578193936" Tag="13" IconVisible="False" LeftMargin="560.2900" RightMargin="511.7100" TopMargin="296.3100" BottomMargin="279.6900" ctype="SpriteObjectData">
+            <Size X="64.0000" Y="64.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="592.2900" Y="311.6900" />
+            <Scale ScaleX="0.3000" ScaleY="0.3000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5214" Y="0.4870" />
+            <PreSize X="0.0563" Y="0.1000" />
+            <FileData Type="Normal" Path="ball.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
         </Children>

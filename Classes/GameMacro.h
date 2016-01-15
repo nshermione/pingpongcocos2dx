@@ -6,6 +6,20 @@
 //
 //
 
+
+/** Namespace
+ * Define game namespace and using game namespace
+ *
+ */
+#define START_GAME_NS namespace game {
+
+#define END_GAME_NS }
+
+#define USING_NS_GAME using namespace game
+
+#define USING_NS_CC_UI using namespace cocos2d::ui
+
+
 /** @def CREATE_FUNC(__TYPE__)
  * Define a create function for a specific type, such as Layer.
  *
@@ -38,6 +52,8 @@ static Scene* createScene() \
     return scene; \
 }
 
+    
+    
 
 
 // Global functions

@@ -1,8 +1,9 @@
 #ifndef __Settings_SCENE_H__
 #define __Settings_SCENE_H__
 
-#include "BaseScene.h"
+#include "game.h"
 
+USING_NS_GAME;
 
 class Settings : public BaseScene {
 public:

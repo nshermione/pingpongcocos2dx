@@ -1,9 +1,10 @@
 #ifndef __Play_SCENE_H__
 #define __Play_SCENE_H__
 
-#include "BaseScene.h"
-#include "PlayClock.h"
+#include "game.h"
 #include "Table.h"
+
+USING_NS_GAME;
 
 class Play : public BaseScene
 {

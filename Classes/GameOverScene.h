@@ -1,8 +1,9 @@
 #ifndef __GameOver_SCENE_H__
 #define __GameOver_SCENE_H__
 
-#include "BaseScene.h"
+#include "game.h"
 
+USING_NS_GAME;
 
 class GameOver : public BaseScene
 {

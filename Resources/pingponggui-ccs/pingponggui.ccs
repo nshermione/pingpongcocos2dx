@@ -17,6 +17,7 @@
         <Image Name="check.png" />
         <Project Name="EnterNameScene.csd" Type="Scene" />
         <Image Name="table_bg.png" />
+        <Image Name="ball.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

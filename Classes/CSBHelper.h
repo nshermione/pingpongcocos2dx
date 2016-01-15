@@ -11,11 +11,17 @@
 
 #include "cocos2d.h"
 
+#include "GameMacro.h"
+
 USING_NS_CC;
+
+START_GAME_NS
 
 class CSBHelper {
 public:
     static Node* createNode(const std::string& csbFile);
 };
+
+END_GAME_NS
 
 #endif /* CSBHelper_hpp */

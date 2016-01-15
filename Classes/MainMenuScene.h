@@ -1,9 +1,9 @@
 #ifndef __MainMenu_SCENE_H__
 #define __MainMenu_SCENE_H__
 
-#include "BaseScene.h"
+#include "game.h"
 
-using namespace cocos2d::ui;
+USING_NS_GAME;
 
 class MainMenu : public BaseScene {
 public:

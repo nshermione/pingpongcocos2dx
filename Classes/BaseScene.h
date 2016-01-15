@@ -7,6 +7,9 @@
 #include "GameMacro.h"
 
 USING_NS_CC;
+USING_NS_CC_UI;
+
+START_GAME_NS
 
 class BaseScene : public cocos2d::Layer
 {
@@ -20,5 +23,7 @@ protected:
     virtual bool init(std::string csbFile);
     virtual void bindButton(std::string buttonName, const ui::Widget::ccWidgetClickCallback &callback);
 };
+
+END_GAME_NS
 
 #endif // __BaseScene_SCENE_H__

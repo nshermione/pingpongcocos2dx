@@ -2,8 +2,9 @@
 #define __Splash_SCENE_H__
 
 #include "cocos2d.h"
-#include "BaseScene.h"
+#include "game.h"
 
+USING_NS_GAME;
 
 class Splash : public BaseScene
 {

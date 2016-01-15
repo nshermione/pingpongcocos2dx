@@ -8,6 +8,8 @@
 
 #include "Player.h"
 
+START_GAME_NS
+
 Player* Player::_instance = 0;
 
 Player::Player() {
@@ -25,13 +27,23 @@ Player* Player::getInstance() {
     return _instance;
 }
 
-ValueMap const& Player::getSaveData() {
-    _saveData["name"] = name;
+cocos2d::ValueMap const& Player::getSaveData() {
+    _saveData["name"] = _name;
     return _saveData;
 }
 
-void Player::loadSavedData(ValueMap const& savedData) {
+void Player::loadSavedData(cocos2d::ValueMap const& savedData) {
     if (savedData.find("name") != savedData.end()) {
-        name = savedData.at("name").asString();
+        _name = savedData.at("name").asString();
     }
 }
+
+const std::string& Player::getName() {
+    return _name;
+}
+
+void Player::setName(const std::string &name) {
+    _name = name;
+}
+
+END_GAME_NS

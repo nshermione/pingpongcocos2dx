@@ -9,7 +9,9 @@
 #ifndef PlayClock_h
 #define PlayClock_h
 
-#include "GameObject.h"
+#include "GameMacro.h"
+
+START_GAME_NS
 
 class PlayClock {
 public:
@@ -26,5 +28,7 @@ public:
 protected:
     bool _paused;
 };
+
+END_GAME_NS
 
 #endif /* PlayClock_h */

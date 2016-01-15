@@ -8,6 +8,7 @@
 
 #include "PlayClock.h"
 
+START_GAME_NS
 
 PlayClock::PlayClock()
 : totalTime(0)
@@ -37,3 +38,5 @@ void PlayClock::update(float deltaTime) {
         totalTime += deltaTime;
     }
 }
+
+END_GAME_NS

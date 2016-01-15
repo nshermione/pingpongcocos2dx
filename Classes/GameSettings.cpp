@@ -8,9 +8,11 @@
 
 #include "GameSettings.h"
 
+
+START_GAME_NS
+
 const std::string FIRST_TIME_KEY = "first_time";
 const std::string PLAYER_KEY = "player";
-
 
 GameSettings *GameSettings::instance = 0;
 
@@ -83,3 +85,5 @@ void GameSettings::loadPlayer(Player *player) {
     auto playerMap = data.at(PLAYER_KEY).asValueMap();
     player->loadSavedData(playerMap);
 }
+
+END_GAME_NS

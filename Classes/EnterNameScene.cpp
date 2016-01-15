@@ -1,7 +1,6 @@
 #include "EnterNameScene.h"
 #include "GameSettings.h"
 #include "MainMenuScene.h"
-#include "Player.h"
 
 // on "init" you need to initialize your instance
 bool EnterName::init(std::string csbFile)
@@ -16,7 +15,7 @@ bool EnterName::init(std::string csbFile)
 void EnterName::submit() {
     auto nameField = (TextField* )_rootNode->getChildByName("nameField");
     auto playerName = nameField->getString();
-    Player::getInstance()->name = playerName;
+    Player::getInstance()->setName(playerName);
     
     auto settings = GameSettings::getInstance();
     settings->savePlayer(Player::getInstance());
