@@ -13,13 +13,14 @@ START_GAME_NS
 
 const std::string FIRST_TIME_KEY = "first_time";
 const std::string PLAYER_KEY = "player";
+const std::string SETTING_FILE = "gamesettings.plist";
 
 GameSettings *GameSettings::instance = 0;
 
 // MacOS path for simulator : /Users/thinhtran/Library/Developer/CoreSimulator/Devices
 
 GameSettings::GameSettings() {
-    filePath = FileUtils::getInstance()->getWritablePath() + "gamesettings.plist";
+    filePath = FileUtils::getInstance()->getWritablePath() + SETTING_FILE;
     data = FileUtils::getInstance()->getValueMapFromFile(filePath);
     if (data.find(FIRST_TIME_KEY) == data.end()) {
         data[FIRST_TIME_KEY] = true;
