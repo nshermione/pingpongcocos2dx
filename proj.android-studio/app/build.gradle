@@ -11,9 +11,6 @@ android {
         versionCode 1
         versionName "1.0"
 
-        ndk {
-            moduleName "hellococos2dxgame" // <-- This is the name of my C++ module!
-        }
     }
 
     sourceSets.main {
@@ -43,9 +40,6 @@ android {
             if (project.hasProperty("RELEASE_STORE_FILE")) {
                 signingConfig signingConfigs.release
             }
-        }
-        debug {
-            jniDebuggable true
         }
     }
 }

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/thinhtran/workspace/hellococos2dx/cocos2d/cocos/platform/android/libcocos2dx/src/main/assets"/></dataSet><dataSet config="release"><source path="/Users/thinhtran/workspace/hellococos2dx/cocos2d/cocos/platform/android/libcocos2dx/src/release/assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/thinhtran/workspace/pingpongcocos2dx/cocos2d/cocos/platform/android/libcocos2dx/src/main/assets"/></dataSet><dataSet config="release"><source path="/Users/thinhtran/workspace/pingpongcocos2dx/cocos2d/cocos/platform/android/libcocos2dx/src/release/assets"/></dataSet></merger>

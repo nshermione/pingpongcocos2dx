@@ -1,0 +1,24 @@
+<Solution>
+  <PropertyGroup Name="pingponggui" Version="2.3.3.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="SplashScene.csd" Type="Scene" />
+        <TTF Name="waltograph42.ttf" />
+        <Image Name="LoadingBar.png" />
+        <Project Name="MainMenuScene.csd" Type="Scene" />
+        <TTF Name="Marker Felt.ttf" />
+        <Image Name="button_bg.png" />
+        <Image Name="button_bg_pressed.png" />
+        <Project Name="PlayScene.csd" Type="Scene" />
+        <Image Name="menu_btn_bg.png" />
+        <Project Name="PauseScene.csd" Type="Scene" />
+        <Project Name="GameOverScene.csd" Type="Scene" />
+        <Image Name="check.png" />
+        <Project Name="EnterNameScene.csd" Type="Scene" />
+        <Image Name="table_bg.png" />
+        <Image Name="ball.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

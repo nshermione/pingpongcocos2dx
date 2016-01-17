@@ -6,6 +6,9 @@
 //
 //
 
+#include <stdio.h>
+#include <iostream>
+#include <memory>
 
 /** Namespace
  * Define game namespace and using game namespace
@@ -20,10 +23,10 @@
 #define USING_NS_CC_UI using namespace cocos2d::ui
 
 
-/** @def CREATE_FUNC(__TYPE__)
+/** @def CREATE_FUNC_SCENE(__TYPE__, csbFile)
  * Define a create function for a specific type, such as Layer.
  *
- * @param __TYPE__  class type to add create(), such as Layer.
+ * @param __TYPE__  class type to add create() and createScene(), such as Layer.
  */
 #ifndef GameMacro_h
 #define GameMacro_h
@@ -52,8 +55,39 @@ static Scene* createScene() \
     return scene; \
 }
 
-    
-    
+
+/** @def CREATE_FUNC_PHYSIC_SCENE(__TYPE__, csbFile)
+ * Define a create function for a specific type, such as Layer.
+ *
+ * @param __TYPE__  class type to add create() and createScene(), such as Layer.
+ */
+#define CREATE_FUNC_PHYSIC_SCENE(__TYPE__,csbFile) \
+static __TYPE__* create() \
+{ \
+__TYPE__ *pRet = new(std::nothrow) __TYPE__(); \
+if (pRet && pRet->init( (csbFile) )) \
+{ \
+pRet->autorelease(); \
+return pRet; \
+} \
+else \
+{ \
+delete pRet; \
+pRet = nullptr; \
+return nullptr; \
+} \
+} \
+static Scene* createScene() \
+{ \
+Scene* scene = Scene::createWithPhysics(); \
+__TYPE__* layer = __TYPE__::create(); \
+layer->setupPhysicsWorld(scene);\
+scene->addChild(layer); \
+return scene; \
+}
+
+
+
 
 
 // Global functions

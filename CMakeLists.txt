@@ -124,13 +124,43 @@ endif( WIN32 )
 
 set(GAME_SRC
   Classes/AppDelegate.cpp
-  Classes/HelloWorldScene.cpp
+  Classes/Ball.cpp
+  Classes/BaseScene.cpp
+  Classes/CSBHelper.cpp
+  Classes/EnterNameScene.cpp
+  Classes/GameObject.cpp
+  Classes/GameOverScene.cpp
+  Classes/GameSettings.cpp
+  Classes/MainMenuScene.cpp
+  Classes/PauseScene.cpp
+  Classes/PlayClock.cpp
+  Classes/PlayScene.cpp
+  Classes/Player.cpp
+  Classes/SettingsScene.cpp
+  Classes/SplashScene.cpp
+  Classes/Table.cpp
   ${PLATFORM_SPECIFIC_SRC}
 )
 
 set(GAME_HEADERS
   Classes/AppDelegate.h
-  Classes/HelloWorldScene.h
+  Classes/Ball.h
+  Classes/BaseScene.h
+  Classes/CSBHelper.h
+  Classes/EnterNameScene.h
+  Classes/GameMacro.h
+  Classes/GameObject.h
+  Classes/GameOverScene.h
+  Classes/GameSettings.h
+  Classes/MainMenuScene.h
+  Classes/PauseScene.h
+  Classes/PlayClock.h
+  Classes/PlayScene.h
+  Classes/Player.h
+  Classes/SettingsScene.h
+  Classes/SplashScene.h
+  Classes/Table.h
+  Classes/game.h
   ${PLATFORM_SPECIFIC_HEADERS}
 )
 

@@ -1,6 +1,5 @@
 #include "PlayScene.h"
 #include "PauseScene.h"
-#include "Table.h"
 
 USING_NS_GAME;
 
@@ -21,9 +20,22 @@ bool Play::init(std::string csbFile)
     playClock.start();
     
     // init table
-    table = std::make_shared<Table>();
+    auto tableSprite = (Sprite *) _rootNode->getChildByName("table");
+    table.init(tableSprite);
+    
+    // init ball
+    auto ballSprite = (Sprite *) _rootNode->getChildByName("ball");
+    ball.init(ballSprite);
     
     return true;
+}
+
+void Play::setupPhysicsWorld(Scene *scene) {
+    auto physicsWorld = scene->getPhysicsWorld();
+//    physicsWorld->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+//    physicsWorld->setAutoStep(false);
+//    physicsWorld->setSubsteps(3);
+//    physicsWorld->step(0.032);
 }
 
 void Play::goToPauseScene() {

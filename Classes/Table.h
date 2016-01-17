@@ -16,6 +16,7 @@ USING_NS_GAME;
 
 class Table: public GameObject {
 public:
+    void init(Sprite *sprite);
     
 protected:
 };

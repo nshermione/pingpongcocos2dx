@@ -17,6 +17,7 @@ USING_NS_GAME;
 
 class Ball: public GameObject {
 public:
+    void init(Sprite* sprite);
     
 protected:
 };

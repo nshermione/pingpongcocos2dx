@@ -3,6 +3,7 @@
 
 #include "game.h"
 #include "Table.h"
+#include "Ball.h"
 
 USING_NS_GAME;
 
@@ -10,10 +11,11 @@ class Play : public BaseScene
 {
 public:
     // implement the "static create()" and "static createScene()" methods manually
-    CREATE_FUNC_SCENE(Play, "PlayScene.csb");
+    CREATE_FUNC_PHYSIC_SCENE(Play, "PlayScene.csb");
     
 protected:
     bool init(std::string csbFile);
+    void setupPhysicsWorld(Scene *scene);
     
 private:
     void goToPauseScene();
@@ -24,7 +26,8 @@ private:
     void updateClockUI(float dt);
     
     PlayClock playClock;
-    std::shared_ptr<Table> table;
+    Table table;
+    Ball ball;
 };
 
 #endif // __Play_SCENE_H__

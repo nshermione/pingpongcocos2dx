@@ -85,7 +85,7 @@
             <FileData Type="Normal" Path="table_bg.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Sprite_1" ActionTag="578193936" Tag="13" IconVisible="False" LeftMargin="560.2900" RightMargin="511.7100" TopMargin="296.3100" BottomMargin="279.6900" ctype="SpriteObjectData">
+          <AbstractNodeData Name="ball" ActionTag="578193936" Tag="13" IconVisible="False" LeftMargin="560.2900" RightMargin="511.7100" TopMargin="296.3100" BottomMargin="279.6900" ctype="SpriteObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="592.2900" Y="311.6900" />
