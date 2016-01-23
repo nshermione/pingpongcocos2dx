@@ -11,7 +11,7 @@ bool Play::init(std::string csbFile)
     bindButton("menuButton", CC_CALLBACK_0(Play::goToPauseScene, this));
     
     // set player name
-    auto playerLabel = (ui::Text *) _rootNode->getChildByName("playerName");
+    auto playerLabel = (ui::Text *) _rootNode->getChildByName("purpleName");
     auto playerName = Player::getInstance()->getName();
     playerLabel->setString(playerName);
     

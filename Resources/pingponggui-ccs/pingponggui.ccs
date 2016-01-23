@@ -18,6 +18,18 @@
         <Project Name="EnterNameScene.csd" Type="Scene" />
         <Image Name="table_bg.png" />
         <Image Name="ball.png" />
+        <Image Name="bg.png" />
+        <Image Name="middle_line.png" />
+        <Image Name="pingpong_table.png" />
+        <Image Name="purple_goal.png" />
+        <Image Name="item_points.png" />
+        <Image Name="blue_goal.png" />
+        <Image Name="wood_chump.png" />
+        <Image Name="arrow.png" />
+        <Image Name="barrier.png" />
+        <Image Name="portal.png" />
+        <Image Name="blank.png" />
+        <Image Name="bg_1.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -45,6 +45,17 @@
 		4A7722311C41A6330095C22B /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A77222F1C41A6330095C22B /* GameObject.cpp */; };
 		4A9DA3F91C45B1DC0056AF7C /* Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DA3F71C45B1DC0056AF7C /* Table.cpp */; };
 		4A9DA3FB1C45B2B10056AF7C /* table_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9DA3FA1C45B2B10056AF7C /* table_bg.png */; };
+		4AB1C9021C51C5BF0076B642 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8F71C51C5BF0076B642 /* arrow.png */; };
+		4AB1C9031C51C5BF0076B642 /* barrier.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8F81C51C5BF0076B642 /* barrier.png */; };
+		4AB1C9041C51C5BF0076B642 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8F91C51C5BF0076B642 /* bg.png */; };
+		4AB1C9051C51C5BF0076B642 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8FA1C51C5BF0076B642 /* blank.png */; };
+		4AB1C9061C51C5BF0076B642 /* blue_goal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8FB1C51C5BF0076B642 /* blue_goal.png */; };
+		4AB1C9071C51C5BF0076B642 /* item_points.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8FC1C51C5BF0076B642 /* item_points.png */; };
+		4AB1C9081C51C5BF0076B642 /* middle_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8FD1C51C5BF0076B642 /* middle_line.png */; };
+		4AB1C9091C51C5BF0076B642 /* pingpong_table.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8FE1C51C5BF0076B642 /* pingpong_table.png */; };
+		4AB1C90A1C51C5BF0076B642 /* portal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8FF1C51C5BF0076B642 /* portal.png */; };
+		4AB1C90B1C51C5BF0076B642 /* purple_goal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C9001C51C5BF0076B642 /* purple_goal.png */; };
+		4AB1C90C1C51C5BF0076B642 /* wood_chump.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C9011C51C5BF0076B642 /* wood_chump.png */; };
 		4AC145041C492E0D007D40DA /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AC145021C492E0D007D40DA /* Ball.cpp */; };
 		4AC145061C49365F007D40DA /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC145051C49365F007D40DA /* ball.png */; };
 		4AD3B2B31C3E574200DFA5FC /* LoadingBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B21C3E574200DFA5FC /* LoadingBar.png */; };
@@ -179,6 +190,17 @@
 		4A9DA3F71C45B1DC0056AF7C /* Table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Table.cpp; sourceTree = "<group>"; };
 		4A9DA3F81C45B1DC0056AF7C /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
 		4A9DA3FA1C45B2B10056AF7C /* table_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_bg.png; sourceTree = "<group>"; };
+		4AB1C8F71C51C5BF0076B642 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		4AB1C8F81C51C5BF0076B642 /* barrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrier.png; sourceTree = "<group>"; };
+		4AB1C8F91C51C5BF0076B642 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		4AB1C8FA1C51C5BF0076B642 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
+		4AB1C8FB1C51C5BF0076B642 /* blue_goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_goal.png; sourceTree = "<group>"; };
+		4AB1C8FC1C51C5BF0076B642 /* item_points.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_points.png; sourceTree = "<group>"; };
+		4AB1C8FD1C51C5BF0076B642 /* middle_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = middle_line.png; sourceTree = "<group>"; };
+		4AB1C8FE1C51C5BF0076B642 /* pingpong_table.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pingpong_table.png; sourceTree = "<group>"; };
+		4AB1C8FF1C51C5BF0076B642 /* portal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = portal.png; sourceTree = "<group>"; };
+		4AB1C9001C51C5BF0076B642 /* purple_goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_goal.png; sourceTree = "<group>"; };
+		4AB1C9011C51C5BF0076B642 /* wood_chump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_chump.png; sourceTree = "<group>"; };
 		4AC145021C492E0D007D40DA /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
 		4AC145031C492E0D007D40DA /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
 		4AC145051C49365F007D40DA /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
@@ -356,6 +378,17 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4AB1C8F71C51C5BF0076B642 /* arrow.png */,
+				4AB1C8F81C51C5BF0076B642 /* barrier.png */,
+				4AB1C8F91C51C5BF0076B642 /* bg.png */,
+				4AB1C8FA1C51C5BF0076B642 /* blank.png */,
+				4AB1C8FB1C51C5BF0076B642 /* blue_goal.png */,
+				4AB1C8FC1C51C5BF0076B642 /* item_points.png */,
+				4AB1C8FD1C51C5BF0076B642 /* middle_line.png */,
+				4AB1C8FE1C51C5BF0076B642 /* pingpong_table.png */,
+				4AB1C8FF1C51C5BF0076B642 /* portal.png */,
+				4AB1C9001C51C5BF0076B642 /* purple_goal.png */,
+				4AB1C9011C51C5BF0076B642 /* wood_chump.png */,
 				4AC145051C49365F007D40DA /* ball.png */,
 				4A9DA3FA1C45B2B10056AF7C /* table_bg.png */,
 				4A04CFA21C4402AE0048C2C8 /* EnterNameScene.csb */,
@@ -606,36 +639,47 @@
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				4A9DA3FB1C45B2B10056AF7C /* table_bg.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				4AB1C9091C51C5BF0076B642 /* pingpong_table.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				4AD3B2BE1C3E6D2300DFA5FC /* Marker Felt.ttf in Resources */,
+				4AB1C90B1C51C5BF0076B642 /* purple_goal.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				4AB1C90A1C51C5BF0076B642 /* portal.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				4AB1C9041C51C5BF0076B642 /* bg.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				4AD3B2BA1C3E6C4A00DFA5FC /* button_bg.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				4A04CFA31C4402AE0048C2C8 /* EnterNameScene.csb in Resources */,
 				4AD3B2BC1C3E6C8800DFA5FC /* MainMenuScene.csb in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
+				4AB1C9031C51C5BF0076B642 /* barrier.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
+				4AB1C90C1C51C5BF0076B642 /* wood_chump.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				4AC145061C49365F007D40DA /* ball.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				4A6A3D861C3FBE3F006E1185 /* PlayScene.csb in Resources */,
+				4AB1C9051C51C5BF0076B642 /* blank.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				4A121FCE1C3D7AF700C04849 /* waltograph42.ttf in Resources */,
 				4A6A3D851C3FBE3F006E1185 /* menu_btn_bg.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
+				4AB1C9071C51C5BF0076B642 /* item_points.png in Resources */,
 				4AD3B2B31C3E574200DFA5FC /* LoadingBar.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				4A77222A1C41A38C0095C22B /* check.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				4A7722251C4193D70095C22B /* GameOverScene.csb in Resources */,
+				4AB1C9061C51C5BF0076B642 /* blue_goal.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				4AB1C9081C51C5BF0076B642 /* middle_line.png in Resources */,
+				4AB1C9021C51C5BF0076B642 /* arrow.png in Resources */,
 				4A121FC31C3D7A1E00C04849 /* SplashScene.csb in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);

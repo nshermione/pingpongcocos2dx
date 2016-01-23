@@ -6,6 +6,16 @@
       <ObjectData Name="Scene" Tag="12" ctype="GameNodeObjectData">
         <Size X="1136.0000" Y="640.0000" />
         <Children>
+          <AbstractNodeData Name="Image_3" ActionTag="1186025437" Tag="46" IconVisible="False" Scale9Width="1136" Scale9Height="640" ctype="ImageViewObjectData">
+            <Size X="1136.0000" Y="640.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="568.0000" Y="320.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <FileData Type="Normal" Path="bg_1.png" Plist="" />
+          </AbstractNodeData>
           <AbstractNodeData Name="nameField" ActionTag="1584459380" Tag="13" IconVisible="False" LeftMargin="460.0000" RightMargin="460.0000" TopMargin="259.4724" BottomMargin="357.5276" TouchEnable="True" FontSize="20" IsCustomSize="True" LabelText="" PlaceHolderText="Enter your name here..." MaxLengthText="10" ctype="TextFieldObjectData">
             <Size X="216.0000" Y="23.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

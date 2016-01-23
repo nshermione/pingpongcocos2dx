@@ -6,6 +6,16 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="1136.0000" Y="640.0000" />
         <Children>
+          <AbstractNodeData Name="Image_1" ActionTag="-1963841455" Tag="50" IconVisible="False" Scale9Width="1136" Scale9Height="640" ctype="ImageViewObjectData">
+            <Size X="1136.0000" Y="640.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="568.0000" Y="320.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <FileData Type="Normal" Path="bg_1.png" Plist="" />
+          </AbstractNodeData>
           <AbstractNodeData Name="title" ActionTag="232052777" Tag="3" IconVisible="False" LeftMargin="401.0000" RightMargin="401.0000" TopMargin="45.5900" BottomMargin="514.4100" FontSize="100" LabelText="Ping Pong" TouchScaleChangeAble="True" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="334.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
