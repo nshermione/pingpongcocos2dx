@@ -4,6 +4,8 @@
 #include "game.h"
 #include "Table.h"
 #include "Ball.h"
+#include "Block.h"
+#include "Chump.h"
 
 USING_NS_GAME;
 
@@ -28,6 +30,12 @@ private:
     PlayClock playClock;
     Table table;
     Ball ball;
+    
+    Block purpleBlock;
+    Block blueBlock;
+    
+    Chump purpleChump;
+    Chump blueChump;
 };
 
 #endif // __Play_SCENE_H__

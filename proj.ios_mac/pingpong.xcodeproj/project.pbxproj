@@ -43,8 +43,11 @@
 		4A77222A1C41A38C0095C22B /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7722291C41A38C0095C22B /* check.png */; };
 		4A77222E1C41A4680095C22B /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A77222C1C41A4680095C22B /* Player.cpp */; };
 		4A7722311C41A6330095C22B /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A77222F1C41A6330095C22B /* GameObject.cpp */; };
+		4A7CD6BB1C535650003B8D0B /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A7CD6B91C535650003B8D0B /* Block.cpp */; };
+		4A7CD6BE1C535772003B8D0B /* Chump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A7CD6BC1C535772003B8D0B /* Chump.cpp */; };
 		4A9DA3F91C45B1DC0056AF7C /* Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DA3F71C45B1DC0056AF7C /* Table.cpp */; };
 		4A9DA3FB1C45B2B10056AF7C /* table_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9DA3FA1C45B2B10056AF7C /* table_bg.png */; };
+		4AA655521C535B740063FB0C /* Goal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AA655501C535B740063FB0C /* Goal.cpp */; };
 		4AB1C9021C51C5BF0076B642 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8F71C51C5BF0076B642 /* arrow.png */; };
 		4AB1C9031C51C5BF0076B642 /* barrier.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8F81C51C5BF0076B642 /* barrier.png */; };
 		4AB1C9041C51C5BF0076B642 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8F91C51C5BF0076B642 /* bg.png */; };
@@ -187,9 +190,15 @@
 		4A77222F1C41A6330095C22B /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
 		4A7722301C41A6330095C22B /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
 		4A7722331C41BBAC0095C22B /* GameMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameMacro.h; sourceTree = "<group>"; };
+		4A7CD6B91C535650003B8D0B /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Block.cpp; sourceTree = "<group>"; };
+		4A7CD6BA1C535650003B8D0B /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		4A7CD6BC1C535772003B8D0B /* Chump.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Chump.cpp; sourceTree = "<group>"; };
+		4A7CD6BD1C535772003B8D0B /* Chump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chump.h; sourceTree = "<group>"; };
 		4A9DA3F71C45B1DC0056AF7C /* Table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Table.cpp; sourceTree = "<group>"; };
 		4A9DA3F81C45B1DC0056AF7C /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
 		4A9DA3FA1C45B2B10056AF7C /* table_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_bg.png; sourceTree = "<group>"; };
+		4AA655501C535B740063FB0C /* Goal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Goal.cpp; sourceTree = "<group>"; };
+		4AA655511C535B740063FB0C /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
 		4AB1C8F71C51C5BF0076B642 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		4AB1C8F81C51C5BF0076B642 /* barrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrier.png; sourceTree = "<group>"; };
 		4AB1C8F91C51C5BF0076B642 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -479,6 +488,12 @@
 		4A9DA3F61C45B1C60056AF7C /* objects */ = {
 			isa = PBXGroup;
 			children = (
+				4AA655501C535B740063FB0C /* Goal.cpp */,
+				4AA655511C535B740063FB0C /* Goal.h */,
+				4A7CD6BC1C535772003B8D0B /* Chump.cpp */,
+				4A7CD6BD1C535772003B8D0B /* Chump.h */,
+				4A7CD6B91C535650003B8D0B /* Block.cpp */,
+				4A7CD6BA1C535650003B8D0B /* Block.h */,
 				4AC145021C492E0D007D40DA /* Ball.cpp */,
 				4AC145031C492E0D007D40DA /* Ball.h */,
 				4A9DA3F71C45B1DC0056AF7C /* Table.cpp */,
@@ -712,9 +727,12 @@
 				46880B8A19C43A87006E1F66 /* SplashScene.cpp in Sources */,
 				4A6A3D821C3FA766006E1185 /* PlayScene.cpp in Sources */,
 				4A9DA3F91C45B1DC0056AF7C /* Table.cpp in Sources */,
+				4A7CD6BE1C535772003B8D0B /* Chump.cpp in Sources */,
 				4A7722311C41A6330095C22B /* GameObject.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				4A7CD6BB1C535650003B8D0B /* Block.cpp in Sources */,
 				4A0AF34F1C45891A00790E44 /* PlayClock.cpp in Sources */,
+				4AA655521C535B740063FB0C /* Goal.cpp in Sources */,
 				4A171F9A1C3D83F7000CAE3C /* BaseScene.cpp in Sources */,
 				4AC145041C492E0D007D40DA /* Ball.cpp in Sources */,
 				4A77222E1C41A4680095C22B /* Player.cpp in Sources */,

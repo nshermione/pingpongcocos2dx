@@ -27,6 +27,20 @@ bool Play::init(std::string csbFile)
     auto ballSprite = (Sprite *) _rootNode->getChildByName("ball");
     ball.init(ballSprite);
     
+    // init blocks
+    auto block = (Sprite *) _rootNode->getChildByName("purbleBlock");
+    purpleBlock.init(block);
+    
+    block = (Sprite *) _rootNode->getChildByName("blueBlock");
+    blueBlock.init(block);
+    
+    // init chumps
+    auto chump = (Sprite *) _rootNode->getChildByName("purpleChump");
+    purpleChump.init(chump);
+    
+    chump = (Sprite *) _rootNode->getChildByName("blueChump");
+    blueChump.init(chump);
+    
     return true;
 }
 

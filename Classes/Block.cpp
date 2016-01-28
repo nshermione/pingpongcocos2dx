@@ -1,17 +1,17 @@
 //
-//  Table.cpp
+//  Block.cpp
 //  pingpong
 //
 //  Created by Thinh Tran on 1/13/16.
 //
 //
 
-#include "Table.h"
+#include "Block.h"
 
 
-void Table::init(cocos2d::Sprite *sprite) {
+void Block::init(cocos2d::Sprite *sprite) {
     auto size = sprite->getContentSize();
-    log("Table size %f %f", size.width, size.height);
+    log("Block size %f %f", size.width, size.height);
     auto leftBody = PhysicsBody::createEdgeBox(size,
                                               PhysicsMaterial(0.1f, 1.0f, 1.0f));
     
