@@ -6,8 +6,10 @@
 #include "Ball.h"
 #include "Block.h"
 #include "Chump.h"
+#include "Goal.h"
 
-USING_NS_GAME;
+#include "chipmunk.h"
+
 
 class Play : public BaseScene
 {
@@ -17,7 +19,7 @@ public:
     
 protected:
     bool init(std::string csbFile);
-    void setupPhysicsWorld(Scene *scene);
+    void setupPhysicsWorld(cocos2d::Scene *scene);
     
 private:
     void goToPauseScene();
@@ -36,6 +38,13 @@ private:
     
     Chump purpleChump;
     Chump blueChump;
+    
+    Goal purpleGoal;
+    Goal blueGoal;
+    
+    //chipmunk
+    cpSpace *space;
+    
 };
 
 #endif // __Play_SCENE_H__

@@ -6,8 +6,7 @@
 
 #include "GameMacro.h"
 
-USING_NS_CC;
-USING_NS_CC_UI;
+
 
 START_GAME_NS
 
@@ -21,7 +20,7 @@ protected:
     Node* _rootNode;
     
     virtual bool init(std::string csbFile);
-    virtual void bindButton(std::string buttonName, const ui::Widget::ccWidgetClickCallback &callback);
+    virtual void bindButton(std::string buttonName, const cocos2d::ui::Widget::ccWidgetClickCallback &callback);
 };
 
 END_GAME_NS

@@ -8,6 +8,7 @@
 
 #include "GameSettings.h"
 
+USING_NS_CC;
 
 START_GAME_NS
 

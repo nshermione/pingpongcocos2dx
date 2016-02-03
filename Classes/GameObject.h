@@ -13,15 +13,13 @@
 
 #include "GameMacro.h"
 
-USING_NS_CC;
-
 START_GAME_NS
 
 class GameObject {
     
 public:
     GameObject();
-    GameObject(Sprite* sprite);
+    GameObject(cocos2d::Sprite* sprite);
     ~GameObject();
 
     /* 
@@ -33,13 +31,14 @@ public:
     void setName(const std::string& name);
     
     // Sprite
-    Sprite* getSprite();
-    void setSprite(Sprite* sprite);
+    cocos2d::Sprite* getSprite();
+    void setSprite(cocos2d::Sprite* sprite);
 
 protected:
-    Sprite* _sprite;
+    cocos2d::Sprite* _sprite;
     std::string _name;
 };
+
 
 END_GAME_NS
 

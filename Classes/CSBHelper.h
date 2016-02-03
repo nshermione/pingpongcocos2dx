@@ -13,13 +13,11 @@
 
 #include "GameMacro.h"
 
-USING_NS_CC;
-
 START_GAME_NS
 
 class CSBHelper {
 public:
-    static Node* createNode(const std::string& csbFile);
+    static cocos2d::Node* createNode(const std::string& csbFile);
 };
 
 END_GAME_NS

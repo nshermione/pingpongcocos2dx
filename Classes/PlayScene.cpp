@@ -2,6 +2,8 @@
 #include "PauseScene.h"
 
 USING_NS_GAME;
+USING_NS_CC;
+USING_NS_CC_UI;
 
 // on "init" you need to initialize your instance
 bool Play::init(std::string csbFile)
@@ -20,8 +22,16 @@ bool Play::init(std::string csbFile)
     playClock.start();
     
     // init table
-    auto tableSprite = (Sprite *) _rootNode->getChildByName("table");
-    table.init(tableSprite);
+    std::vector<Sprite *> sprites;
+    auto edge1 = (Sprite *) _rootNode->getChildByName("edge1");
+    auto edge2 = (Sprite *) _rootNode->getChildByName("edge2");
+    auto edge3 = (Sprite *) _rootNode->getChildByName("edge3");
+    auto edge4 = (Sprite *) _rootNode->getChildByName("edge4");
+    sprites.push_back(edge1);
+    sprites.push_back(edge2);
+    sprites.push_back(edge3);
+    sprites.push_back(edge4);
+    table.init(sprites);
     
     // init ball
     auto ballSprite = (Sprite *) _rootNode->getChildByName("ball");
@@ -41,15 +51,19 @@ bool Play::init(std::string csbFile)
     chump = (Sprite *) _rootNode->getChildByName("blueChump");
     blueChump.init(chump);
     
+    // init goals
+    auto goal = (Sprite *) _rootNode->getChildByName("purpleGoal");
+    purpleGoal.init(goal);
+    
+    goal = (Sprite *) _rootNode->getChildByName("blueGoal");
+    blueGoal.init(goal);
+    
     return true;
 }
 
 void Play::setupPhysicsWorld(Scene *scene) {
-    auto physicsWorld = scene->getPhysicsWorld();
-//    physicsWorld->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
-//    physicsWorld->setAutoStep(false);
-//    physicsWorld->setSubsteps(3);
-//    physicsWorld->step(0.032);
+
+
 }
 
 void Play::goToPauseScene() {

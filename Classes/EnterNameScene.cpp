@@ -2,6 +2,9 @@
 #include "GameSettings.h"
 #include "MainMenuScene.h"
 
+USING_NS_CC;
+USING_NS_CC_UI;
+
 // on "init" you need to initialize your instance
 bool EnterName::init(std::string csbFile)
 {

@@ -17,9 +17,27 @@ USING_NS_GAME;
 
 class Ball: public GameObject {
 public:
-    void init(Sprite* sprite);
+    bool init(cocos2d::Sprite* sprite);
     
 protected:
+    
+    void reset();
+    void initParticle();
+    void initShader();
+    void initPhysics();
+    
+    void controlVelocity(float dt);
+    void setVelocity(float vel);
+    void setTrail(cocos2d::ParticleSystemQuad* trail);
+    
+    cocos2d::ParticleSystemQuad* trail1;
+    cocos2d::ParticleSystemQuad* trail2;
+    
+    cocos2d::ParticleSystemQuad* currentTrail;
+    float speedVariant;
+    float speedByTime;
+    float totalSpeed;
+    float totalTime;
 };
 
 #endif /* Ball_h */

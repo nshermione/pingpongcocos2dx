@@ -17,11 +17,10 @@ USING_NS_GAME;
 
 class Goal: public GameObject {
 public:
-    void init(Sprite *sprite);
-    void intersect(Ball ball, std::function<void()> callBack);
+    void init(cocos2d::Sprite *sprite);
+    bool onContactBegin(cocos2d::PhysicsContact& contact);
     
 protected:
-    bool isFocus = false;
 };
 
 

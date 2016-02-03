@@ -2,6 +2,8 @@
 #include "SettingsScene.h"
 #include "PlayScene.h"
 
+USING_NS_CC;
+USING_NS_CC_UI;
 
 // on "init" you need to initialize your instance
 bool MainMenu::init(std::string csbFile)

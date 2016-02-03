@@ -8,14 +8,16 @@
 
 #include "Block.h"
 
+USING_NS_CC;
+
 
 void Block::init(cocos2d::Sprite *sprite) {
     auto size = sprite->getContentSize();
     log("Block size %f %f", size.width, size.height);
-    auto leftBody = PhysicsBody::createEdgeBox(size,
+    auto physicsBody = PhysicsBody::createBox(size,
                                               PhysicsMaterial(0.1f, 1.0f, 1.0f));
     
-    leftBody->setDynamic(false);
+    physicsBody->setDynamic(false);
     
-    sprite->setPhysicsBody(leftBody);
+    sprite->setPhysicsBody(physicsBody);
 }

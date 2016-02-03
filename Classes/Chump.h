@@ -16,7 +16,7 @@ USING_NS_GAME;
 
 class Chump: public GameObject {
 public:
-    void init(Sprite *sprite);
+    void init(cocos2d::Sprite *sprite);
     
 protected:
 };

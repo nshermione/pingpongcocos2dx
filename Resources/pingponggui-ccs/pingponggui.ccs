@@ -1,35 +1,35 @@
 <Solution>
-  <PropertyGroup Name="pingponggui" Version="2.3.3.0" Type="CocosStudio" />
+  <PropertyGroup Name="pingponggui" Version="3.10.0.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Project Name="SplashScene.csd" Type="Scene" />
-        <TTF Name="waltograph42.ttf" />
+        <Image Name="arrow.png" />
+        <Image Name="ball.png" />
+        <Image Name="barrier.png" />
+        <Image Name="bg.png" />
+        <Image Name="bg_1.png" />
+        <Image Name="blank.png" />
+        <Image Name="blue_goal.png" />
+        <Image Name="button_bg.png" />
+        <Image Name="button_bg_pressed.png" />
+        <Image Name="check.png" />
+        <Project Name="EnterNameScene.csd" Type="Scene" />
+        <Project Name="GameOverScene.csd" Type="Scene" />
+        <Image Name="item_points.png" />
         <Image Name="LoadingBar.png" />
         <Project Name="MainMenuScene.csd" Type="Scene" />
         <TTF Name="Marker Felt.ttf" />
-        <Image Name="button_bg.png" />
-        <Image Name="button_bg_pressed.png" />
-        <Project Name="PlayScene.csd" Type="Scene" />
         <Image Name="menu_btn_bg.png" />
-        <Project Name="PauseScene.csd" Type="Scene" />
-        <Project Name="GameOverScene.csd" Type="Scene" />
-        <Image Name="check.png" />
-        <Project Name="EnterNameScene.csd" Type="Scene" />
-        <Image Name="table_bg.png" />
-        <Image Name="ball.png" />
-        <Image Name="bg.png" />
         <Image Name="middle_line.png" />
+        <Project Name="PauseScene.csd" Type="Scene" />
         <Image Name="pingpong_table.png" />
-        <Image Name="purple_goal.png" />
-        <Image Name="item_points.png" />
-        <Image Name="blue_goal.png" />
-        <Image Name="wood_chump.png" />
-        <Image Name="arrow.png" />
-        <Image Name="barrier.png" />
+        <Project Name="PlayScene.csd" Type="Scene" />
         <Image Name="portal.png" />
-        <Image Name="blank.png" />
-        <Image Name="bg_1.png" />
+        <Image Name="purple_goal.png" />
+        <Project Name="SplashScene.csd" Type="Scene" />
+        <Image Name="table_bg.png" />
+        <TTF Name="waltograph42.ttf" />
+        <Image Name="wood_chump.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

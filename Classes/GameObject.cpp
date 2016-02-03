@@ -29,7 +29,7 @@ void GameObject::setName(const std::string &name) {
     _name = name;
 }
 
-Sprite* GameObject::getSprite() {
+cocos2d::Sprite* GameObject::getSprite() {
     return _sprite;
 }
 

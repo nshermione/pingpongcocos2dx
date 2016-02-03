@@ -12,8 +12,6 @@
 #include "cocos2d.h"
 #include "Player.h"
 
-USING_NS_CC;
-
 START_GAME_NS
 
 class GameSettings {
@@ -30,12 +28,12 @@ public:
     void savePlayer(Player* player);
     void loadPlayer(Player* player);
     
-    Value get(std::string const& key);
-    void set(std::string const& key, Value value);
+    cocos2d::Value get(std::string const& key);
+    void set(std::string const& key, cocos2d::Value value);
     
 private:
     static GameSettings* instance;
-    ValueMap data;
+    cocos2d::ValueMap data;
     std::string filePath;
 };
 

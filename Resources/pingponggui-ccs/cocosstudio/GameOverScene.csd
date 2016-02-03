@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="GameOverScene" Type="Scene" ID="42ee698f-1e37-42f1-88ee-7f41c36be3b4" Version="2.3.3.0" />
+  <PropertyGroup Name="GameOverScene" Type="Scene" ID="42ee698f-1e37-42f1-88ee-7f41c36be3b4" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />

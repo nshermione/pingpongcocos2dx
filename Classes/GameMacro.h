@@ -23,13 +23,14 @@
 #define USING_NS_CC_UI using namespace cocos2d::ui
 
 
+#ifndef GameMacro_h
+#define GameMacro_h
+
 /** @def CREATE_FUNC_SCENE(__TYPE__, csbFile)
  * Define a create function for a specific type, such as Layer.
  *
  * @param __TYPE__  class type to add create() and createScene(), such as Layer.
  */
-#ifndef GameMacro_h
-#define GameMacro_h
 
 #define CREATE_FUNC_SCENE(__TYPE__,csbFile) \
 static __TYPE__* create() \
@@ -47,12 +48,35 @@ pRet = nullptr; \
 return nullptr; \
 } \
 } \
-static Scene* createScene() \
+static cocos2d::Scene* createScene() \
 { \
-    Scene* scene = Scene::create(); \
+    cocos2d::Scene* scene = cocos2d::Scene::create(); \
     __TYPE__* layer = __TYPE__::create(); \
     scene->addChild(layer); \
     return scene; \
+}
+
+/** @def CREATE_FUNC_WITH_SPRITE(__TYPE__)
+ * Define a create function for a game object
+ *
+ * @param __TYPE__  class type to add create(cocos2d::Sprite *sprite)
+ */
+
+#define CREATE_FUNC_WITH_SPRITE(__TYPE__) \
+static __TYPE__* create(cocos2d::Sprite *sprite) \
+{ \
+__TYPE__ *pRet = new(std::nothrow) __TYPE__(); \
+if (pRet && pRet->init( (sprite) )) \
+{ \
+pRet->autorelease(); \
+return pRet; \
+} \
+else \
+{ \
+delete pRet; \
+pRet = nullptr; \
+return nullptr; \
+} \
 }
 
 
@@ -77,20 +101,19 @@ pRet = nullptr; \
 return nullptr; \
 } \
 } \
-static Scene* createScene() \
+static cocos2d::Scene* createScene() \
 { \
-Scene* scene = Scene::createWithPhysics(); \
+cocos2d::Scene* scene = cocos2d::Scene::createWithPhysics(); \
 __TYPE__* layer = __TYPE__::create(); \
 layer->setupPhysicsWorld(scene);\
 scene->addChild(layer); \
 return scene; \
 }
 
-
-
-
-
-// Global functions
+/** Global functions
+ * Define global functions
+ *
+ */
 template<typename ... Args>
 std::string string_snprintf(const std::string &pattern, Args ... args) {
     size_t size = snprintf( nullptr, 0, pattern.c_str(), args ... ) + 1; // Extra space for '\0'

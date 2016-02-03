@@ -1,6 +1,9 @@
 #include "PauseScene.h"
 #include "MainMenuScene.h"
 
+USING_NS_CC;
+USING_NS_CC_UI;
+
 // on "init" you need to initialize your instance
 bool Pause::init(std::string csbFile)
 {

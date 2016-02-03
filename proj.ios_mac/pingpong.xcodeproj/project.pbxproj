@@ -27,11 +27,16 @@
 		4A04CFA11C44013B0048C2C8 /* EnterNameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A04CF9F1C44013B0048C2C8 /* EnterNameScene.cpp */; };
 		4A04CFA31C4402AE0048C2C8 /* EnterNameScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 4A04CFA21C4402AE0048C2C8 /* EnterNameScene.csb */; };
 		4A04CFA61C44034F0048C2C8 /* GameSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A04CFA41C44034F0048C2C8 /* GameSettings.cpp */; };
+		4A0AA0FD1C5CC04E005D04FC /* bg_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AA0FC1C5CC04E005D04FC /* bg_1.png */; };
 		4A0AF34F1C45891A00790E44 /* PlayClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AF34D1C45891A00790E44 /* PlayClock.cpp */; };
 		4A121FC31C3D7A1E00C04849 /* SplashScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 4A121FC21C3D7A1E00C04849 /* SplashScene.csb */; };
 		4A121FCE1C3D7AF700C04849 /* waltograph42.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A121FCD1C3D7AF700C04849 /* waltograph42.ttf */; };
+		4A1328701C60814D007D2613 /* dust.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A13286F1C60814D007D2613 /* dust.plist */; };
 		4A171F991C3D83F7000CAE3C /* CSBHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A171F951C3D83F7000CAE3C /* CSBHelper.cpp */; };
 		4A171F9A1C3D83F7000CAE3C /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A171F971C3D83F7000CAE3C /* BaseScene.cpp */; };
+		4A32C7341C5F102F00863509 /* trail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A32C7331C5F102F00863509 /* trail.plist */; };
+		4A652F291C5E6C4F00DCBD44 /* ball.vs in Resources */ = {isa = PBXBuildFile; fileRef = 4A652F281C5E6C4F00DCBD44 /* ball.vs */; };
+		4A652F2B1C5E6C5900DCBD44 /* ball.fs in Resources */ = {isa = PBXBuildFile; fileRef = 4A652F2A1C5E6C5900DCBD44 /* ball.fs */; };
 		4A6A3D7F1C3FA6B7006E1185 /* SettingsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A3D7D1C3FA6B7006E1185 /* SettingsScene.cpp */; };
 		4A6A3D821C3FA766006E1185 /* PlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A3D801C3FA766006E1185 /* PlayScene.cpp */; };
 		4A6A3D851C3FBE3F006E1185 /* menu_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A6A3D831C3FBE3F006E1185 /* menu_btn_bg.png */; };
@@ -164,14 +169,19 @@
 		4A04CFA21C4402AE0048C2C8 /* EnterNameScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = EnterNameScene.csb; sourceTree = "<group>"; };
 		4A04CFA41C44034F0048C2C8 /* GameSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameSettings.cpp; sourceTree = "<group>"; };
 		4A04CFA51C44034F0048C2C8 /* GameSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettings.h; sourceTree = "<group>"; };
+		4A0AA0FC1C5CC04E005D04FC /* bg_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_1.png; path = ../../../hellocc2dx/Resources/bg_1.png; sourceTree = "<group>"; };
 		4A0AF34D1C45891A00790E44 /* PlayClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayClock.cpp; sourceTree = "<group>"; };
 		4A0AF34E1C45891A00790E44 /* PlayClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayClock.h; sourceTree = "<group>"; };
 		4A121FC21C3D7A1E00C04849 /* SplashScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = SplashScene.csb; sourceTree = "<group>"; };
 		4A121FCD1C3D7AF700C04849 /* waltograph42.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = waltograph42.ttf; sourceTree = "<group>"; };
+		4A13286F1C60814D007D2613 /* dust.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dust.plist; sourceTree = "<group>"; };
 		4A171F951C3D83F7000CAE3C /* CSBHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSBHelper.cpp; sourceTree = "<group>"; };
 		4A171F961C3D83F7000CAE3C /* CSBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBHelper.h; sourceTree = "<group>"; };
 		4A171F971C3D83F7000CAE3C /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
 		4A171F981C3D83F7000CAE3C /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
+		4A32C7331C5F102F00863509 /* trail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = trail.plist; sourceTree = "<group>"; };
+		4A652F281C5E6C4F00DCBD44 /* ball.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ball.vs; sourceTree = "<group>"; };
+		4A652F2A1C5E6C5900DCBD44 /* ball.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ball.fs; sourceTree = "<group>"; };
 		4A6A3D7D1C3FA6B7006E1185 /* SettingsScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SettingsScene.cpp; sourceTree = "<group>"; };
 		4A6A3D7E1C3FA6B7006E1185 /* SettingsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsScene.h; sourceTree = "<group>"; };
 		4A6A3D801C3FA766006E1185 /* PlayScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayScene.cpp; sourceTree = "<group>"; };
@@ -387,6 +397,9 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A13286F1C60814D007D2613 /* dust.plist */,
+				4A32C7331C5F102F00863509 /* trail.plist */,
+				4A0AA0FC1C5CC04E005D04FC /* bg_1.png */,
 				4AB1C8F71C51C5BF0076B642 /* arrow.png */,
 				4AB1C8F81C51C5BF0076B642 /* barrier.png */,
 				4AB1C8F91C51C5BF0076B642 /* bg.png */,
@@ -417,6 +430,8 @@
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
+				4A652F281C5E6C4F00DCBD44 /* ball.vs */,
+				4A652F2A1C5E6C5900DCBD44 /* ball.fs */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -649,6 +664,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A652F2B1C5E6C5900DCBD44 /* ball.fs in Resources */,
 				4A7722231C4190180095C22B /* PauseScene.csb in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
@@ -656,6 +672,7 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				4AB1C9091C51C5BF0076B642 /* pingpong_table.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
+				4A652F291C5E6C4F00DCBD44 /* ball.vs in Resources */,
 				4AD3B2BE1C3E6D2300DFA5FC /* Marker Felt.ttf in Resources */,
 				4AB1C90B1C51C5BF0076B642 /* purple_goal.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
@@ -668,6 +685,7 @@
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				4A04CFA31C4402AE0048C2C8 /* EnterNameScene.csb in Resources */,
 				4AD3B2BC1C3E6C8800DFA5FC /* MainMenuScene.csb in Resources */,
+				4A32C7341C5F102F00863509 /* trail.plist in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				4AB1C9031C51C5BF0076B642 /* barrier.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
@@ -675,6 +693,7 @@
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				4AC145061C49365F007D40DA /* ball.png in Resources */,
+				4A0AA0FD1C5CC04E005D04FC /* bg_1.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				4A6A3D861C3FBE3F006E1185 /* PlayScene.csb in Resources */,
@@ -691,6 +710,7 @@
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				4A7722251C4193D70095C22B /* GameOverScene.csb in Resources */,
 				4AB1C9061C51C5BF0076B642 /* blue_goal.png in Resources */,
+				4A1328701C60814D007D2613 /* dust.plist in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				4AB1C9081C51C5BF0076B642 /* middle_line.png in Resources */,
@@ -854,7 +874,7 @@
 		5087E76D17EB910900C73F5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -888,7 +908,7 @@
 		5087E76E17EB910900C73F5D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
