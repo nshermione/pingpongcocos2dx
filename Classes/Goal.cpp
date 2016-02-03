@@ -29,10 +29,17 @@ void Goal::init(cocos2d::Sprite *sprite) {
 }
 
 bool Goal::onContactBegin(cocos2d::PhysicsContact& contact) {
-    auto bodyA = contact.getShapeA()->getBody();
-    auto bodyB = contact.getShapeB()->getBody();
-    if (bodyA && bodyB) {
+    auto nodeA = contact.getShapeA()->getBody()->getNode();
+    auto nodeB = contact.getShapeB()->getBody()->getNode();
+    if (nodeA && nodeB) {
+        auto ball = nodeA->getName()==Ball::NAME? nodeA : nodeB;
+        auto parent = ball->getParent();
+        auto position = ball->getPosition();
+        auto disappear = ParticleSystemQuad::create("disappear.plist");
+        parent->addChild(disappear);
+        disappear->setPosition(position);
         
+        ball->removeFromParentAndCleanup(true);
     }
     return false;
 }

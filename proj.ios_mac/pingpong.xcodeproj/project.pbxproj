@@ -64,6 +64,8 @@
 		4AB1C90A1C51C5BF0076B642 /* portal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8FF1C51C5BF0076B642 /* portal.png */; };
 		4AB1C90B1C51C5BF0076B642 /* purple_goal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C9001C51C5BF0076B642 /* purple_goal.png */; };
 		4AB1C90C1C51C5BF0076B642 /* wood_chump.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C9011C51C5BF0076B642 /* wood_chump.png */; };
+		4AB998DF1C6206B200652D60 /* disappear.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AB998DD1C6206B200652D60 /* disappear.plist */; };
+		4AB998E01C6206B200652D60 /* gift.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AB998DE1C6206B200652D60 /* gift.plist */; };
 		4AC145041C492E0D007D40DA /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AC145021C492E0D007D40DA /* Ball.cpp */; };
 		4AC145061C49365F007D40DA /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC145051C49365F007D40DA /* ball.png */; };
 		4AD3B2B31C3E574200DFA5FC /* LoadingBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B21C3E574200DFA5FC /* LoadingBar.png */; };
@@ -220,6 +222,8 @@
 		4AB1C8FF1C51C5BF0076B642 /* portal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = portal.png; sourceTree = "<group>"; };
 		4AB1C9001C51C5BF0076B642 /* purple_goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_goal.png; sourceTree = "<group>"; };
 		4AB1C9011C51C5BF0076B642 /* wood_chump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_chump.png; sourceTree = "<group>"; };
+		4AB998DD1C6206B200652D60 /* disappear.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = disappear.plist; sourceTree = "<group>"; };
+		4AB998DE1C6206B200652D60 /* gift.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gift.plist; sourceTree = "<group>"; };
 		4AC145021C492E0D007D40DA /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
 		4AC145031C492E0D007D40DA /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
 		4AC145051C49365F007D40DA /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
@@ -397,6 +401,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4AB998DD1C6206B200652D60 /* disappear.plist */,
+				4AB998DE1C6206B200652D60 /* gift.plist */,
 				4A13286F1C60814D007D2613 /* dust.plist */,
 				4A32C7331C5F102F00863509 /* trail.plist */,
 				4A0AA0FC1C5CC04E005D04FC /* bg_1.png */,
@@ -666,10 +672,12 @@
 			files = (
 				4A652F2B1C5E6C5900DCBD44 /* ball.fs in Resources */,
 				4A7722231C4190180095C22B /* PauseScene.csb in Resources */,
+				4AB998E01C6206B200652D60 /* gift.plist in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				4A9DA3FB1C45B2B10056AF7C /* table_bg.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				4AB998DF1C6206B200652D60 /* disappear.plist in Resources */,
 				4AB1C9091C51C5BF0076B642 /* pingpong_table.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				4A652F291C5E6C4F00DCBD44 /* ball.vs in Resources */,

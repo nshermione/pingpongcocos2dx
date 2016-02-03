@@ -18,6 +18,7 @@ USING_NS_GAME;
 class Ball: public GameObject {
 public:
     bool init(cocos2d::Sprite* sprite);
+    static std::string NAME;
     
 protected:
     

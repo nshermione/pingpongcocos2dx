@@ -11,6 +11,8 @@
 
 USING_NS_CC;
 
+std::string Ball::NAME = "ball";
+
 bool Ball::init(cocos2d::Sprite *sprite) {
     reset();
     setSprite(sprite);
