@@ -13,6 +13,7 @@
         <Image Name="button_bg.png" />
         <Image Name="button_bg_pressed.png" />
         <Image Name="check.png" />
+        <Image Name="chump3.png" />
         <Project Name="EnterNameScene.csd" Type="Scene" />
         <Project Name="GameOverScene.csd" Type="Scene" />
         <Image Name="item_points.png" />

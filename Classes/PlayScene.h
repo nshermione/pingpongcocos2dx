@@ -29,6 +29,10 @@ private:
     void updatePlayerUI();
     void updateClockUI(float dt);
     
+    // Physics
+    void physicsUpdate(float dt);
+    cocos2d::Scene* _scene;
+    
     PlayClock playClock;
     Table table;
     Ball ball;

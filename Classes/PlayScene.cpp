@@ -5,6 +5,8 @@ USING_NS_GAME;
 USING_NS_CC;
 USING_NS_CC_UI;
 
+using namespace CocosDenshion;
+
 // on "init" you need to initialize your instance
 bool Play::init(std::string csbFile)
 {
@@ -46,10 +48,12 @@ bool Play::init(std::string csbFile)
     
     // init chumps
     auto chump = (Sprite *) _rootNode->getChildByName("purpleChump");
-    purpleChump.init(chump);
+    purpleChump.init(chump, false);
+    purpleChump.registerTouchEvents();
     
     chump = (Sprite *) _rootNode->getChildByName("blueChump");
-    blueChump.init(chump);
+    blueChump.init(chump, true);
+    blueChump.registerTouchEvents();
     
     // init goals
     auto goal = (Sprite *) _rootNode->getChildByName("purpleGoal");
@@ -58,12 +62,34 @@ bool Play::init(std::string csbFile)
     goal = (Sprite *) _rootNode->getChildByName("blueGoal");
     blueGoal.init(goal);
     
+    // schedule physics update
+    this->schedule(schedule_selector(Play::physicsUpdate), 0.016f);
+    
     return true;
 }
 
+float _filteredUpdateDelta = 0;
+
 void Play::setupPhysicsWorld(Scene *scene) {
+    _scene = scene;
+    
+}
 
-
+void Play::physicsUpdate(float dt) {
+    _scene->getPhysicsWorld()->setAutoStep(false);
+    // How many times to supstep the phyiscs engine per game update.
+    const int phyiscsSubSteps = 3;
+    
+    // The delta is divided by the number of substeps, to sync the game step with the physics step.
+    float delta = dt / static_cast<float>(phyiscsSubSteps);
+    
+    _filteredUpdateDelta = delta > __FLT_EPSILON__ ? 0.15 * dt + 0.85 * _filteredUpdateDelta : 0.0;
+    
+    // Apply the number of substeps to the phyiscs engine for this game update.
+    for (int i=phyiscsSubSteps; i>0; i--)
+    {
+        _scene->getPhysicsWorld()->step(_filteredUpdateDelta);
+    }
 }
 
 void Play::goToPauseScene() {

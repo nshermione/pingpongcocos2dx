@@ -9,6 +9,7 @@
 #include "Goal.h"
 
 USING_NS_CC;
+using namespace CocosDenshion;
 
 void Goal::init(cocos2d::Sprite *sprite) {
     setSprite(sprite);
@@ -40,6 +41,10 @@ bool Goal::onContactBegin(cocos2d::PhysicsContact& contact) {
         disappear->setPosition(position);
         
         ball->removeFromParentAndCleanup(true);
+        
+        // play sound yay
+        auto audio = SimpleAudioEngine::getInstance();
+        audio->playEffect("yay.wav");
     }
     return false;
 }

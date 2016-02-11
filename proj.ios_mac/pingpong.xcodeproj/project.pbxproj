@@ -32,6 +32,9 @@
 		4A121FC31C3D7A1E00C04849 /* SplashScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 4A121FC21C3D7A1E00C04849 /* SplashScene.csb */; };
 		4A121FCE1C3D7AF700C04849 /* waltograph42.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A121FCD1C3D7AF700C04849 /* waltograph42.ttf */; };
 		4A1328701C60814D007D2613 /* dust.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A13286F1C60814D007D2613 /* dust.plist */; };
+		4A16F0FF1C6B884000551E1B /* chump3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A16F0FE1C6B884000551E1B /* chump3.png */; };
+		4A16F1021C6B907500551E1B /* PhysicsShapeCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F1001C6B907500551E1B /* PhysicsShapeCache.cpp */; };
+		4A16F1061C6B91C300551E1B /* physicsbody.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A16F1051C6B91C300551E1B /* physicsbody.plist */; };
 		4A171F991C3D83F7000CAE3C /* CSBHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A171F951C3D83F7000CAE3C /* CSBHelper.cpp */; };
 		4A171F9A1C3D83F7000CAE3C /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A171F971C3D83F7000CAE3C /* BaseScene.cpp */; };
 		4A32C7341C5F102F00863509 /* trail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A32C7331C5F102F00863509 /* trail.plist */; };
@@ -50,6 +53,9 @@
 		4A7722311C41A6330095C22B /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A77222F1C41A6330095C22B /* GameObject.cpp */; };
 		4A7CD6BB1C535650003B8D0B /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A7CD6B91C535650003B8D0B /* Block.cpp */; };
 		4A7CD6BE1C535772003B8D0B /* Chump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A7CD6BC1C535772003B8D0B /* Chump.cpp */; };
+		4A8AA6AE1C65EF7B0055E17E /* boo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4A8AA6AB1C65EF7B0055E17E /* boo.wav */; };
+		4A8AA6AF1C65EF7B0055E17E /* intro.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4A8AA6AC1C65EF7B0055E17E /* intro.wav */; };
+		4A8AA6B01C65EF7B0055E17E /* yay.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4A8AA6AD1C65EF7B0055E17E /* yay.wav */; };
 		4A9DA3F91C45B1DC0056AF7C /* Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DA3F71C45B1DC0056AF7C /* Table.cpp */; };
 		4A9DA3FB1C45B2B10056AF7C /* table_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9DA3FA1C45B2B10056AF7C /* table_bg.png */; };
 		4AA655521C535B740063FB0C /* Goal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AA655501C535B740063FB0C /* Goal.cpp */; };
@@ -177,6 +183,10 @@
 		4A121FC21C3D7A1E00C04849 /* SplashScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = SplashScene.csb; sourceTree = "<group>"; };
 		4A121FCD1C3D7AF700C04849 /* waltograph42.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = waltograph42.ttf; sourceTree = "<group>"; };
 		4A13286F1C60814D007D2613 /* dust.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dust.plist; sourceTree = "<group>"; };
+		4A16F0FE1C6B884000551E1B /* chump3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chump3.png; sourceTree = "<group>"; };
+		4A16F1001C6B907500551E1B /* PhysicsShapeCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsShapeCache.cpp; sourceTree = "<group>"; };
+		4A16F1011C6B907500551E1B /* PhysicsShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsShapeCache.h; sourceTree = "<group>"; };
+		4A16F1051C6B91C300551E1B /* physicsbody.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = physicsbody.plist; sourceTree = "<group>"; };
 		4A171F951C3D83F7000CAE3C /* CSBHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSBHelper.cpp; sourceTree = "<group>"; };
 		4A171F961C3D83F7000CAE3C /* CSBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBHelper.h; sourceTree = "<group>"; };
 		4A171F971C3D83F7000CAE3C /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
@@ -206,6 +216,9 @@
 		4A7CD6BA1C535650003B8D0B /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
 		4A7CD6BC1C535772003B8D0B /* Chump.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Chump.cpp; sourceTree = "<group>"; };
 		4A7CD6BD1C535772003B8D0B /* Chump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chump.h; sourceTree = "<group>"; };
+		4A8AA6AB1C65EF7B0055E17E /* boo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boo.wav; sourceTree = "<group>"; };
+		4A8AA6AC1C65EF7B0055E17E /* intro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = intro.wav; sourceTree = "<group>"; };
+		4A8AA6AD1C65EF7B0055E17E /* yay.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yay.wav; sourceTree = "<group>"; };
 		4A9DA3F71C45B1DC0056AF7C /* Table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Table.cpp; sourceTree = "<group>"; };
 		4A9DA3F81C45B1DC0056AF7C /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
 		4A9DA3FA1C45B2B10056AF7C /* table_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_bg.png; sourceTree = "<group>"; };
@@ -401,6 +414,11 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A16F1051C6B91C300551E1B /* physicsbody.plist */,
+				4A16F0FE1C6B884000551E1B /* chump3.png */,
+				4A8AA6AB1C65EF7B0055E17E /* boo.wav */,
+				4A8AA6AC1C65EF7B0055E17E /* intro.wav */,
+				4A8AA6AD1C65EF7B0055E17E /* yay.wav */,
 				4AB998DD1C6206B200652D60 /* disappear.plist */,
 				4AB998DE1C6206B200652D60 /* gift.plist */,
 				4A13286F1C60814D007D2613 /* dust.plist */,
@@ -493,6 +511,8 @@
 				4A0AF34D1C45891A00790E44 /* PlayClock.cpp */,
 				4A0AF34E1C45891A00790E44 /* PlayClock.h */,
 				4AC145081C495397007D40DA /* game.h */,
+				4A16F1001C6B907500551E1B /* PhysicsShapeCache.cpp */,
+				4A16F1011C6B907500551E1B /* PhysicsShapeCache.h */,
 			);
 			name = gamelib;
 			sourceTree = "<group>";
@@ -670,6 +690,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A16F1061C6B91C300551E1B /* physicsbody.plist in Resources */,
 				4A652F2B1C5E6C5900DCBD44 /* ball.fs in Resources */,
 				4A7722231C4190180095C22B /* PauseScene.csb in Resources */,
 				4AB998E01C6206B200652D60 /* gift.plist in Resources */,
@@ -678,9 +699,11 @@
 				4A9DA3FB1C45B2B10056AF7C /* table_bg.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				4AB998DF1C6206B200652D60 /* disappear.plist in Resources */,
+				4A8AA6B01C65EF7B0055E17E /* yay.wav in Resources */,
 				4AB1C9091C51C5BF0076B642 /* pingpong_table.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				4A652F291C5E6C4F00DCBD44 /* ball.vs in Resources */,
+				4A8AA6AE1C65EF7B0055E17E /* boo.wav in Resources */,
 				4AD3B2BE1C3E6D2300DFA5FC /* Marker Felt.ttf in Resources */,
 				4AB1C90B1C51C5BF0076B642 /* purple_goal.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
@@ -701,10 +724,12 @@
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				4AC145061C49365F007D40DA /* ball.png in Resources */,
+				4A8AA6AF1C65EF7B0055E17E /* intro.wav in Resources */,
 				4A0AA0FD1C5CC04E005D04FC /* bg_1.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				4A6A3D861C3FBE3F006E1185 /* PlayScene.csb in Resources */,
+				4A16F0FF1C6B884000551E1B /* chump3.png in Resources */,
 				4AB1C9051C51C5BF0076B642 /* blank.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				4A121FCE1C3D7AF700C04849 /* waltograph42.ttf in Resources */,
@@ -768,6 +793,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4A04CFA61C44034F0048C2C8 /* GameSettings.cpp in Sources */,
 				4A171F991C3D83F7000CAE3C /* CSBHelper.cpp in Sources */,
+				4A16F1021C6B907500551E1B /* PhysicsShapeCache.cpp in Sources */,
 				4A7722281C4194780095C22B /* GameOverScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);

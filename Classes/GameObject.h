@@ -10,7 +10,7 @@
 #define GameObject_h
 
 #include "cocos2d.h"
-
+#include "SimpleAudioEngine.h"
 #include "GameMacro.h"
 
 START_GAME_NS

@@ -18,7 +18,7 @@ bool Ball::init(cocos2d::Sprite *sprite) {
     setSprite(sprite);
     
     // schedulers
-    sprite->schedule(CC_CALLBACK_1(Ball::controlVelocity, this), 0.02f, "velocityController");
+    sprite->schedule(CC_CALLBACK_1(Ball::controlVelocity, this), 0.016f, "velocityController");
     
     initShader();
     initParticle();
@@ -44,10 +44,11 @@ void Ball::initPhysics() {
     physicsBody->setGravityEnable(false);
     physicsBody->setCollisionBitmask(0x0001);
     physicsBody->setContactTestBitmask(0xFFFFFFFF);
+    physicsBody->setGroup(0);
     
     //set initial velocity of physicsBody
-    physicsBody->setVelocity(Vec2(cocos2d::random(-100,100),
-                                  cocos2d::random(-100,100)));
+    physicsBody->setVelocity(Vec2(cocos2d::random(-10,10),
+                                  cocos2d::random(-3, 3)));
     sprite->setPhysicsBody(physicsBody);
 }
 
@@ -118,23 +119,23 @@ void Ball::controlVelocity(float dt) {
     totalTime += dt;
     
     // Get speed by time
-    if (totalTime > 0 && totalTime < 30) {
-        speedByTime = 100;
-    } else if (totalTime < 60) {
-        speedByTime = 150;
-    } else if (totalTime < 90) {
-        speedByTime = 200;
+    if (totalTime > 0 && totalTime < 10) {
+        speedByTime = 30;
+    } else if (totalTime < 20) {
+        speedByTime = 45;
+    } else if (totalTime < 30) {
+        speedByTime = 60;
     } else {
-        speedByTime = 250;
+        speedByTime = 75;
     }
     
     totalSpeed = speedByTime + speedVariant;
     setVelocity(totalSpeed);
     
     // Update trail by speed
-    if (totalSpeed > 120 && totalSpeed < 200) {
+    if (totalSpeed > 36 && totalSpeed < 60) {
         setTrail(trail1);
-    } else if (totalSpeed >= 200) {
+    } else if (totalSpeed >= 60) {
         setTrail(trail2);
     }
 }

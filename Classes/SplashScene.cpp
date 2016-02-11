@@ -1,6 +1,7 @@
 #include "SplashScene.h"
 #include "MainMenuScene.h"
 #include "EnterNameScene.h"
+#include "PhysicsShapeCache.h"
 
 USING_NS_CC;
 USING_NS_CC_UI;
@@ -20,6 +21,9 @@ bool Splash::init(std::string csbFile)
     // Init player
     auto player = Player::getInstance();
     settings->loadPlayer(player);
+    
+    // Init physics
+    PhysicsShapeCache::getInstance()->addShapesWithFile("physicsbody.plist");
 
     return true;
 }
