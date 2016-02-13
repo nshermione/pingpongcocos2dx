@@ -11,6 +11,7 @@
 
 #include "GameObject.h"
 #include "GameMacro.h"
+#include "Physics.h"
 
 
 USING_NS_GAME;
@@ -39,6 +40,8 @@ protected:
     float speedByTime;
     float totalSpeed;
     float totalTime;
+    
+    Physics2DBody* physicsBody;
 };
 
 #endif /* Ball_h */

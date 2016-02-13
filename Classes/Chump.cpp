@@ -7,20 +7,17 @@
 //
 
 #include "Chump.h"
-#include "PhysicsShapeCache.h"
+#include "Physics.h"
 
 USING_NS_CC;
 
 
 void Chump::init(cocos2d::Sprite *sprite, bool flipped) {
     setSprite(sprite);
-    PhysicsBody* physicsBody;
-    if (flipped) {
-        physicsBody = PhysicsShapeCache::getInstance()->createBodyWithName("chump3_flip");
-    } else {
-        physicsBody = PhysicsShapeCache::getInstance()->createBodyWithName("chump3");
-    }
-    sprite->setPhysicsBody(physicsBody);
+    std::string bodyName = flipped? "chump3_flip" : "chump3";
+
+    auto world = Physics::getWorld2D();
+    world->addBody(sprite, bodyName);
 }
 
 void Chump::registerTouchEvents() {

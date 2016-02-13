@@ -86,9 +86,10 @@ return nullptr; \
  * @param __TYPE__  class type to add create() and createScene(), such as Layer.
  */
 #define CREATE_FUNC_PHYSIC_SCENE(__TYPE__,csbFile) \
-static __TYPE__* create() \
+static __TYPE__* create(cocos2d::Scene* scene) \
 { \
 __TYPE__ *pRet = new(std::nothrow) __TYPE__(); \
+pRet->setupPhysicsWorld(scene);\
 if (pRet && pRet->init( (csbFile) )) \
 { \
 pRet->autorelease(); \
@@ -104,8 +105,7 @@ return nullptr; \
 static cocos2d::Scene* createScene() \
 { \
 cocos2d::Scene* scene = cocos2d::Scene::createWithPhysics(); \
-__TYPE__* layer = __TYPE__::create(); \
-layer->setupPhysicsWorld(scene);\
+__TYPE__* layer = __TYPE__::create(scene); \
 scene->addChild(layer); \
 return scene; \
 }

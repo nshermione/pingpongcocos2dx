@@ -17,6 +17,10 @@
 
 #include "GameSettings.h"
 
+#include "Physics2D.h"
+
+#include "Physics.h"
+
 #include "Player.h"
 
 #include "PlayClock.h"

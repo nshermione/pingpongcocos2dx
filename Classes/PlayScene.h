@@ -8,7 +8,6 @@
 #include "Chump.h"
 #include "Goal.h"
 
-#include "chipmunk.h"
 
 
 class Play : public BaseScene
@@ -29,8 +28,6 @@ private:
     void updatePlayerUI();
     void updateClockUI(float dt);
     
-    // Physics
-    void physicsUpdate(float dt);
     cocos2d::Scene* _scene;
     
     PlayClock playClock;
@@ -45,9 +42,6 @@ private:
     
     Goal purpleGoal;
     Goal blueGoal;
-    
-    //chipmunk
-    cpSpace *space;
     
 };
 

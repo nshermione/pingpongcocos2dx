@@ -13,6 +13,12 @@ USING_NS_CC;
 
 std::string Ball::NAME = "ball";
 
+
+float NORMAL_SPEED = 100;
+float FAST_SPEED = 150;
+float VERY_FAST_SPEED = 200;
+float EXTREMELY_SPEED = 250;
+
 bool Ball::init(cocos2d::Sprite *sprite) {
     reset();
     setSprite(sprite);
@@ -36,20 +42,20 @@ void Ball::reset() {
 
 void Ball::initPhysics() {
     auto sprite = getSprite();
-    auto size = sprite->getContentSize();
-    auto physicsBody = PhysicsBody::createCircle(size.width/2,
-                                                 PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    auto world = Physics::getWorld2D();
+    
+    physicsBody = world->addBody(sprite, "ball");
     
     //set the body isn't affected by the physics world's gravitational force
-    physicsBody->setGravityEnable(false);
+    physicsBody->setGravity(false);
     physicsBody->setCollisionBitmask(0x0001);
     physicsBody->setContactTestBitmask(0xFFFFFFFF);
     physicsBody->setGroup(0);
     
     //set initial velocity of physicsBody
-    physicsBody->setVelocity(Vec2(cocos2d::random(-10,10),
-                                  cocos2d::random(-3, 3)));
-    sprite->setPhysicsBody(physicsBody);
+    physicsBody->setVelocity(Vec2(cocos2d::random(-NORMAL_SPEED, NORMAL_SPEED),
+                                  cocos2d::random(-NORMAL_SPEED/3, NORMAL_SPEED/3)));
+
 }
 
 void Ball::initShader() {
@@ -88,12 +94,11 @@ void Ball::initParticle() {
 }
 
 void Ball::setVelocity(float vel) {
-    auto sprite = getSprite();
-    if (sprite->getPhysicsBody()) {
-        auto velocity = sprite->getPhysicsBody()->getVelocity();
+    if (physicsBody != NULL) {
+        auto velocity = physicsBody->getVelocity();
         velocity.normalize();
         velocity.scale(vel);
-        sprite->getPhysicsBody()->setVelocity(velocity);
+        physicsBody->setVelocity(velocity);
         
         //update trail
         if (currentTrail != NULL) {
@@ -120,22 +125,22 @@ void Ball::controlVelocity(float dt) {
     
     // Get speed by time
     if (totalTime > 0 && totalTime < 10) {
-        speedByTime = 30;
+        speedByTime = NORMAL_SPEED;
     } else if (totalTime < 20) {
-        speedByTime = 45;
+        speedByTime = FAST_SPEED;
     } else if (totalTime < 30) {
-        speedByTime = 60;
+        speedByTime = VERY_FAST_SPEED;
     } else {
-        speedByTime = 75;
+        speedByTime = EXTREMELY_SPEED;
     }
     
     totalSpeed = speedByTime + speedVariant;
     setVelocity(totalSpeed);
     
     // Update trail by speed
-    if (totalSpeed > 36 && totalSpeed < 60) {
+    if (totalSpeed > NORMAL_SPEED && totalSpeed < VERY_FAST_SPEED) {
         setTrail(trail1);
-    } else if (totalSpeed >= 60) {
+    } else if (totalSpeed >= VERY_FAST_SPEED) {
         setTrail(trail2);
     }
 }

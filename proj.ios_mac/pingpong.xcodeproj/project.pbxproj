@@ -38,6 +38,7 @@
 		4A171F991C3D83F7000CAE3C /* CSBHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A171F951C3D83F7000CAE3C /* CSBHelper.cpp */; };
 		4A171F9A1C3D83F7000CAE3C /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A171F971C3D83F7000CAE3C /* BaseScene.cpp */; };
 		4A32C7341C5F102F00863509 /* trail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A32C7331C5F102F00863509 /* trail.plist */; };
+		4A5A80A91C6D0BC50081EF40 /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A80A71C6D0BC50081EF40 /* Physics.cpp */; };
 		4A652F291C5E6C4F00DCBD44 /* ball.vs in Resources */ = {isa = PBXBuildFile; fileRef = 4A652F281C5E6C4F00DCBD44 /* ball.vs */; };
 		4A652F2B1C5E6C5900DCBD44 /* ball.fs in Resources */ = {isa = PBXBuildFile; fileRef = 4A652F2A1C5E6C5900DCBD44 /* ball.fs */; };
 		4A6A3D7F1C3FA6B7006E1185 /* SettingsScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A3D7D1C3FA6B7006E1185 /* SettingsScene.cpp */; };
@@ -58,6 +59,10 @@
 		4A8AA6B01C65EF7B0055E17E /* yay.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4A8AA6AD1C65EF7B0055E17E /* yay.wav */; };
 		4A9DA3F91C45B1DC0056AF7C /* Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DA3F71C45B1DC0056AF7C /* Table.cpp */; };
 		4A9DA3FB1C45B2B10056AF7C /* table_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A9DA3FA1C45B2B10056AF7C /* table_bg.png */; };
+		4AA521B91C6C950C002D3FE3 /* GB2ShapeCache-x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AA521B71C6C950C002D3FE3 /* GB2ShapeCache-x.cpp */; };
+		4AA521BF1C6CB1F0002D3FE3 /* PhysicsCocos2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AA521BD1C6CB1F0002D3FE3 /* PhysicsCocos2D.cpp */; };
+		4AA521C21C6CB218002D3FE3 /* PhysicsBox2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AA521C01C6CB218002D3FE3 /* PhysicsBox2D.cpp */; };
+		4AA521C51C6CB2B6002D3FE3 /* Physics2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AA521C31C6CB2B6002D3FE3 /* Physics2D.cpp */; };
 		4AA655521C535B740063FB0C /* Goal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AA655501C535B740063FB0C /* Goal.cpp */; };
 		4AB1C9021C51C5BF0076B642 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8F71C51C5BF0076B642 /* arrow.png */; };
 		4AB1C9031C51C5BF0076B642 /* barrier.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8F81C51C5BF0076B642 /* barrier.png */; };
@@ -192,6 +197,8 @@
 		4A171F971C3D83F7000CAE3C /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
 		4A171F981C3D83F7000CAE3C /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
 		4A32C7331C5F102F00863509 /* trail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = trail.plist; sourceTree = "<group>"; };
+		4A5A80A71C6D0BC50081EF40 /* Physics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics.cpp; sourceTree = "<group>"; };
+		4A5A80A81C6D0BC50081EF40 /* Physics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics.h; sourceTree = "<group>"; };
 		4A652F281C5E6C4F00DCBD44 /* ball.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ball.vs; sourceTree = "<group>"; };
 		4A652F2A1C5E6C5900DCBD44 /* ball.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ball.fs; sourceTree = "<group>"; };
 		4A6A3D7D1C3FA6B7006E1185 /* SettingsScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SettingsScene.cpp; sourceTree = "<group>"; };
@@ -222,6 +229,14 @@
 		4A9DA3F71C45B1DC0056AF7C /* Table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Table.cpp; sourceTree = "<group>"; };
 		4A9DA3F81C45B1DC0056AF7C /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
 		4A9DA3FA1C45B2B10056AF7C /* table_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_bg.png; sourceTree = "<group>"; };
+		4AA521B71C6C950C002D3FE3 /* GB2ShapeCache-x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GB2ShapeCache-x.cpp"; sourceTree = "<group>"; };
+		4AA521B81C6C950C002D3FE3 /* GB2ShapeCache-x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GB2ShapeCache-x.h"; sourceTree = "<group>"; };
+		4AA521BD1C6CB1F0002D3FE3 /* PhysicsCocos2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsCocos2D.cpp; sourceTree = "<group>"; };
+		4AA521BE1C6CB1F0002D3FE3 /* PhysicsCocos2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsCocos2D.h; sourceTree = "<group>"; };
+		4AA521C01C6CB218002D3FE3 /* PhysicsBox2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsBox2D.cpp; sourceTree = "<group>"; };
+		4AA521C11C6CB218002D3FE3 /* PhysicsBox2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsBox2D.h; sourceTree = "<group>"; };
+		4AA521C31C6CB2B6002D3FE3 /* Physics2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics2D.cpp; sourceTree = "<group>"; };
+		4AA521C41C6CB2B6002D3FE3 /* Physics2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics2D.h; sourceTree = "<group>"; };
 		4AA655501C535B740063FB0C /* Goal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Goal.cpp; sourceTree = "<group>"; };
 		4AA655511C535B740063FB0C /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
 		4AB1C8F71C51C5BF0076B642 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
@@ -513,6 +528,16 @@
 				4AC145081C495397007D40DA /* game.h */,
 				4A16F1001C6B907500551E1B /* PhysicsShapeCache.cpp */,
 				4A16F1011C6B907500551E1B /* PhysicsShapeCache.h */,
+				4AA521B71C6C950C002D3FE3 /* GB2ShapeCache-x.cpp */,
+				4AA521B81C6C950C002D3FE3 /* GB2ShapeCache-x.h */,
+				4AA521BD1C6CB1F0002D3FE3 /* PhysicsCocos2D.cpp */,
+				4AA521BE1C6CB1F0002D3FE3 /* PhysicsCocos2D.h */,
+				4AA521C01C6CB218002D3FE3 /* PhysicsBox2D.cpp */,
+				4AA521C11C6CB218002D3FE3 /* PhysicsBox2D.h */,
+				4AA521C31C6CB2B6002D3FE3 /* Physics2D.cpp */,
+				4AA521C41C6CB2B6002D3FE3 /* Physics2D.h */,
+				4A5A80A71C6D0BC50081EF40 /* Physics.cpp */,
+				4A5A80A81C6D0BC50081EF40 /* Physics.h */,
 			);
 			name = gamelib;
 			sourceTree = "<group>";
@@ -635,7 +660,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0720;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 5R6CYCG995;
@@ -774,8 +799,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A6A3D7F1C3FA6B7006E1185 /* SettingsScene.cpp in Sources */,
+				4AA521B91C6C950C002D3FE3 /* GB2ShapeCache-x.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				4A6A3D891C3FC015006E1185 /* PauseScene.cpp in Sources */,
+				4AA521C51C6CB2B6002D3FE3 /* Physics2D.cpp in Sources */,
 				4AD3B2B61C3E64C500DFA5FC /* MainMenuScene.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* SplashScene.cpp in Sources */,
 				4A6A3D821C3FA766006E1185 /* PlayScene.cpp in Sources */,
@@ -787,12 +814,15 @@
 				4A0AF34F1C45891A00790E44 /* PlayClock.cpp in Sources */,
 				4AA655521C535B740063FB0C /* Goal.cpp in Sources */,
 				4A171F9A1C3D83F7000CAE3C /* BaseScene.cpp in Sources */,
+				4AA521C21C6CB218002D3FE3 /* PhysicsBox2D.cpp in Sources */,
 				4AC145041C492E0D007D40DA /* Ball.cpp in Sources */,
 				4A77222E1C41A4680095C22B /* Player.cpp in Sources */,
+				4A5A80A91C6D0BC50081EF40 /* Physics.cpp in Sources */,
 				4A04CFA11C44013B0048C2C8 /* EnterNameScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4A04CFA61C44034F0048C2C8 /* GameSettings.cpp in Sources */,
 				4A171F991C3D83F7000CAE3C /* CSBHelper.cpp in Sources */,
+				4AA521BF1C6CB1F0002D3FE3 /* PhysicsCocos2D.cpp in Sources */,
 				4A16F1021C6B907500551E1B /* PhysicsShapeCache.cpp in Sources */,
 				4A7722281C4194780095C22B /* GameOverScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -909,9 +939,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -934,6 +964,7 @@
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamestop.hellococos;
 				PRODUCT_NAME = "pingpong-mobile";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
@@ -943,9 +974,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac/Prefix.pch;
@@ -966,6 +997,7 @@
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamestop.hellococos;
 				PRODUCT_NAME = "pingpong-mobile";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
@@ -977,6 +1009,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

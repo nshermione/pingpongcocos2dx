@@ -29,6 +29,7 @@
 
 #include "PhysicsShapeCache.h"
 
+USING_NS_CC;
 
 PhysicsShapeCache::PhysicsShapeCache()
 {
@@ -78,7 +79,7 @@ bool PhysicsShapeCache::addShapesWithFile(const std::string &plist, float scaleF
         const ValueMap &bodyData = iter->second.asValueMap();
         std::string bodyName = iter->first;
         BodyDef *bodyDef = new BodyDef();
-        bodyDefs.insert(bodyName, bodyDef);
+        bodyDefs[bodyName] = bodyDef;
         bodyDef->anchorPoint          = PointFromString(bodyData.at("anchorpoint").asString());
         bodyDef->isDynamic            = bodyData.at("is_dynamic").asBool();
         bodyDef->affectedByGravity    = bodyData.at("affected_by_gravity").asBool();
@@ -92,7 +93,7 @@ bool PhysicsShapeCache::addShapesWithFile(const std::string &plist, float scaleF
         for (auto &fixtureitem : fixtureList)
         {
             FixtureData *fd = new FixtureData();
-            bodyDef->fixtures.pushBack(fd);
+            bodyDef->fixtures.push_back(fd);
             auto &fixturedata = fixtureitem.asValueMap();
             fd->density         = fixturedata.at("density").asFloat();
             fd->restitution     = fixturedata.at("restitution").asFloat();
@@ -111,7 +112,7 @@ bool PhysicsShapeCache::addShapesWithFile(const std::string &plist, float scaleF
                 for (auto &polygonitem : polygonsArray)
                 {
                     Polygon *poly = new Polygon();
-                    fd->polygons.pushBack(poly);
+                    fd->polygons.push_back(poly);
                     auto &polygonArray = polygonitem.asValueVector();
                     poly->numVertices = (int)polygonArray.size();
                     auto *vertices = poly->vertices = new cocos2d::Point[poly->numVertices];

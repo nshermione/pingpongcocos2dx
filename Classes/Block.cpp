@@ -7,17 +7,13 @@
 //
 
 #include "Block.h"
+#include "Physics.h"
 
 USING_NS_CC;
 
 
 void Block::init(cocos2d::Sprite *sprite) {
-    auto size = sprite->getContentSize();
-    log("Block size %f %f", size.width, size.height);
-    auto physicsBody = PhysicsBody::createBox(size,
-                                              PhysicsMaterial(0.1f, 1.0f, 1.0f));
-    
+    auto world = Physics::getWorld2D();
+    auto physicsBody = world->addBody(sprite, "block");
     physicsBody->setDynamic(false);
-    
-    sprite->setPhysicsBody(physicsBody);
 }

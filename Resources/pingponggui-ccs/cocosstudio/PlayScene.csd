@@ -6,15 +6,16 @@
       <ObjectData Name="Scene" Tag="10" ctype="GameNodeObjectData">
         <Size X="1136.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1308920067" Tag="14" IconVisible="False" LeftEage="374" RightEage="374" TopEage="211" BottomEage="211" Scale9OriginX="374" Scale9OriginY="211" Scale9Width="388" Scale9Height="218" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1798434540" Tag="29" IconVisible="False" ctype="SpriteObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="568.0000" Y="320.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.0000" Y="1.0000" />
+            <PreSize X="0.0405" Y="0.0719" />
             <FileData Type="Normal" Path="bg.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="edge1" ActionTag="-1987696248" Tag="26" IconVisible="False" LeftMargin="7.4867" RightMargin="1048.5133" TopMargin="-1.0051" BottomMargin="1.0051" Scale9Width="1" Scale9Height="1" ctype="ImageViewObjectData">
             <Size X="80.0000" Y="640.0000" />
@@ -156,25 +157,25 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="purpleChump" ActionTag="1684007233" Tag="22" IconVisible="False" LeftMargin="117.6192" RightMargin="898.3807" TopMargin="286.0000" BottomMargin="238.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="purpleChump" ActionTag="1684007233" Tag="22" IconVisible="False" LeftMargin="117.6192" RightMargin="898.3808" TopMargin="286.0000" BottomMargin="238.0000" ctype="SpriteObjectData">
             <Size X="120.0000" Y="116.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="177.6192" Y="296.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1564" Y="0.4625" />
-            <PreSize X="0.0880" Y="0.1922" />
+            <PreSize X="0.1056" Y="0.1813" />
             <FileData Type="Normal" Path="chump3.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="blueChump" ActionTag="1116463291" Tag="23" IconVisible="False" LeftMargin="913.0067" RightMargin="102.9934" TopMargin="286.0000" BottomMargin="238.0000" FlipX="True" ctype="SpriteObjectData">
+          <AbstractNodeData Name="blueChump" ActionTag="1116463291" Tag="23" IconVisible="False" LeftMargin="913.0067" RightMargin="102.9933" TopMargin="286.0000" BottomMargin="238.0000" FlipX="True" ctype="SpriteObjectData">
             <Size X="120.0000" Y="116.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="973.0067" Y="296.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.8565" Y="0.4625" />
-            <PreSize X="0.0335" Y="0.2203" />
+            <PreSize X="0.1056" Y="0.1813" />
             <FileData Type="Normal" Path="chump3.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
@@ -237,7 +238,7 @@
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="647.5040" Y="276.4205" />
-            <Scale ScaleX="0.4872" ScaleY="0.4872" />
+            <Scale ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5700" Y="0.4319" />
             <PreSize X="0.0563" Y="0.1000" />

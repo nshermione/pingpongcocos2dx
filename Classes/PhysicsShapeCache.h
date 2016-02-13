@@ -31,7 +31,7 @@
 #define __PhysicsShapeCache_h__
 #include "cocos2d.h"
 
-USING_NS_CC;
+
 class BodyDef;
 class FixtureData;
 
@@ -47,18 +47,18 @@ public:
     bool removeShapesWithFile(const std::string &plist);
     bool removeAllShapes();
     
-    PhysicsBody *createBodyWithName(const std::string &name);
-    bool setBodyOnSprite(const std::string &name, Sprite *sprite);
+    cocos2d::PhysicsBody *createBodyWithName(const std::string &name);
+    bool setBodyOnSprite(const std::string &name, cocos2d::Sprite *sprite);
     
 private:
     PhysicsShapeCache();
     ~PhysicsShapeCache();
     bool safeDeleteBodyDef(BodyDef *bodyDef);
     BodyDef *getBodyDef(const std::string &name);
-    void setBodyProperties(PhysicsBody *body, BodyDef *bd);
-    void setShapeProperties(PhysicsShape *shape, FixtureData *fd);
+    void setBodyProperties(cocos2d::PhysicsBody *body, BodyDef *bd);
+    void setShapeProperties(cocos2d::PhysicsShape *shape, FixtureData *fd);
     
-    Map<std::string, BodyDef *> bodyDefs;
+    std::map<std::string, BodyDef*> bodyDefs;
 };
 
 
@@ -69,15 +69,16 @@ typedef enum
 } FixtureType;
 
 
-class Polygon : public Ref
+class Polygon
 {
 public:
-    Point* vertices;
+    cocos2d::Point* vertices;
     int numVertices;
+    
 };
 
 
-class FixtureData : public Ref
+class FixtureData
 {
 public:
     FixtureType fixtureType;
@@ -93,19 +94,20 @@ public:
     int contactTestMask;
     
     // for circles
-    Point center;
+    cocos2d::Point center;
     float radius;
     
     // for polygons / polyline
-    Vector<Polygon *> polygons;
+    std::vector<Polygon *> polygons;
+    
 };
 
 
-class BodyDef : public Ref
+class BodyDef
 {
 public:
-    Point anchorPoint;
-    Vector<FixtureData *> fixtures;
+    cocos2d::Point anchorPoint;
+    std::vector<FixtureData *> fixtures;
     
     bool isDynamic;
     bool affectedByGravity;
@@ -115,6 +117,7 @@ public:
     float angularDamping;
     float velocityLimit;
     float angularVelocityLimit;
+    
 };
 
 
