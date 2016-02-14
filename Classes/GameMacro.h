@@ -10,6 +10,17 @@
 #include <iostream>
 #include <memory>
 
+
+/** Settings
+ * Define configuration for game settings
+ */
+
+
+#define BOX2D_PTM_RATIO 32
+
+
+
+
 /** Namespace
  * Define game namespace and using game namespace
  *

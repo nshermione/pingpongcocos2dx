@@ -35,6 +35,11 @@ public:
     void setGravity(bool inGravity);
     void setVelocity(const cocos2d::Vec2& vel);
     cocos2d::Vec2 getVelocity();
+    void setPosition(const cocos2d::Vec2& vel);
+    void movePosition(const cocos2d::Vec2& vel);
+    cocos2d::Vec2 getPosition();
+    bool isSupportCCD();
+    void enableCCD();
     
     void setBody(b2Body *body) {
         _body = body;
@@ -61,6 +66,7 @@ public:
     void drawDebug();
     
 private:
+    void update(float dt);
     b2World *_world;
 };
 

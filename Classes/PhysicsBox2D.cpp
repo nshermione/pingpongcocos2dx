@@ -8,7 +8,6 @@
 
 #include "PhysicsBox2D.h"
 
-
 START_GAME_NS
 
 // PhysicsBox2DBody
@@ -89,6 +88,30 @@ cocos2d::Vec2 PhysicsBox2DBody::getVelocity() {
     return cocos2d::Vec2(vel.x, vel.y);
 }
 
+void PhysicsBox2DBody::setPosition(const cocos2d::Vec2 &vel) {
+    auto transform = _body->GetTransform();
+    _body->SetTransform(b2Vec2(vel.x, vel.y), transform.q.GetAngle());
+}
+
+void PhysicsBox2DBody::movePosition(const cocos2d::Vec2 &vel) {
+    auto transform = _body->GetTransform();
+    auto newPos = b2Vec2(transform.p.x + vel.x/BOX2D_PTM_RATIO,
+                         transform.p.y + vel.y/BOX2D_PTM_RATIO);
+    _body->SetTransform(newPos, transform.q.GetAngle());
+}
+
+cocos2d::Vec2 PhysicsBox2DBody::getPosition() {
+    auto pos = _body->GetTransform().p;
+    return cocos2d::Vec2(pos.x, pos.y);
+}
+
+bool PhysicsBox2DBody::isSupportCCD() {
+    return true;
+}
+
+void PhysicsBox2DBody::enableCCD() {
+    _body->SetBullet(true);
+}
 
 // PhysicsBox2DWorld
 
@@ -100,17 +123,31 @@ void PhysicsBox2DWorld::init(cocos2d::Scene *scene, float gravityX, float gravit
     
     // create a world object, which will hold and simulate the rigid bodies.
     _world = new b2World(gravity);
+    
+    // schedule physics main loop
+    scene->schedule(CC_CALLBACK_1(PhysicsBox2DWorld::update, this), 0.016f, "updatePhysicsBox2dWorld");
 }
+
+void PhysicsBox2DWorld::update(float dt) {
+    _world->Step(dt, 10, 10);
+    for(b2Body *b = _world->GetBodyList(); b; b=b->GetNext()) {
+        if (b->GetUserData() != NULL) {
+            cocos2d::Sprite *sprite = (cocos2d::Sprite *)b->GetUserData();
+            auto pos = b->GetPosition();
+            sprite->setPosition(pos.x * BOX2D_PTM_RATIO, pos.y * BOX2D_PTM_RATIO);
+            sprite->setRotation(-1 * CC_RADIANS_TO_DEGREES(b->GetAngle()));
+        }
+    }
+}
+
 
 Physics2DBody* PhysicsBox2DWorld::addBody(cocos2d::Sprite* sprite, const std::string &bodyName) {
     auto loader = GB2ShapeCache::sharedGB2ShapeCache();
+    auto pos = sprite->getPosition();
     b2Body *body;
     b2BodyDef bodyDef;
     bodyDef.type = b2_staticBody;
-    bodyDef.position.Set(0.0f, 0.0f);
-    bodyDef.linearDamping = 0.0f;
-    bodyDef.angularDamping = 0.01f;
-    bodyDef.gravityScale = 0.0f;
+    bodyDef.position.Set(pos.x / BOX2D_PTM_RATIO, pos.y / BOX2D_PTM_RATIO);
     bodyDef.userData = sprite;
     body = _world->CreateBody(&bodyDef);
     loader->addFixturesToBody(body, bodyName);
@@ -125,10 +162,12 @@ Physics2DBody* PhysicsBox2DWorld::addBody(cocos2d::Sprite* sprite, const std::st
 Physics2DBody* PhysicsBox2DWorld::addBodyBox(cocos2d::Sprite* sprite,
                           const cocos2d::Size& size,
                           cocos2d::PhysicsMaterial material) {
+    auto pos = sprite->getPosition();
+    
     b2Body *body;
     b2BodyDef bodyDef;
     bodyDef.type = b2_staticBody;
-    bodyDef.position.Set(0.0f, 0.0f);
+    bodyDef.position.Set(pos.x / BOX2D_PTM_RATIO, pos.y / BOX2D_PTM_RATIO);
     bodyDef.linearDamping = 0.0f;
     bodyDef.angularDamping = 0.01f;
     bodyDef.gravityScale = 0.0f;
@@ -136,7 +175,7 @@ Physics2DBody* PhysicsBox2DWorld::addBodyBox(cocos2d::Sprite* sprite,
     body = _world->CreateBody(&bodyDef);
     
     b2PolygonShape polygon;
-    polygon.SetAsBox(sprite->getContentSize().width, sprite->getContentSize().height);
+    polygon.SetAsBox(sprite->getContentSize().width / BOX2D_PTM_RATIO, sprite->getContentSize().height / BOX2D_PTM_RATIO);
     b2FixtureDef paddleShapeDef;
     paddleShapeDef.shape = &polygon;
     paddleShapeDef.density = material.density;
@@ -156,10 +195,12 @@ Physics2DBody* PhysicsBox2DWorld::addBodyBox(cocos2d::Sprite* sprite,
 Physics2DBody* PhysicsBox2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
                              float radius,
                              cocos2d::PhysicsMaterial material)  {
+    auto pos = sprite->getPosition();
+    
     b2Body *body;
     b2BodyDef bodyDef;
     bodyDef.type = b2_staticBody;
-    bodyDef.position.Set(0.0f, 0.0f);
+    bodyDef.position.Set(pos.x / BOX2D_PTM_RATIO, pos.y / BOX2D_PTM_RATIO);
     bodyDef.linearDamping = 0.0f;
     bodyDef.angularDamping = 0.01f;
     bodyDef.gravityScale = 0.0f;
@@ -167,7 +208,7 @@ Physics2DBody* PhysicsBox2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
     body = _world->CreateBody(&bodyDef);
     
     b2CircleShape circle;
-    circle.m_p.Set(sprite->getContentSize().width/2, sprite->getContentSize().height/2);
+    circle.m_p.Set(sprite->getContentSize().width/2 / BOX2D_PTM_RATIO, sprite->getContentSize().height/2 / BOX2D_PTM_RATIO);
     circle.m_radius = sprite->getContentSize().width/2;
     b2FixtureDef paddleShapeDef;
     paddleShapeDef.shape = &circle;

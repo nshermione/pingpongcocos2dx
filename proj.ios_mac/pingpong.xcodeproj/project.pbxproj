@@ -84,6 +84,9 @@
 		4AD3B2BA1C3E6C4A00DFA5FC /* button_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2B81C3E6C4A00DFA5FC /* button_bg.png */; };
 		4AD3B2BC1C3E6C8800DFA5FC /* MainMenuScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2BB1C3E6C8800DFA5FC /* MainMenuScene.csb */; };
 		4AD3B2BE1C3E6D2300DFA5FC /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3B2BD1C3E6D2300DFA5FC /* Marker Felt.ttf */; };
+		4ADA46BE1C6F33C7008EC8DF /* box2dphysicsbody.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ADA46BD1C6F33C7008EC8DF /* box2dphysicsbody.plist */; };
+		4ADA46D01C6F76B3008EC8DF /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA46CE1C6F76B3008EC8DF /* GLES-Render.cpp */; };
+		4ADA46D31C6F799A008EC8DF /* B2DebugDrawLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA46D11C6F799A008EC8DF /* B2DebugDrawLayer.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -262,6 +265,11 @@
 		4AD3B2B81C3E6C4A00DFA5FC /* button_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bg.png; sourceTree = "<group>"; };
 		4AD3B2BB1C3E6C8800DFA5FC /* MainMenuScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainMenuScene.csb; sourceTree = "<group>"; };
 		4AD3B2BD1C3E6D2300DFA5FC /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
+		4ADA46BD1C6F33C7008EC8DF /* box2dphysicsbody.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = box2dphysicsbody.plist; sourceTree = "<group>"; };
+		4ADA46CE1C6F76B3008EC8DF /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GLES-Render.cpp"; sourceTree = "<group>"; };
+		4ADA46CF1C6F76B3008EC8DF /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
+		4ADA46D11C6F799A008EC8DF /* B2DebugDrawLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = B2DebugDrawLayer.cpp; sourceTree = "<group>"; };
+		4ADA46D21C6F799A008EC8DF /* B2DebugDrawLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = B2DebugDrawLayer.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -429,6 +437,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4ADA46BD1C6F33C7008EC8DF /* box2dphysicsbody.plist */,
 				4A16F1051C6B91C300551E1B /* physicsbody.plist */,
 				4A16F0FE1C6B884000551E1B /* chump3.png */,
 				4A8AA6AB1C65EF7B0055E17E /* boo.wav */,
@@ -514,6 +523,10 @@
 		4A171F9B1C3D84E5000CAE3C /* gamelib */ = {
 			isa = PBXGroup;
 			children = (
+				4ADA46D11C6F799A008EC8DF /* B2DebugDrawLayer.cpp */,
+				4ADA46D21C6F799A008EC8DF /* B2DebugDrawLayer.h */,
+				4ADA46CE1C6F76B3008EC8DF /* GLES-Render.cpp */,
+				4ADA46CF1C6F76B3008EC8DF /* GLES-Render.h */,
 				4A77222F1C41A6330095C22B /* GameObject.cpp */,
 				4A7722301C41A6330095C22B /* GameObject.h */,
 				4A171F951C3D83F7000CAE3C /* CSBHelper.cpp */,
@@ -743,6 +756,7 @@
 				4AD3B2BC1C3E6C8800DFA5FC /* MainMenuScene.csb in Resources */,
 				4A32C7341C5F102F00863509 /* trail.plist in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
+				4ADA46BE1C6F33C7008EC8DF /* box2dphysicsbody.plist in Resources */,
 				4AB1C9031C51C5BF0076B642 /* barrier.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				4AB1C90C1C51C5BF0076B642 /* wood_chump.png in Resources */,
@@ -798,8 +812,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ADA46D01C6F76B3008EC8DF /* GLES-Render.cpp in Sources */,
 				4A6A3D7F1C3FA6B7006E1185 /* SettingsScene.cpp in Sources */,
 				4AA521B91C6C950C002D3FE3 /* GB2ShapeCache-x.cpp in Sources */,
+				4ADA46D31C6F799A008EC8DF /* B2DebugDrawLayer.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				4A6A3D891C3FC015006E1185 /* PauseScene.cpp in Sources */,
 				4AA521C51C6CB2B6002D3FE3 /* Physics2D.cpp in Sources */,

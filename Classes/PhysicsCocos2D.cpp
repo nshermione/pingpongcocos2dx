@@ -84,6 +84,27 @@ Vec2 PhysicsCocos2DBody::getVelocity() {
     return _body->getVelocity();
 }
 
+void PhysicsCocos2DBody::setPosition(const cocos2d::Vec2 &vel) {
+    _bodySprite->setPosition(vel);
+}
+
+void PhysicsCocos2DBody::movePosition(const cocos2d::Vec2 &vel) {
+    auto prevPos = _bodySprite->getPosition();
+    _bodySprite->setPosition(prevPos.x + vel.x, prevPos.y + vel.x);
+}
+
+cocos2d::Vec2 PhysicsCocos2DBody::getPosition() {
+    return _bodySprite->getPosition();
+}
+
+bool PhysicsCocos2DBody::isSupportCCD() {
+    return false;
+}
+
+void PhysicsCocos2DBody::enableCCD() {
+    // do nothing because cocos2dx currently (v3.8) doesn't support continuous collision detection
+}
+
 // PhysicsCocos2DWorld
 
 void PhysicsCocos2DWorld::init(cocos2d::Scene *scene, float gravityX, float gravityY) {

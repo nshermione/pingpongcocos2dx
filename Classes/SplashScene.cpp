@@ -24,8 +24,8 @@ bool Splash::init(std::string csbFile)
 
     
     // Setup global physic world
-    auto world = Physics::createWorld2D(PhysicsCocos2DType);
-    world->loadBodies("physicsbody.plist");
+    auto world = Physics::createWorld2D(PhysicsBox2DType);
+    world->loadBodies("box2dphysicsbody.plist");
     
     return true;
 }

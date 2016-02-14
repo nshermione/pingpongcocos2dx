@@ -17,7 +17,7 @@ void Chump::init(cocos2d::Sprite *sprite, bool flipped) {
     std::string bodyName = flipped? "chump3_flip" : "chump3";
 
     auto world = Physics::getWorld2D();
-    world->addBody(sprite, bodyName);
+    physicsBody = world->addBody(sprite, bodyName);
 }
 
 void Chump::registerTouchEvents() {
@@ -28,11 +28,11 @@ void Chump::registerTouchEvents() {
         return true;
     };
     
-    listener->onTouchMoved = [] (Touch* touch, Event* event) {
+    listener->onTouchMoved = [this] (Touch* touch, Event* event) {
         auto target = event->getCurrentTarget();
+        auto prevPos = physicsBody->getPosition();
         auto dy = touch->getDelta().y * target->getScaleY();
-        dy = dy + target->getPositionY();
-        target->setPositionY(dy);
+        physicsBody->movePosition(cocos2d::Vec2(0, dy)); 
     };
     
 

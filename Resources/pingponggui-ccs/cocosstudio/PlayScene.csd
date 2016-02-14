@@ -13,7 +13,7 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.0405" Y="0.0719" />
+            <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
@@ -69,22 +69,22 @@
           </AbstractNodeData>
           <AbstractNodeData Name="blueGoal" ActionTag="659547072" Tag="21" IconVisible="False" LeftMargin="1040.8623" RightMargin="84.1377" TopMargin="88.9998" BottomMargin="41.0002" Scale9Width="11" Scale9Height="510" ctype="ImageViewObjectData">
             <Size X="11.0000" Y="510.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1046.3623" Y="296.0002" />
+            <AnchorPoint ScaleX="0.5500" ScaleY="0.5000" />
+            <Position X="1046.9124" Y="296.0002" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9211" Y="0.4625" />
+            <PrePosition X="0.9216" Y="0.4625" />
             <PreSize X="0.0097" Y="0.7969" />
             <FileData Type="Normal" Path="blue_goal.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="purpleGoal" ActionTag="-795852724" Tag="19" IconVisible="False" LeftMargin="89.1979" RightMargin="1022.8021" TopMargin="85.0000" BottomMargin="37.0000" Scale9Width="24" Scale9Height="518" ctype="ImageViewObjectData">
-            <Size X="24.0000" Y="518.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="101.1979" Y="296.0000" />
+          <AbstractNodeData Name="purpleGoal" ActionTag="-795852724" Tag="19" IconVisible="False" LeftMargin="96.6979" RightMargin="1030.3021" TopMargin="85.0000" BottomMargin="37.0000" LeftEage="2" RightEage="2" TopEage="170" BottomEage="170" Scale9OriginX="2" Scale9OriginY="170" Scale9Width="5" Scale9Height="178" ctype="ImageViewObjectData">
+            <Size X="9.0000" Y="518.0000" />
+            <AnchorPoint ScaleX="0.5600" ScaleY="0.5000" />
+            <Position X="101.7379" Y="296.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0891" Y="0.4625" />
-            <PreSize X="0.0211" Y="0.8094" />
+            <PrePosition X="0.0896" Y="0.4625" />
+            <PreSize X="0.0079" Y="0.8094" />
             <FileData Type="Normal" Path="purple_goal.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="menuButton" ActionTag="-1072537288" Tag="11" IconVisible="False" LeftMargin="1049.5253" RightMargin="22.4747" TopMargin="18.2123" BottomMargin="557.7877" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -234,14 +234,14 @@
             <FileData Type="Normal" Path="portal.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ball" ActionTag="578193936" Tag="13" IconVisible="False" LeftMargin="615.5040" RightMargin="456.4960" TopMargin="331.5795" BottomMargin="244.4205" ctype="SpriteObjectData">
-            <Size X="64.0000" Y="64.0000" />
+          <AbstractNodeData Name="ball" ActionTag="578193936" Tag="13" IconVisible="False" LeftMargin="631.5040" RightMargin="472.4960" TopMargin="347.5795" BottomMargin="260.4205" ctype="SpriteObjectData">
+            <Size X="32.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="647.5040" Y="276.4205" />
-            <Scale ScaleX="0.5000" ScaleY="0.5000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5700" Y="0.4319" />
-            <PreSize X="0.0563" Y="0.1000" />
+            <PreSize X="0.0282" Y="0.0500" />
             <FileData Type="Normal" Path="ball.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>

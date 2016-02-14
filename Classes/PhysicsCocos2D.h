@@ -34,6 +34,11 @@ public:
     void setGravity(bool inGravity);
     void setVelocity(const cocos2d::Vec2& vel);
     cocos2d::Vec2 getVelocity();
+    void setPosition(const cocos2d::Vec2& vel);
+    void movePosition(const cocos2d::Vec2& vel);
+    cocos2d::Vec2 getPosition();
+    bool isSupportCCD();
+    void enableCCD();
     
     void setBody(cocos2d::PhysicsBody *body) {
         _body = body;

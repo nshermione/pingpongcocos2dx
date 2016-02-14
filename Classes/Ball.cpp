@@ -14,10 +14,10 @@ USING_NS_CC;
 std::string Ball::NAME = "ball";
 
 
-float NORMAL_SPEED = 100;
-float FAST_SPEED = 150;
-float VERY_FAST_SPEED = 200;
-float EXTREMELY_SPEED = 250;
+float NORMAL_SPEED = 15;
+float FAST_SPEED = 20;
+float VERY_FAST_SPEED = 25;
+float EXTREMELY_SPEED = 35;
 
 bool Ball::init(cocos2d::Sprite *sprite) {
     reset();
@@ -47,10 +47,15 @@ void Ball::initPhysics() {
     physicsBody = world->addBody(sprite, "ball");
     
     //set the body isn't affected by the physics world's gravitational force
+    physicsBody->setDynamic(true);
     physicsBody->setGravity(false);
     physicsBody->setCollisionBitmask(0x0001);
     physicsBody->setContactTestBitmask(0xFFFFFFFF);
     physicsBody->setGroup(0);
+    
+    if (physicsBody->isSupportCCD()) {
+        physicsBody->enableCCD();
+    }
     
     //set initial velocity of physicsBody
     physicsBody->setVelocity(Vec2(cocos2d::random(-NORMAL_SPEED, NORMAL_SPEED),

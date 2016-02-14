@@ -11,6 +11,7 @@
 
 #include "GameObject.h"
 #include "GameMacro.h"
+#include "Physics2D.h"
 
 USING_NS_GAME;
 
@@ -20,6 +21,8 @@ public:
     void registerTouchEvents();
     
 protected:
+    Physics2DBody* physicsBody;
+    
 };
 
 

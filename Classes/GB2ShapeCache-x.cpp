@@ -31,6 +31,8 @@
 #include "box2d/Box2D.h"
 #include "CCNS.h"
 
+#include "GameMacro.h"
+
 USING_NS_CC;
 
 /**
@@ -93,7 +95,7 @@ void GB2ShapeCache::addFixturesToBody(b2Body *body, const std::string &shape) {
     assert(pos != shapeObjects.end());
     
     BodyDef *so = (*pos).second;
-    
+
     FixtureDef *fix = so->fixtures;
     while (fix) {
         body->CreateFixture(&fix->fixture);
@@ -125,7 +127,7 @@ bool GB2ShapeCache::addShapesWithFile(const std::string &plist) {
         return false;
     }
     
-    int ptmRatio = metadata["ptm_ratio"].asFloat();
+    float ptmRatio = metadata["ptm_ratio"].asFloat() * BOX2D_PTM_RATIO;
     
     ValueMap &bodydict = dict.at("bodies").asValueMap();
     b2Vec2 vertices[b2_maxPolygonVertices];
@@ -142,22 +144,14 @@ bool GB2ShapeCache::addShapesWithFile(const std::string &plist) {
         {
             b2FixtureDef basicData;
 
-            
             auto &fixturedata = fixtureitem.asValueMap();
             basicData.density         = fixturedata.at("density").asFloat();
             basicData.restitution      = fixturedata.at("restitution").asFloat();
             basicData.friction        = fixturedata.at("friction").asFloat();
-            basicData.isSensor             = fixturedata.at("isSensor").asInt();
-            basicData.filter.groupIndex           = fixturedata.at("filter_groupIndex").asInt();
             basicData.filter.categoryBits    = fixturedata.at("filter_categoryBits").asInt();
+            basicData.filter.groupIndex           = fixturedata.at("filter_groupIndex").asInt();
             basicData.filter.maskBits   = fixturedata.at("filter_maskBits").asInt();
-
-            auto cb = fixturedata.at("userdataCbValue").asString();
-
-            int callbackData = 0;
-            
-            if (!cb.empty())
-                callbackData = atoi(cb.c_str());
+            basicData.isSensor             = fixturedata.at("isSensor").asBool();
             
             std::string fixtureType = fixturedata.at("fixture_type").asString();
             if (fixtureType == "POLYGON")
@@ -167,7 +161,6 @@ bool GB2ShapeCache::addShapesWithFile(const std::string &plist) {
                 {
                     FixtureDef *fix = new FixtureDef();
                     fix->fixture = basicData; // copy basic data
-                    fix->callbackData = callbackData;
                     
                     b2PolygonShape *polyshape = new b2PolygonShape();
                     int vindex = 0;
@@ -194,7 +187,6 @@ bool GB2ShapeCache::addShapesWithFile(const std::string &plist) {
             {
                 FixtureDef *fix = new FixtureDef();
                 fix->fixture = basicData; // copy basic data
-                fix->callbackData = callbackData;
                 
                 const ValueMap &circleData = fixturedata.at("circle").asValueMap();
                 

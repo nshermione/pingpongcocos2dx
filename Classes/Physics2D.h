@@ -25,6 +25,11 @@ public:
     virtual void setGravity(bool inGravity) = 0;
     virtual void setVelocity(const cocos2d::Vec2& vel) = 0;
     virtual cocos2d::Vec2 getVelocity() = 0;
+    virtual void setPosition(const cocos2d::Vec2& vel) = 0;
+    virtual void movePosition(const cocos2d::Vec2& vel) = 0;
+    virtual cocos2d::Vec2 getPosition() = 0;
+    virtual bool isSupportCCD() = 0;
+    virtual void enableCCD() = 0;
     
     void setSprite(cocos2d::Sprite *sprite) { _bodySprite = sprite; }
     cocos2d::Sprite* getSprite() { return _bodySprite; };
