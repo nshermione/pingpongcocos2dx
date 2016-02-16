@@ -32,6 +32,7 @@ public:
     void setCollisionBitmask(int bitmask);
     void setContactTestBitmask(int bitmask);
     void setDynamic(bool isDynamic);
+    void setKinematic(bool isKinematic);
     void setGravity(bool inGravity);
     void setVelocity(const cocos2d::Vec2& vel);
     cocos2d::Vec2 getVelocity();
@@ -41,18 +42,22 @@ public:
     bool isSupportCCD();
     void enableCCD();
     
-    void setBody(b2Body *body) {
-        _body = body;
-    }
+    void setBody(b2Body *body) ;
+    b2Body* getBody() ;
+    void setDeleteFlag(bool isDeleted);
+    bool isDeleted();
     
 private:
     b2Body *_body;
+    bool deleteFlag;
 };
 
 
 
 class PhysicsBox2DWorld : public Physics2DWorld {
 public:
+    PhysicsBox2DWorld();
+    ~PhysicsBox2DWorld();
     void init(cocos2d::Scene *scene, float gravityX, float gravityY);
     Physics2DBody* addBody(cocos2d::Sprite* sprite, const std::string &bodyName);
     Physics2DBody* addBodyBox(cocos2d::Sprite* sprite,
@@ -61,13 +66,38 @@ public:
     Physics2DBody* addBodyCircle(cocos2d::Sprite* sprite,
                                          float radius,
                                          cocos2d::PhysicsMaterial material);
+    void removeBody(Physics2DBody *body);
     void loadBodies(const std::string &plist);
-    void registerContactListener(Physics2DContactListener listener);
+    void registerContactListener(Physics2DContactListener* listener);
     void drawDebug();
+    Physics2DBody* findBody(b2Body *b2Body);
     
 private:
     void update(float dt);
     b2World *_world;
+    std::unordered_map<b2Body*, std::shared_ptr<PhysicsBox2DBody>> _bodyMap;
+    b2ContactListener *_contactListener;
+};
+
+
+
+class PhysicsBox2DContact : public Physics2DContact {
+public:
+    PhysicsBox2DContact(PhysicsBox2DWorld* world, b2Contact* contact, Physics2DBody* target=nullptr);
+    ~PhysicsBox2DContact();
+    Physics2DBody* getBodyA();
+    Physics2DBody* getBodyB();
+    cocos2d::Sprite* getSpriteA();
+    cocos2d::Sprite* getSpriteB();
+    Physics2DBody* getTargetBody();
+    Physics2DBody* getOtherBody();
+    void changeTarget(Physics2DBody* target);
+    
+private:
+    Physics2DBody* bodyA;
+    Physics2DBody* bodyB;
+    Physics2DBody* targetBody;
+    Physics2DBody* otherBody;
 };
 
 END_GAME_NS

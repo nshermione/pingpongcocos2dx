@@ -75,6 +75,7 @@
 		4AB1C90A1C51C5BF0076B642 /* portal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C8FF1C51C5BF0076B642 /* portal.png */; };
 		4AB1C90B1C51C5BF0076B642 /* purple_goal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C9001C51C5BF0076B642 /* purple_goal.png */; };
 		4AB1C90C1C51C5BF0076B642 /* wood_chump.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB1C9011C51C5BF0076B642 /* wood_chump.png */; };
+		4AB67CC61C72263B00312E62 /* Box2DContactListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AB67CC41C72263B00312E62 /* Box2DContactListener.cpp */; };
 		4AB998DF1C6206B200652D60 /* disappear.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AB998DD1C6206B200652D60 /* disappear.plist */; };
 		4AB998E01C6206B200652D60 /* gift.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AB998DE1C6206B200652D60 /* gift.plist */; };
 		4AC145041C492E0D007D40DA /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AC145021C492E0D007D40DA /* Ball.cpp */; };
@@ -253,6 +254,8 @@
 		4AB1C8FF1C51C5BF0076B642 /* portal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = portal.png; sourceTree = "<group>"; };
 		4AB1C9001C51C5BF0076B642 /* purple_goal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_goal.png; sourceTree = "<group>"; };
 		4AB1C9011C51C5BF0076B642 /* wood_chump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_chump.png; sourceTree = "<group>"; };
+		4AB67CC41C72263B00312E62 /* Box2DContactListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Box2DContactListener.cpp; sourceTree = "<group>"; };
+		4AB67CC51C72263B00312E62 /* Box2DContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2DContactListener.h; sourceTree = "<group>"; };
 		4AB998DD1C6206B200652D60 /* disappear.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = disappear.plist; sourceTree = "<group>"; };
 		4AB998DE1C6206B200652D60 /* gift.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gift.plist; sourceTree = "<group>"; };
 		4AC145021C492E0D007D40DA /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
@@ -488,7 +491,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4A9DA3F61C45B1C60056AF7C /* objects */,
+				4A9DA3F61C45B1C60056AF7C /* domain */,
 				4A77222B1C41A4560095C22B /* player */,
 				4A171F9B1C3D84E5000CAE3C /* gamelib */,
 				4A121FD31C3D81AE00C04849 /* scenes */,
@@ -551,6 +554,8 @@
 				4AA521C41C6CB2B6002D3FE3 /* Physics2D.h */,
 				4A5A80A71C6D0BC50081EF40 /* Physics.cpp */,
 				4A5A80A81C6D0BC50081EF40 /* Physics.h */,
+				4AB67CC41C72263B00312E62 /* Box2DContactListener.cpp */,
+				4AB67CC51C72263B00312E62 /* Box2DContactListener.h */,
 			);
 			name = gamelib;
 			sourceTree = "<group>";
@@ -564,7 +569,7 @@
 			name = player;
 			sourceTree = "<group>";
 		};
-		4A9DA3F61C45B1C60056AF7C /* objects */ = {
+		4A9DA3F61C45B1C60056AF7C /* domain */ = {
 			isa = PBXGroup;
 			children = (
 				4AA655501C535B740063FB0C /* Goal.cpp */,
@@ -578,7 +583,7 @@
 				4A9DA3F71C45B1DC0056AF7C /* Table.cpp */,
 				4A9DA3F81C45B1DC0056AF7C /* Table.h */,
 			);
-			name = objects;
+			name = domain;
 			sourceTree = "<group>";
 		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
@@ -823,6 +828,7 @@
 				46880B8A19C43A87006E1F66 /* SplashScene.cpp in Sources */,
 				4A6A3D821C3FA766006E1185 /* PlayScene.cpp in Sources */,
 				4A9DA3F91C45B1DC0056AF7C /* Table.cpp in Sources */,
+				4AB67CC61C72263B00312E62 /* Box2DContactListener.cpp in Sources */,
 				4A7CD6BE1C535772003B8D0B /* Chump.cpp in Sources */,
 				4A7722311C41A6330095C22B /* GameObject.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -896,7 +902,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -935,7 +941,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -976,6 +982,7 @@
 				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -1009,6 +1016,7 @@
 				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",

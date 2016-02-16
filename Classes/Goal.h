@@ -18,7 +18,7 @@ USING_NS_GAME;
 class Goal: public GameObject {
 public:
     void init(cocos2d::Sprite *sprite);
-    bool onContactBegin(cocos2d::PhysicsContact& contact);
+    bool onContactBegin(std::shared_ptr<Physics2DContact> contact);
     
 protected:
 };

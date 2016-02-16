@@ -32,7 +32,7 @@ public:
     void setName(const std::string& name);
     
 private:
-    static Player* _instance;
+    static std::shared_ptr<Player> _instance;
     cocos2d::ValueMap _saveData;
     std::string _name;
 };

@@ -10,7 +10,7 @@
 
 START_GAME_NS
 
-Player* Player::_instance = 0;
+std::shared_ptr<Player> Player::_instance = nullptr;
 
 Player::Player() {
 }
@@ -21,10 +21,10 @@ Player::~Player() {
 
 Player* Player::getInstance() {
     if (!_instance) {
-        _instance = new Player();
+        _instance = std::make_shared<Player>();
     }
     
-    return _instance;
+    return _instance.get();
 }
 
 cocos2d::ValueMap const& Player::getSaveData() {

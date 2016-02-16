@@ -54,7 +54,7 @@ bool B2DebugDrawLayer::init()
   //////////////////////////////
   // 1. super init first
 
-  if(!CCLayer::init())
+  if(!Layer::init())
   {
     return false;
   }

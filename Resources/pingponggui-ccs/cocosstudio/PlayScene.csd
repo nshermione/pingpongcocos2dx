@@ -17,43 +17,23 @@
             <FileData Type="Normal" Path="bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="edge1" ActionTag="-1987696248" Tag="26" IconVisible="False" LeftMargin="7.4867" RightMargin="1048.5133" TopMargin="-1.0051" BottomMargin="1.0051" Scale9Width="1" Scale9Height="1" ctype="ImageViewObjectData">
-            <Size X="80.0000" Y="640.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="47.4867" Y="321.0051" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0418" Y="0.5016" />
-            <PreSize X="0.0704" Y="1.0000" />
-            <FileData Type="Normal" Path="blank.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="edge2" ActionTag="1120204759" Tag="27" IconVisible="False" LeftMargin="1061.8468" RightMargin="-5.8468" TopMargin="-0.5478" BottomMargin="0.5478" Scale9Width="1" Scale9Height="1" ctype="ImageViewObjectData">
-            <Size X="80.0000" Y="640.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1101.8468" Y="320.5478" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9699" Y="0.5009" />
-            <PreSize X="0.0704" Y="1.0000" />
-            <FileData Type="Normal" Path="blank.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="edge3" ActionTag="652436351" Tag="28" IconVisible="False" LeftMargin="14.6217" RightMargin="11.3783" TopMargin="3.0667" BottomMargin="556.9333" Scale9Width="1" Scale9Height="1" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="topEdge" ActionTag="652436351" Tag="28" IconVisible="False" LeftMargin="12.4462" RightMargin="13.5538" TopMargin="16.1171" BottomMargin="543.8829" Scale9Width="1" Scale9Height="1" ctype="ImageViewObjectData">
             <Size X="1110.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="569.6217" Y="596.9333" />
+            <Position X="567.4462" Y="583.8829" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5014" Y="0.9327" />
+            <PrePosition X="0.4995" Y="0.9123" />
             <PreSize X="0.9771" Y="0.1250" />
             <FileData Type="Normal" Path="blank.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="edge4" ActionTag="283906732" Tag="29" IconVisible="False" LeftMargin="13.1663" RightMargin="12.8337" TopMargin="603.0237" BottomMargin="-43.0237" Scale9Width="1" Scale9Height="1" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="botEdge" ActionTag="283906732" Tag="29" IconVisible="False" LeftMargin="15.3411" RightMargin="10.6589" TopMargin="592.1497" BottomMargin="-32.1497" Scale9Width="1" Scale9Height="1" ctype="ImageViewObjectData">
             <Size X="1110.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="568.1663" Y="-3.0237" />
+            <Position X="570.3411" Y="7.8503" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5001" Y="-0.0047" />
+            <PrePosition X="0.5021" Y="0.0123" />
             <PreSize X="0.9771" Y="0.1250" />
             <FileData Type="Normal" Path="blank.png" Plist="" />
           </AbstractNodeData>
@@ -87,13 +67,13 @@
             <PreSize X="0.0079" Y="0.8094" />
             <FileData Type="Normal" Path="purple_goal.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="menuButton" ActionTag="-1072537288" Tag="11" IconVisible="False" LeftMargin="1049.5253" RightMargin="22.4747" TopMargin="18.2123" BottomMargin="557.7877" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="menuButton" ActionTag="-1072537288" Tag="11" IconVisible="False" LeftMargin="1063.7434" RightMargin="8.2566" TopMargin="5.6671" BottomMargin="570.3329" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1081.5253" Y="589.7877" />
-            <Scale ScaleX="1.5061" ScaleY="1.4498" />
+            <Position X="1095.7434" Y="602.3329" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9520" Y="0.9215" />
+            <PrePosition X="0.9646" Y="0.9411" />
             <PreSize X="0.0563" Y="0.1000" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />

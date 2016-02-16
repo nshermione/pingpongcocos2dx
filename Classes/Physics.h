@@ -22,8 +22,11 @@ enum Physics2DType {
 
 class Physics {
 public:
+    Physics();
+    ~Physics();
     static Physics2DWorld* createWorld2D(Physics2DType type);
     static Physics2DWorld* getWorld2D();
+    
 };
 
 END_GAME_NS

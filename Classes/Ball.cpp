@@ -19,6 +19,19 @@ float FAST_SPEED = 20;
 float VERY_FAST_SPEED = 25;
 float EXTREMELY_SPEED = 35;
 
+Ball::Ball()
+:physicsBody(nullptr)
+,currentTrail(nullptr)
+,trail1(nullptr)
+,trail2(nullptr)
+{
+    
+}
+
+Ball::~Ball() {
+    SAFE_DELETE_POINTER(physicsBody);
+}
+
 bool Ball::init(cocos2d::Sprite *sprite) {
     reset();
     setSprite(sprite);
@@ -99,14 +112,14 @@ void Ball::initParticle() {
 }
 
 void Ball::setVelocity(float vel) {
-    if (physicsBody != NULL) {
+    if (physicsBody != nullptr) {
         auto velocity = physicsBody->getVelocity();
         velocity.normalize();
         velocity.scale(vel);
         physicsBody->setVelocity(velocity);
         
         //update trail
-        if (currentTrail != NULL) {
+        if (currentTrail != nullptr) {
             auto angle = atan2(velocity.y, velocity.x) * 180 / M_PI + 180;
             currentTrail->setAngle(angle);
         }
@@ -115,7 +128,7 @@ void Ball::setVelocity(float vel) {
 
 void Ball::setTrail(cocos2d::ParticleSystemQuad* trail) {
 
-    if (currentTrail != NULL && trail != currentTrail) {
+    if (currentTrail != nullptr && trail != currentTrail) {
         currentTrail->setVisible(false);
     }
     

@@ -7,17 +7,18 @@
 //
 
 #include "PhysicsBox2D.h"
+#include "Box2DContactListener.h"
 
 START_GAME_NS
 
 // PhysicsBox2DBody
 
-PhysicsBox2DBody::PhysicsBox2DBody() {
-    
+PhysicsBox2DBody::PhysicsBox2DBody()
+:deleteFlag(false) {
+   
 }
 
 PhysicsBox2DBody::~PhysicsBox2DBody() {
-    
 }
 
 void PhysicsBox2DBody::setDensity(float density){
@@ -71,6 +72,14 @@ void PhysicsBox2DBody::setDynamic(bool isDynamic){
     }
 }
 
+void PhysicsBox2DBody::setKinematic(bool isKinematic) {
+    if (isKinematic) {
+        _body->SetType(b2_kinematicBody);
+    } else {
+        _body->SetType(b2_staticBody);
+    }
+}
+
 void PhysicsBox2DBody::setGravity(bool inGravity) {
     if (inGravity) {
         _body->SetGravityScale(1.0f);
@@ -98,6 +107,9 @@ void PhysicsBox2DBody::movePosition(const cocos2d::Vec2 &vel) {
     auto newPos = b2Vec2(transform.p.x + vel.x/BOX2D_PTM_RATIO,
                          transform.p.y + vel.y/BOX2D_PTM_RATIO);
     _body->SetTransform(newPos, transform.q.GetAngle());
+    
+    auto pos = _body->GetPosition();
+    _bodySprite->setPosition(pos.x * BOX2D_PTM_RATIO, pos.y * BOX2D_PTM_RATIO);
 }
 
 cocos2d::Vec2 PhysicsBox2DBody::getPosition() {
@@ -113,7 +125,85 @@ void PhysicsBox2DBody::enableCCD() {
     _body->SetBullet(true);
 }
 
+void PhysicsBox2DBody::setBody(b2Body *body) {
+    _body = body;
+}
+
+b2Body* PhysicsBox2DBody::getBody() {
+    return _body;
+}
+
+void PhysicsBox2DBody::setDeleteFlag(bool isDeleted) {
+    deleteFlag = isDeleted;
+}
+
+bool PhysicsBox2DBody::isDeleted() {
+    return deleteFlag;
+}
+
+//PhysicsBox2DContact
+
+PhysicsBox2DContact::PhysicsBox2DContact(PhysicsBox2DWorld* world,
+                                         b2Contact* contact,
+                                         Physics2DBody* target) {
+    bodyA = world->findBody(contact->GetFixtureA()->GetBody());
+    bodyB = world->findBody(contact->GetFixtureB()->GetBody());
+    changeTarget(target);
+}
+
+PhysicsBox2DContact::~PhysicsBox2DContact() {
+
+}
+
+void PhysicsBox2DContact::changeTarget(Physics2DBody* target) {
+    if (target == bodyA) {
+        targetBody = bodyA;
+        otherBody = bodyB;
+    } else if (target == bodyB) {
+        targetBody = bodyB;
+        otherBody = bodyA;
+    } else {
+        targetBody = nullptr;
+        otherBody = nullptr;
+    }
+}
+
+Physics2DBody* PhysicsBox2DContact::getBodyA() {
+    return bodyA;
+}
+
+Physics2DBody* PhysicsBox2DContact::getBodyB() {
+    return bodyB;
+}
+
+cocos2d::Sprite* PhysicsBox2DContact::getSpriteA() {
+    return bodyA->getSprite();
+}
+
+cocos2d::Sprite* PhysicsBox2DContact::getSpriteB() {
+    return bodyB->getSprite();
+}
+
+Physics2DBody* PhysicsBox2DContact::getTargetBody() {
+    return targetBody;
+}
+
+Physics2DBody* PhysicsBox2DContact::getOtherBody() {
+    return otherBody;
+}
+
 // PhysicsBox2DWorld
+
+PhysicsBox2DWorld::PhysicsBox2DWorld()
+:_world(nullptr)
+,_contactListener(new Box2DContactListener(this)) {
+    
+}
+
+PhysicsBox2DWorld::~PhysicsBox2DWorld() {
+    SAFE_DELETE_POINTER(_world);
+    SAFE_DELETE_POINTER(_contactListener);
+}
 
 void PhysicsBox2DWorld::init(cocos2d::Scene *scene, float gravityX, float gravityY) {
     Physics2DWorld::init(scene, gravityX, gravityY);
@@ -123,20 +213,38 @@ void PhysicsBox2DWorld::init(cocos2d::Scene *scene, float gravityX, float gravit
     
     // create a world object, which will hold and simulate the rigid bodies.
     _world = new b2World(gravity);
+    _world->SetContactListener(_contactListener);
     
     // schedule physics main loop
     scene->schedule(CC_CALLBACK_1(PhysicsBox2DWorld::update, this), 0.016f, "updatePhysicsBox2dWorld");
 }
 
 void PhysicsBox2DWorld::update(float dt) {
-    _world->Step(dt, 10, 10);
-    for(b2Body *b = _world->GetBodyList(); b; b=b->GetNext()) {
+    _world->Step(dt, 8, 3);
+
+    for(auto it = _bodyMap.begin(); it != _bodyMap.end();) {
+        auto physicsBody = (*it).second;
+        if (physicsBody == nullptr) {
+            _bodyMap.erase(it++);
+            continue;
+        }
+        auto b =  physicsBody->getBody();
+        // Remove deleted bodies
+        if (physicsBody->isDeleted() && b->GetUserData() != NULL) {
+            cocos2d::Sprite *sprite = (cocos2d::Sprite *)b->GetUserData();
+            sprite->removeFromParentAndCleanup(true);
+            _bodyMap.erase(it++);
+            _world->DestroyBody(b);
+            continue;
+        }
+        // Move sprite
         if (b->GetUserData() != NULL) {
             cocos2d::Sprite *sprite = (cocos2d::Sprite *)b->GetUserData();
             auto pos = b->GetPosition();
             sprite->setPosition(pos.x * BOX2D_PTM_RATIO, pos.y * BOX2D_PTM_RATIO);
             sprite->setRotation(-1 * CC_RADIANS_TO_DEGREES(b->GetAngle()));
         }
+        ++it;
     }
 }
 
@@ -149,14 +257,16 @@ Physics2DBody* PhysicsBox2DWorld::addBody(cocos2d::Sprite* sprite, const std::st
     bodyDef.type = b2_staticBody;
     bodyDef.position.Set(pos.x / BOX2D_PTM_RATIO, pos.y / BOX2D_PTM_RATIO);
     bodyDef.userData = sprite;
+    bodyDef.fixedRotation = true;
     body = _world->CreateBody(&bodyDef);
     loader->addFixturesToBody(body, bodyName);
     
-    PhysicsBox2DBody *pBody = new PhysicsBox2DBody();
+    auto pBody = std::make_shared<PhysicsBox2DBody>();
     pBody->setBody(body);
     pBody->setSprite(sprite);
     
-    return pBody;
+    _bodyMap[body] = pBody;
+    return pBody.get();
 }
 
 Physics2DBody* PhysicsBox2DWorld::addBodyBox(cocos2d::Sprite* sprite,
@@ -185,11 +295,12 @@ Physics2DBody* PhysicsBox2DWorld::addBodyBox(cocos2d::Sprite* sprite,
     b2Fixture *_paddleFixture;
     _paddleFixture = body->CreateFixture(&paddleShapeDef);
     
-    PhysicsBox2DBody *pBody = new PhysicsBox2DBody();
+    auto pBody = std::make_shared<PhysicsBox2DBody>();
     pBody->setBody(body);
     pBody->setSprite(sprite);
     
-    return pBody;
+    _bodyMap[body] = pBody;
+    return pBody.get();
 }
 
 Physics2DBody* PhysicsBox2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
@@ -219,11 +330,16 @@ Physics2DBody* PhysicsBox2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
     b2Fixture *_paddleFixture;
     _paddleFixture = body->CreateFixture(&paddleShapeDef);
     
-    PhysicsBox2DBody *pBody = new PhysicsBox2DBody();
+    auto pBody = std::make_shared<PhysicsBox2DBody>();
     pBody->setBody(body);
     pBody->setSprite(sprite);
     
-    return pBody;
+    _bodyMap[body] = pBody;
+    return pBody.get();
+}
+
+void PhysicsBox2DWorld::removeBody(Physics2DBody *body) {
+    ((PhysicsBox2DBody* ) body)->setDeleteFlag(true);
 }
 
 void PhysicsBox2DWorld::loadBodies(const std::string &plist) {
@@ -231,12 +347,17 @@ void PhysicsBox2DWorld::loadBodies(const std::string &plist) {
     loader->addShapesWithFile(plist);
 }
 
-void PhysicsBox2DWorld::registerContactListener(Physics2DContactListener listener) {
+void PhysicsBox2DWorld::registerContactListener(Physics2DContactListener* listener) {
     // TODO
+    ((Box2DContactListener*)_contactListener)->addListener(listener);
 }
 
 void PhysicsBox2DWorld::drawDebug() {
     
+}
+
+Physics2DBody* PhysicsBox2DWorld::findBody(b2Body *b2Body) {
+    return _bodyMap[b2Body].get();
 }
 
 END_GAME_NS

@@ -10,7 +10,6 @@
 #define PhysicsCocos2D_h
 
 #include "cocos2d.h"
-
 #include "GameMacro.h"
 #include "PhysicsShapeCache.h"
 #include "Physics2D.h"
@@ -31,6 +30,7 @@ public:
     void setCollisionBitmask(int bitmask);
     void setContactTestBitmask(int bitmask);
     void setDynamic(bool isDynamic);
+    void setKinematic(bool isKinematic);
     void setGravity(bool inGravity);
     void setVelocity(const cocos2d::Vec2& vel);
     cocos2d::Vec2 getVelocity();
@@ -49,6 +49,8 @@ private:
 
 class PhysicsCocos2DWorld : public Physics2DWorld {
 public:
+    PhysicsCocos2DWorld();
+    ~PhysicsCocos2DWorld();
     void init(cocos2d::Scene *scene, float gravityX, float gravityY);
     Physics2DBody* addBody(cocos2d::Sprite* sprite, const std::string &bodyName);
     Physics2DBody* addBodyBox(cocos2d::Sprite* sprite,
@@ -57,12 +59,14 @@ public:
     Physics2DBody* addBodyCircle(cocos2d::Sprite* sprite,
                                          float radius,
                                          cocos2d::PhysicsMaterial material);
+    void removeBody(Physics2DBody *body);
     void loadBodies(const std::string &plist);
-    void registerContactListener(Physics2DContactListener listener);
+    void registerContactListener(Physics2DContactListener* listener);
     void drawDebug();
     
 private:
     cocos2d::PhysicsWorld *_world;
+    std::vector<Physics2DBody*> _bodies;
 };
 
 END_GAME_NS

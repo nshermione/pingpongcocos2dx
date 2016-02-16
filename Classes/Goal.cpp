@@ -25,27 +25,32 @@ void Goal::init(cocos2d::Sprite *sprite) {
     physicsBody->setContactTestBitmask(0xFFFFFFFF);
     
     // collision check
-    auto contactListener = EventListenerPhysicsContact::create();
-    contactListener->onContactBegin = CC_CALLBACK_1(Goal::onContactBegin, this);
-    sprite->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, sprite);
+    auto listener = new Physics2DContactListener(physicsBody);
+    listener->onContactBegin = CC_CALLBACK_1(Goal::onContactBegin, this);
+    world->registerContactListener(listener);
 }
 
-bool Goal::onContactBegin(cocos2d::PhysicsContact& contact) {
-    auto nodeA = contact.getShapeA()->getBody()->getNode();
-    auto nodeB = contact.getShapeB()->getBody()->getNode();
-    if (nodeA && nodeB) {
-        auto ball = nodeA->getName()==Ball::NAME? nodeA : nodeB;
-        auto parent = ball->getParent();
-        auto position = ball->getPosition();
+bool Goal::onContactBegin(std::shared_ptr<Physics2DContact> contact) {
+    if (contact->getTargetBody() != nullptr) {
+        auto ball = contact->getOtherBody();
+        auto ballSprite = ball->getSprite();
+        if (ballSprite->getName() != Ball::NAME) {
+            return false;
+        }
+        
+        auto parentSprite = ballSprite->getParent();
+        auto position = ballSprite->getPosition();
         auto disappear = ParticleSystemQuad::create("disappear.plist");
-        parent->addChild(disappear);
+        parentSprite->addChild(disappear);
         disappear->setPosition(position);
         
-        ball->removeFromParentAndCleanup(true);
+        Physics::getWorld2D()->removeBody(ball);
         
         // play sound yay
         auto audio = SimpleAudioEngine::getInstance();
         audio->playEffect("yay.wav");
+        
+        return true;
     }
     return false;
 }

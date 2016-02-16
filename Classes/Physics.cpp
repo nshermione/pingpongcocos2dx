@@ -10,23 +10,31 @@
 
 START_GAME_NS
 
-static Physics2DWorld *_world2D = NULL;
+static std::shared_ptr<Physics2DWorld> _world2D = nullptr;
+
+Physics::Physics () {
+    
+}
+
+Physics::~Physics() {
+
+}
 
 Physics2DWorld* Physics::createWorld2D(Physics2DType type) {
     switch (type) {
         case PhysicsCocos2DType:
-            _world2D = new PhysicsCocos2DWorld();
+            _world2D = std::make_shared<PhysicsCocos2DWorld>();
             break;
         case PhysicsBox2DType:
-            _world2D = new PhysicsBox2DWorld();
+            _world2D = std::make_shared<PhysicsBox2DWorld>();
             break;
     }
     
-    return _world2D;
+    return _world2D.get();
 }
 
 Physics2DWorld* Physics::getWorld2D() {
-    return _world2D;
+    return _world2D.get();
 };
 
 END_GAME_NS

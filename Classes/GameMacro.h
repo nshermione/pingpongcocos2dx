@@ -121,6 +121,12 @@ scene->addChild(layer); \
 return scene; \
 }
 
+/** @def SAFE_DELETE_POINTER(pointer) 
+ * Define a delete function for none nullptr pointer
+ */
+#define SAFE_DELETE_POINTER(pointer) if(pointer != nullptr) { delete pointer; }
+
+
 /** Global functions
  * Define global functions
  *

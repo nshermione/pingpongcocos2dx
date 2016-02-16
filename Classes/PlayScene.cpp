@@ -39,13 +39,13 @@ bool Play::init(std::string csbFile)
     blueBlock.init(block);
     
     // init chumps
+    auto botEdge = (Sprite *) _rootNode->getChildByName("botEdge");
+    auto topEdge = (Sprite *) _rootNode->getChildByName("topEdge");
     auto chump = (Sprite *) _rootNode->getChildByName("purpleChump");
-    purpleChump.init(chump, false);
-    purpleChump.registerTouchEvents();
+    purpleChump.init(chump, topEdge, botEdge, false);
     
     chump = (Sprite *) _rootNode->getChildByName("blueChump");
-    blueChump.init(chump, true);
-    blueChump.registerTouchEvents();
+    blueChump.init(chump, topEdge, botEdge, true);
     
     // init goals
     auto goal = (Sprite *) _rootNode->getChildByName("purpleGoal");

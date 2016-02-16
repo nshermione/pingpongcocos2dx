@@ -17,12 +17,13 @@ USING_NS_GAME;
 
 class Chump: public GameObject {
 public:
-    void init(cocos2d::Sprite *sprite, bool flipped);
+    void init(cocos2d::Sprite *sprite, cocos2d::Sprite *topEdge, cocos2d::Sprite *bottomEdge, bool flipped);
     void registerTouchEvents();
     
 protected:
     Physics2DBody* physicsBody;
-    
+    cocos2d::Sprite* _topEdge;
+    cocos2d::Sprite* _botEdge;
 };
 
 

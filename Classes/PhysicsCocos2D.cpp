@@ -72,6 +72,11 @@ void PhysicsCocos2DBody::setDynamic(bool isDynamic){
     _body->setDynamic(isDynamic);
 }
 
+void PhysicsCocos2DBody::setKinematic(bool isKinematic) {
+    // kinematic currently is not supported by cocos2d-x
+    _body->setDynamic(isKinematic);
+}
+
 void PhysicsCocos2DBody::setGravity(bool inGravity){
     _body->setGravityEnable(inGravity);
 }
@@ -107,6 +112,17 @@ void PhysicsCocos2DBody::enableCCD() {
 
 // PhysicsCocos2DWorld
 
+PhysicsCocos2DWorld::PhysicsCocos2DWorld() {
+    
+}
+
+PhysicsCocos2DWorld::~PhysicsCocos2DWorld() {
+    for (auto it = _bodies.begin(); it != _bodies.end(); ++it) {
+        auto body = *it;
+        SAFE_DELETE_POINTER(body);
+    }
+}
+
 void PhysicsCocos2DWorld::init(cocos2d::Scene *scene, float gravityX, float gravityY) {
     Physics2DWorld::init(scene, gravityX, gravityY);
     
@@ -126,6 +142,7 @@ Physics2DBody* PhysicsCocos2DWorld::addBodyBox(cocos2d::Sprite* sprite,
     pBody->setBody(physicsBody);
     pBody->setSprite(sprite);
     
+    _bodies.push_back(pBody);
     return pBody;
 }
 
@@ -141,6 +158,7 @@ Physics2DBody* PhysicsCocos2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
     pBody->setBody(physicsBody);
     pBody->setSprite(sprite);
     
+    _bodies.push_back(pBody);
     return pBody;
 }
 
@@ -153,7 +171,12 @@ Physics2DBody* PhysicsCocos2DWorld::addBody(cocos2d::Sprite* sprite, const std::
     pBody->setBody(body);
     pBody->setSprite(sprite);
     
+    _bodies.push_back(pBody);
     return pBody;
+}
+
+void PhysicsCocos2DWorld::removeBody(Physics2DBody *body) {
+    body->getSprite()->removeFromParentAndCleanup(true);
 }
 
 void PhysicsCocos2DWorld::loadBodies(const std::string &plist) {
@@ -161,7 +184,7 @@ void PhysicsCocos2DWorld::loadBodies(const std::string &plist) {
     loader->addShapesWithFile(plist);
 }
 
-void PhysicsCocos2DWorld::registerContactListener(Physics2DContactListener listener) {
+void PhysicsCocos2DWorld::registerContactListener(Physics2DContactListener* listener) {
     
 }
 

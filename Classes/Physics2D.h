@@ -13,6 +13,7 @@
 
 class Physics2DBody {
 public:
+    virtual ~Physics2DBody() {};
     virtual void setDensity(float density) = 0;
     virtual void setFriction(float friction) = 0;
     virtual void setRestitution(float restitution) = 0;
@@ -22,6 +23,7 @@ public:
     virtual void setCollisionBitmask(int bitmask) = 0;
     virtual void setContactTestBitmask(int bitmask) = 0;
     virtual void setDynamic(bool isDynamic) = 0;
+    virtual void setKinematic(bool isKinematic) = 0;
     virtual void setGravity(bool inGravity) = 0;
     virtual void setVelocity(const cocos2d::Vec2& vel) = 0;
     virtual cocos2d::Vec2 getVelocity() = 0;
@@ -39,21 +41,43 @@ protected:
 };
 
 class Physics2DContact {
-    virtual Physics2DBody getBodyA() = 0;
-    virtual Physics2DBody getBodyB() = 0;
-    virtual cocos2d::Sprite getSpriteA() = 0;
-    virtual cocos2d::Sprite getSpriteB() = 0;
+public:
+    virtual Physics2DBody* getBodyA() = 0;
+    virtual Physics2DBody* getBodyB() = 0;
+    virtual Physics2DBody* getTargetBody() = 0;
+    virtual Physics2DBody* getOtherBody() = 0;
+    virtual cocos2d::Sprite* getSpriteA() = 0;
+    virtual cocos2d::Sprite* getSpriteB() = 0;
+    virtual void changeTarget(Physics2DBody* target) = 0;
 };
 
 class Physics2DContactListener {
-    std::function<Physics2DContact> onContactBegin();
-    std::function<Physics2DContact> onContactEnd();
-    std::function<Physics2DContact> onContactPreSolve();
-    std::function<Physics2DContact> onContactPostSolve();
+public:
+    Physics2DContactListener(Physics2DBody* target=nullptr)
+    :onContactBegin(nullptr)
+    ,onContactEnd(nullptr)
+    ,onContactPreSolve(nullptr)
+    ,onContactPostSolve(nullptr) {
+        _target = target;
+    }
+    
+    typedef std::function<bool(std::shared_ptr<Physics2DContact>)> onContactCallback;
+    onContactCallback onContactBegin;
+    onContactCallback onContactEnd;
+    onContactCallback onContactPreSolve;
+    onContactCallback onContactPostSolve;
+    
+    Physics2DBody* getTarget() {
+        return _target;
+    }
+    
+private:
+    Physics2DBody* _target;
 };
 
 class Physics2DWorld {
 public:
+    virtual ~Physics2DWorld() {};
     virtual void init(cocos2d::Scene *scene, float gravityX, float gravityY) {
         _scene = scene;
     }
@@ -64,8 +88,9 @@ public:
     virtual Physics2DBody* addBodyCircle(cocos2d::Sprite* sprite,
                                              float radius,
                                              cocos2d::PhysicsMaterial material) = 0;
+    virtual void removeBody(Physics2DBody *body) = 0;
     virtual void loadBodies(const std::string &plist) = 0;
-    virtual void registerContactListener(Physics2DContactListener listener) = 0;
+    virtual void registerContactListener(Physics2DContactListener* listener) = 0;
     virtual void drawDebug() = 0;
     
 protected:
