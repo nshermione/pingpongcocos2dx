@@ -3,31 +3,45 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Image Name="add_disable.png" />
+        <Image Name="add_normal.png" />
+        <Image Name="add_press.png" />
         <Image Name="arrow.png" />
         <Image Name="ball.png" />
         <Image Name="barrier.png" />
+        <Image Name="barrier_disable.png" />
         <Image Name="bg.png" />
         <Image Name="bg_1.png" />
         <Image Name="blank.png" />
         <Image Name="blue_goal.png" />
         <Image Name="button_bg.png" />
+        <Image Name="button_bg_disable.png" />
         <Image Name="button_bg_pressed.png" />
         <Image Name="check.png" />
         <Image Name="chump3.png" />
         <Project Name="EnterNameScene.csd" Type="Scene" />
         <Project Name="GameOverScene.csd" Type="Scene" />
+        <Image Name="home_disable.png" />
+        <Image Name="home_normal.png" />
+        <Image Name="home_press.png" />
+        <Image Name="item_bg.png" />
         <Image Name="item_points.png" />
         <Image Name="LoadingBar.png" />
         <Project Name="MainMenuScene.csd" Type="Scene" />
         <TTF Name="Marker Felt.ttf" />
         <Image Name="menu_btn_bg.png" />
         <Image Name="middle_line.png" />
+        <Image Name="money_bar.png" />
+        <Image Name="money_icon.png" />
         <Project Name="PauseScene.csd" Type="Scene" />
         <Image Name="pingpong_table.png" />
         <Project Name="PlayScene.csd" Type="Scene" />
         <Image Name="portal.png" />
         <Image Name="purple_goal.png" />
         <Project Name="SplashScene.csd" Type="Scene" />
+        <Project Name="Store.csd" Type="Scene" />
+        <Image Name="store_bg.png" />
+        <Image Name="store_bg_listview.png" />
         <Image Name="table_bg.png" />
         <TTF Name="waltograph42.ttf" />
         <Image Name="wood_chump.png" />
