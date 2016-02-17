@@ -30,7 +30,7 @@ public:
     void setCollisionBitmask(int bitmask);
     void setContactTestBitmask(int bitmask);
     void setDynamic(bool isDynamic);
-    void setKinematic(bool isKinematic);
+    bool isDynamic();
     void setGravity(bool inGravity);
     void setVelocity(const cocos2d::Vec2& vel);
     cocos2d::Vec2 getVelocity();
@@ -39,12 +39,15 @@ public:
     cocos2d::Vec2 getPosition();
     bool isSupportCCD();
     void enableCCD();
+    const std::string& getName();
+    void setName(const std::string& name);
     
     void setBody(cocos2d::PhysicsBody *body) {
         _body = body;
     }
 private:
     cocos2d::PhysicsBody *_body;
+    std::string _name;
 };
 
 class PhysicsCocos2DWorld : public Physics2DWorld {
@@ -52,13 +55,16 @@ public:
     PhysicsCocos2DWorld();
     ~PhysicsCocos2DWorld();
     void init(cocos2d::Scene *scene, float gravityX, float gravityY);
-    Physics2DBody* addBody(cocos2d::Sprite* sprite, const std::string &bodyName);
+    Physics2DBody* addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string &bodyPrototype);
     Physics2DBody* addBodyBox(cocos2d::Sprite* sprite,
+                                      const std::string &bodyName,
                                       const cocos2d::Size& size,
                                       cocos2d::PhysicsMaterial material);
     Physics2DBody* addBodyCircle(cocos2d::Sprite* sprite,
+                                         const std::string &bodyName, 
                                          float radius,
                                          cocos2d::PhysicsMaterial material);
+    Physics2DBody* findBody(const std::string& name);
     void removeBody(Physics2DBody *body);
     void loadBodies(const std::string &plist);
     void registerContactListener(Physics2DContactListener* listener);
@@ -66,7 +72,8 @@ public:
     
 private:
     cocos2d::PhysicsWorld *_world;
-    std::vector<Physics2DBody*> _bodies;
+    std::vector<std::shared_ptr<Physics2DBody>> _bodies;
+    std::unordered_map<std::string, std::shared_ptr<Physics2DBody>> _bodyMapByName;
 };
 
 END_GAME_NS

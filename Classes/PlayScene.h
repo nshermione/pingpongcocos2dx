@@ -34,14 +34,14 @@ private:
     Table table;
     Ball ball;
     
-    Block purpleBlock;
-    Block blueBlock;
+    Block playerBlock;
+    Block enemyBlock;
     
-    Chump purpleChump;
-    Chump blueChump;
+    Chump playerChump;
+    Chump enemyChump;
     
-    Goal purpleGoal;
-    Goal blueGoal;
+    Goal playerGoal;
+    Goal enemyGoal;
     
 };
 

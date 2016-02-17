@@ -32,7 +32,7 @@ public:
     void setCollisionBitmask(int bitmask);
     void setContactTestBitmask(int bitmask);
     void setDynamic(bool isDynamic);
-    void setKinematic(bool isKinematic);
+    bool isDynamic();
     void setGravity(bool inGravity);
     void setVelocity(const cocos2d::Vec2& vel);
     cocos2d::Vec2 getVelocity();
@@ -41,6 +41,8 @@ public:
     cocos2d::Vec2 getPosition();
     bool isSupportCCD();
     void enableCCD();
+    const std::string& getName();
+    void setName(const std::string& name);
     
     void setBody(b2Body *body) ;
     b2Body* getBody() ;
@@ -50,6 +52,7 @@ public:
 private:
     b2Body *_body;
     bool deleteFlag;
+    std::string _name;
 };
 
 
@@ -59,23 +62,27 @@ public:
     PhysicsBox2DWorld();
     ~PhysicsBox2DWorld();
     void init(cocos2d::Scene *scene, float gravityX, float gravityY);
-    Physics2DBody* addBody(cocos2d::Sprite* sprite, const std::string &bodyName);
+    Physics2DBody* addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string &bodyPrototype);
     Physics2DBody* addBodyBox(cocos2d::Sprite* sprite,
+                                      const std::string &bodyName,
                                       const cocos2d::Size& size,
                                       cocos2d::PhysicsMaterial material);
     Physics2DBody* addBodyCircle(cocos2d::Sprite* sprite,
+                                         const std::string &bodyName, 
                                          float radius,
                                          cocos2d::PhysicsMaterial material);
+    Physics2DBody* findBody(const std::string& name);
+    Physics2DBody* findBody(b2Body *b2Body);
     void removeBody(Physics2DBody *body);
     void loadBodies(const std::string &plist);
     void registerContactListener(Physics2DContactListener* listener);
     void drawDebug();
-    Physics2DBody* findBody(b2Body *b2Body);
     
 private:
     void update(float dt);
     b2World *_world;
     std::unordered_map<b2Body*, std::shared_ptr<PhysicsBox2DBody>> _bodyMap;
+    std::unordered_map<std::string, std::shared_ptr<PhysicsBox2DBody>> _bodyMapByName;
     b2ContactListener *_contactListener;
 };
 

@@ -14,7 +14,8 @@ START_GAME_NS
 // PhysicsBox2DBody
 
 PhysicsBox2DBody::PhysicsBox2DBody()
-:deleteFlag(false) {
+:deleteFlag(false)
+,_name("") {
    
 }
 
@@ -72,12 +73,8 @@ void PhysicsBox2DBody::setDynamic(bool isDynamic){
     }
 }
 
-void PhysicsBox2DBody::setKinematic(bool isKinematic) {
-    if (isKinematic) {
-        _body->SetType(b2_kinematicBody);
-    } else {
-        _body->SetType(b2_staticBody);
-    }
+bool PhysicsBox2DBody::isDynamic() {
+    return _body->GetType() == b2_dynamicBody;
 }
 
 void PhysicsBox2DBody::setGravity(bool inGravity) {
@@ -99,7 +96,7 @@ cocos2d::Vec2 PhysicsBox2DBody::getVelocity() {
 
 void PhysicsBox2DBody::setPosition(const cocos2d::Vec2 &vel) {
     auto transform = _body->GetTransform();
-    _body->SetTransform(b2Vec2(vel.x, vel.y), transform.q.GetAngle());
+    _body->SetTransform(b2Vec2(vel.x/BOX2D_PTM_RATIO, vel.y/BOX2D_PTM_RATIO), transform.q.GetAngle());
 }
 
 void PhysicsBox2DBody::movePosition(const cocos2d::Vec2 &vel) {
@@ -114,7 +111,7 @@ void PhysicsBox2DBody::movePosition(const cocos2d::Vec2 &vel) {
 
 cocos2d::Vec2 PhysicsBox2DBody::getPosition() {
     auto pos = _body->GetTransform().p;
-    return cocos2d::Vec2(pos.x, pos.y);
+    return cocos2d::Vec2(pos.x * BOX2D_PTM_RATIO, pos.y * BOX2D_PTM_RATIO);
 }
 
 bool PhysicsBox2DBody::isSupportCCD() {
@@ -139,6 +136,14 @@ void PhysicsBox2DBody::setDeleteFlag(bool isDeleted) {
 
 bool PhysicsBox2DBody::isDeleted() {
     return deleteFlag;
+}
+
+const std::string& PhysicsBox2DBody::getName() {
+    return _name;
+}
+
+void PhysicsBox2DBody::setName(const std::string& name) {
+    _name = name;
 }
 
 //PhysicsBox2DContact
@@ -240,16 +245,21 @@ void PhysicsBox2DWorld::update(float dt) {
         // Move sprite
         if (b->GetUserData() != NULL) {
             cocos2d::Sprite *sprite = (cocos2d::Sprite *)b->GetUserData();
-            auto pos = b->GetPosition();
-            sprite->setPosition(pos.x * BOX2D_PTM_RATIO, pos.y * BOX2D_PTM_RATIO);
-            sprite->setRotation(-1 * CC_RADIANS_TO_DEGREES(b->GetAngle()));
+            if (physicsBody->isDynamic()) {
+                auto pos = b->GetPosition();
+                sprite->setPosition(pos.x * BOX2D_PTM_RATIO, pos.y * BOX2D_PTM_RATIO);
+                sprite->setRotation(-1 * CC_RADIANS_TO_DEGREES(b->GetAngle()));
+            } else {
+                auto pos = sprite->getPosition();
+                physicsBody->setPosition(pos);
+            }
         }
         ++it;
     }
 }
 
 
-Physics2DBody* PhysicsBox2DWorld::addBody(cocos2d::Sprite* sprite, const std::string &bodyName) {
+Physics2DBody* PhysicsBox2DWorld::addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string &bodyPrototype) {
     auto loader = GB2ShapeCache::sharedGB2ShapeCache();
     auto pos = sprite->getPosition();
     b2Body *body;
@@ -259,17 +269,19 @@ Physics2DBody* PhysicsBox2DWorld::addBody(cocos2d::Sprite* sprite, const std::st
     bodyDef.userData = sprite;
     bodyDef.fixedRotation = true;
     body = _world->CreateBody(&bodyDef);
-    loader->addFixturesToBody(body, bodyName);
+    loader->addFixturesToBody(body, bodyPrototype);
     
     auto pBody = std::make_shared<PhysicsBox2DBody>();
     pBody->setBody(body);
     pBody->setSprite(sprite);
     
     _bodyMap[body] = pBody;
+    _bodyMapByName[bodyName] = pBody;
     return pBody.get();
 }
 
 Physics2DBody* PhysicsBox2DWorld::addBodyBox(cocos2d::Sprite* sprite,
+                          const std::string &bodyName,
                           const cocos2d::Size& size,
                           cocos2d::PhysicsMaterial material) {
     auto pos = sprite->getPosition();
@@ -300,10 +312,12 @@ Physics2DBody* PhysicsBox2DWorld::addBodyBox(cocos2d::Sprite* sprite,
     pBody->setSprite(sprite);
     
     _bodyMap[body] = pBody;
+    _bodyMapByName[bodyName] = pBody;
     return pBody.get();
 }
 
 Physics2DBody* PhysicsBox2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
+                             const std::string &bodyName,
                              float radius,
                              cocos2d::PhysicsMaterial material)  {
     auto pos = sprite->getPosition();
@@ -335,11 +349,20 @@ Physics2DBody* PhysicsBox2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
     pBody->setSprite(sprite);
     
     _bodyMap[body] = pBody;
+    _bodyMapByName[bodyName] = pBody;
     return pBody.get();
 }
 
 void PhysicsBox2DWorld::removeBody(Physics2DBody *body) {
     ((PhysicsBox2DBody* ) body)->setDeleteFlag(true);
+}
+
+Physics2DBody* PhysicsBox2DWorld::findBody(const std::string& name) {
+    if (_bodyMapByName.count(name) != 0) {
+        return _bodyMapByName[name].get();
+    }
+    
+    return nullptr;
 }
 
 void PhysicsBox2DWorld::loadBodies(const std::string &plist) {
@@ -357,7 +380,11 @@ void PhysicsBox2DWorld::drawDebug() {
 }
 
 Physics2DBody* PhysicsBox2DWorld::findBody(b2Body *b2Body) {
-    return _bodyMap[b2Body].get();
+    if (_bodyMap.count(b2Body) != 0) {
+        return _bodyMap[b2Body].get();
+    }
+    
+    return nullptr;
 }
 
 END_GAME_NS

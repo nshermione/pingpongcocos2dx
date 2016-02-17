@@ -11,9 +11,10 @@
 
 USING_NS_CC;
 
-void Table::init(Sprite* sprite) {
+void Table::init(Sprite* sprite, const std::string& name) {
     setSprite(sprite);
+    setName(name);
     auto world = Physics::getWorld2D();
-    auto body = world->addBody(sprite, "table");
+    auto body = world->addBody(sprite, name, "table");
     body->setDensity(false);
 }

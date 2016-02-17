@@ -16,7 +16,7 @@ USING_NS_GAME;
 
 class Block: public GameObject {
 public:
-    void init(cocos2d::Sprite *sprite);
+    void init(cocos2d::Sprite *sprite, const std::string& name);
     
 protected:
 };

@@ -32,10 +32,10 @@ Ball::~Ball() {
     SAFE_DELETE_POINTER(physicsBody);
 }
 
-bool Ball::init(cocos2d::Sprite *sprite) {
+bool Ball::init(cocos2d::Sprite *sprite, const std::string& name) {
     reset();
     setSprite(sprite);
-    
+    setName(name);
     // schedulers
     sprite->schedule(CC_CALLBACK_1(Ball::controlVelocity, this), 0.016f, "velocityController");
     
@@ -57,7 +57,7 @@ void Ball::initPhysics() {
     auto sprite = getSprite();
     auto world = Physics::getWorld2D();
     
-    physicsBody = world->addBody(sprite, "ball");
+    physicsBody = world->addBody(sprite, getName(), "ball");
     
     //set the body isn't affected by the physics world's gravitational force
     physicsBody->setDynamic(true);

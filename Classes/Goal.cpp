@@ -12,11 +12,13 @@
 USING_NS_CC;
 using namespace CocosDenshion;
 
-void Goal::init(cocos2d::Sprite *sprite) {
+void Goal::init(cocos2d::Sprite *sprite, const std::string& name) {
     setSprite(sprite);
+    setName(name);
     
     auto world = Physics::getWorld2D();
     auto physicsBody = world->addBodyBox(sprite,
+                                         name,
                                          sprite->getContentSize(),
                                          PhysicsMaterial(0.1f, 1.0f, 1.0f));
     

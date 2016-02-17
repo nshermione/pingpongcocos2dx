@@ -16,7 +16,7 @@ USING_NS_GAME;
 
 class Table: public GameObject {
 public:
-    void init(cocos2d::Sprite* sprites);
+    void init(cocos2d::Sprite* sprites, const std::string& name);
     
 protected:
 };

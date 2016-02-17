@@ -20,7 +20,7 @@ class Ball: public GameObject {
 public:
     Ball();
     ~Ball();
-    bool init(cocos2d::Sprite* sprite);
+    bool init(cocos2d::Sprite* sprite, const std::string& name);
     static std::string NAME;
     
 protected:

@@ -14,8 +14,16 @@ bool Play::init(std::string csbFile)
     
     bindButton("menuButton", CC_CALLBACK_0(Play::goToPauseScene, this));
     
+    // random team
+    std::string playerTeam = "purple";
+    std::string enemyTeam = "blue";
+    if (random(0, 1) == 0) {
+        playerTeam = "blue";
+        enemyTeam = "purple";
+    }
+    
     // set player name
-    auto playerLabel = (ui::Text *) _rootNode->getChildByName("purpleName");
+    auto playerLabel = (ui::Text *) _rootNode->getChildByName(playerTeam + "Name");
     auto playerName = Player::getInstance()->getName();
     playerLabel->setString(playerName);
     
@@ -25,34 +33,34 @@ bool Play::init(std::string csbFile)
     
     // init table
     auto tableSprite = (Sprite *) _rootNode->getChildByName("bg");
-    table.init(tableSprite);
+    table.init(tableSprite, "bg" );
     
     // init ball
     auto ballSprite = (Sprite *) _rootNode->getChildByName("ball");
-    ball.init(ballSprite);
+    ball.init(ballSprite, "ball" );
     
     // init blocks
-    auto block = (Sprite *) _rootNode->getChildByName("purbleBlock");
-    purpleBlock.init(block);
+    auto block = (Sprite *) _rootNode->getChildByName(playerTeam + "Block");
+    playerBlock.init(block, playerTeam + "Block");
     
-    block = (Sprite *) _rootNode->getChildByName("blueBlock");
-    blueBlock.init(block);
+    block = (Sprite *) _rootNode->getChildByName(enemyTeam + "Block");
+    enemyBlock.init(block, enemyTeam + "Block");
     
     // init chumps
     auto botEdge = (Sprite *) _rootNode->getChildByName("botEdge");
     auto topEdge = (Sprite *) _rootNode->getChildByName("topEdge");
-    auto chump = (Sprite *) _rootNode->getChildByName("purpleChump");
-    purpleChump.init(chump, topEdge, botEdge, false);
+    auto chump = (Sprite *) _rootNode->getChildByName(playerTeam + "Chump");
+    playerChump.init(chump, playerTeam + "Chump", topEdge, botEdge, playerTeam=="blue", true);
     
-    chump = (Sprite *) _rootNode->getChildByName("blueChump");
-    blueChump.init(chump, topEdge, botEdge, true);
+    chump = (Sprite *) _rootNode->getChildByName(enemyTeam + "Chump");
+    enemyChump.init(chump, playerTeam + "Chump", topEdge, botEdge, enemyTeam=="blue", false);
     
     // init goals
-    auto goal = (Sprite *) _rootNode->getChildByName("purpleGoal");
-    purpleGoal.init(goal);
+    auto goal = (Sprite *) _rootNode->getChildByName(playerTeam + "Goal");
+    playerGoal.init(goal, playerTeam + "Goal");
     
-    goal = (Sprite *) _rootNode->getChildByName("blueGoal");
-    blueGoal.init(goal);
+    goal = (Sprite *) _rootNode->getChildByName(enemyTeam + "Goal");
+    enemyGoal.init(goal, enemyTeam + "Goal");
     
     return true;
 }

@@ -14,7 +14,8 @@ START_GAME_NS
 
 // PhysicsCocos2DBody
 
-PhysicsCocos2DBody::PhysicsCocos2DBody() {
+PhysicsCocos2DBody::PhysicsCocos2DBody()
+:_name("") {
     
 }
 
@@ -72,9 +73,8 @@ void PhysicsCocos2DBody::setDynamic(bool isDynamic){
     _body->setDynamic(isDynamic);
 }
 
-void PhysicsCocos2DBody::setKinematic(bool isKinematic) {
-    // kinematic currently is not supported by cocos2d-x
-    _body->setDynamic(isKinematic);
+bool PhysicsCocos2DBody::isDynamic() {
+    return _body->isDynamic();
 }
 
 void PhysicsCocos2DBody::setGravity(bool inGravity){
@@ -110,6 +110,14 @@ void PhysicsCocos2DBody::enableCCD() {
     // do nothing because cocos2dx currently (v3.8) doesn't support continuous collision detection
 }
 
+const std::string& PhysicsCocos2DBody::getName() {
+    return _name;
+}
+
+void PhysicsCocos2DBody::setName(const std::string& name) {
+    _name = name;
+}
+
 // PhysicsCocos2DWorld
 
 PhysicsCocos2DWorld::PhysicsCocos2DWorld() {
@@ -117,10 +125,7 @@ PhysicsCocos2DWorld::PhysicsCocos2DWorld() {
 }
 
 PhysicsCocos2DWorld::~PhysicsCocos2DWorld() {
-    for (auto it = _bodies.begin(); it != _bodies.end(); ++it) {
-        auto body = *it;
-        SAFE_DELETE_POINTER(body);
-    }
+
 }
 
 void PhysicsCocos2DWorld::init(cocos2d::Scene *scene, float gravityX, float gravityY) {
@@ -131,6 +136,7 @@ void PhysicsCocos2DWorld::init(cocos2d::Scene *scene, float gravityX, float grav
 }
 
 Physics2DBody* PhysicsCocos2DWorld::addBodyBox(cocos2d::Sprite* sprite,
+                                                      const std::string &bodyName,
                                                       const Size& size,
                                                       PhysicsMaterial material) {
 
@@ -138,15 +144,17 @@ Physics2DBody* PhysicsCocos2DWorld::addBodyBox(cocos2d::Sprite* sprite,
     physicsBody->setDynamic(false);
     sprite->setPhysicsBody(physicsBody);
     
-    PhysicsCocos2DBody *pBody = new PhysicsCocos2DBody();
+    auto pBody = std::make_shared<PhysicsCocos2DBody>();
     pBody->setBody(physicsBody);
     pBody->setSprite(sprite);
     
     _bodies.push_back(pBody);
-    return pBody;
+    _bodyMapByName[bodyName] = pBody;
+    return pBody.get();
 }
 
 Physics2DBody* PhysicsCocos2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
+                                               const std::string &bodyName,
                                                float radius,
                                                PhysicsMaterial material) {
     
@@ -154,25 +162,35 @@ Physics2DBody* PhysicsCocos2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
     physicsBody->setDynamic(false);
     sprite->setPhysicsBody(physicsBody);
     
-    PhysicsCocos2DBody *pBody = new PhysicsCocos2DBody();
+    auto pBody = std::make_shared<PhysicsCocos2DBody>();
     pBody->setBody(physicsBody);
     pBody->setSprite(sprite);
     
     _bodies.push_back(pBody);
-    return pBody;
+    _bodyMapByName[bodyName] = pBody;
+    return pBody.get();
 }
 
-Physics2DBody* PhysicsCocos2DWorld::addBody(cocos2d::Sprite* sprite, const std::string &bodyName) {
+Physics2DBody* PhysicsCocos2DWorld::addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string &bodyPrototype) {
     auto loader = PhysicsShapeCache::getInstance();
-    auto body = loader->createBodyWithName(bodyName);
+    auto body = loader->createBodyWithName(bodyPrototype);
     
     sprite->setPhysicsBody(body);
-    PhysicsCocos2DBody *pBody = new PhysicsCocos2DBody();
+    auto pBody = std::make_shared<PhysicsCocos2DBody>();
     pBody->setBody(body);
     pBody->setSprite(sprite);
     
     _bodies.push_back(pBody);
-    return pBody;
+    _bodyMapByName[bodyName] = pBody;
+    return pBody.get();
+}
+
+Physics2DBody* PhysicsCocos2DWorld::findBody(const std::string& name) {
+    if (_bodyMapByName.count(name) != 0) {
+        return _bodyMapByName[name].get();
+    }
+    
+    return nullptr;
 }
 
 void PhysicsCocos2DWorld::removeBody(Physics2DBody *body) {
