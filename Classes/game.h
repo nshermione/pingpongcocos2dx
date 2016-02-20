@@ -15,6 +15,8 @@
 
 #include "GameObject.h"
 
+#include "GameObjectPool.h"
+
 #include "GameSettings.h"
 
 #include "Physics2D.h"
@@ -28,6 +30,8 @@
 #include "CSBHelper.h"
 
 #include "BaseScene.h"
+
+#include "Popup.h"
 
 
 #endif /* game_h */

@@ -26,6 +26,7 @@ void Chump::init(cocos2d::Sprite *sprite,
                  cocos2d::Sprite *bottomEdge,
                  bool flipped,
                  bool isPlayed) {
+    GameObject::init(name);
     _topEdge = topEdge;
     _botEdge = bottomEdge;
     

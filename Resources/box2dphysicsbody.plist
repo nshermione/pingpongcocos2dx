@@ -209,10 +209,20 @@
 						<key>polygons</key>
 						<array>
 							<array>	
+								<string>{ -1.000,207.000 }</string>	
+								<string>{ 27.070,236.043 }</string>	
+								<string>{ -29.000,236.000 }</string>
+							</array>
+							<array>	
+								<string>{ -568.000,236.000 }</string>	
+								<string>{ 27.070,236.043 }</string>	
+								<string>{ 567.000,320.000 }</string>	
+								<string>{ -568.000,320.000 }</string>
+							</array>
+							<array>	
 								<string>{ 569.000,236.000 }</string>	
 								<string>{ 567.000,320.000 }</string>	
-								<string>{ -568.000,320.000 }</string>	
-								<string>{ -566.000,240.000 }</string>
+								<string>{ 27.070,236.043 }</string>
 							</array>
 						</array>
                     </dict>
@@ -230,10 +240,20 @@
 						<key>polygons</key>
 						<array>
 							<array>	
-								<string>{ 571.000,-365.000 }</string>	
+								<string>{ 0.000,-253.000 }</string>	
+								<string>{ -27.413,-281.276 }</string>	
+								<string>{ 28.000,-281.000 }</string>
+							</array>
+							<array>	
 								<string>{ 569.000,-281.000 }</string>	
+								<string>{ -27.413,-281.276 }</string>	
+								<string>{ -564.000,-361.000 }</string>	
+								<string>{ 571.000,-365.000 }</string>
+							</array>
+							<array>	
 								<string>{ -566.000,-281.000 }</string>	
-								<string>{ -564.000,-361.000 }</string>
+								<string>{ -564.000,-361.000 }</string>	
+								<string>{ -27.413,-281.276 }</string>
 							</array>
 						</array>
                     </dict>

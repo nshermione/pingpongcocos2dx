@@ -151,8 +151,8 @@ void PhysicsBox2DBody::setName(const std::string& name) {
 PhysicsBox2DContact::PhysicsBox2DContact(PhysicsBox2DWorld* world,
                                          b2Contact* contact,
                                          Physics2DBody* target) {
-    bodyA = world->findBody(contact->GetFixtureA()->GetBody());
-    bodyB = world->findBody(contact->GetFixtureB()->GetBody());
+    bodyA = world->findBody(contact->GetFixtureA()->GetBody()).get();
+    bodyB = world->findBody(contact->GetFixtureB()->GetBody()).get();
     changeTarget(target);
 }
 
@@ -237,8 +237,9 @@ void PhysicsBox2DWorld::update(float dt) {
         // Remove deleted bodies
         if (physicsBody->isDeleted() && b->GetUserData() != NULL) {
             cocos2d::Sprite *sprite = (cocos2d::Sprite *)b->GetUserData();
-            sprite->removeFromParentAndCleanup(true);
+            sprite->removeFromParentAndCleanup(false);
             _bodyMap.erase(it++);
+            _bodyMapByName.erase(physicsBody->getName());
             _world->DestroyBody(b);
             continue;
         }
@@ -259,7 +260,7 @@ void PhysicsBox2DWorld::update(float dt) {
 }
 
 
-Physics2DBody* PhysicsBox2DWorld::addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string &bodyPrototype) {
+std::shared_ptr<Physics2DBody> PhysicsBox2DWorld::addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string &bodyPrototype) {
     auto loader = GB2ShapeCache::sharedGB2ShapeCache();
     auto pos = sprite->getPosition();
     b2Body *body;
@@ -274,13 +275,14 @@ Physics2DBody* PhysicsBox2DWorld::addBody(cocos2d::Sprite* sprite, const std::st
     auto pBody = std::make_shared<PhysicsBox2DBody>();
     pBody->setBody(body);
     pBody->setSprite(sprite);
+    pBody->setName(bodyName);
     
     _bodyMap[body] = pBody;
     _bodyMapByName[bodyName] = pBody;
-    return pBody.get();
+    return pBody;
 }
 
-Physics2DBody* PhysicsBox2DWorld::addBodyBox(cocos2d::Sprite* sprite,
+std::shared_ptr<Physics2DBody> PhysicsBox2DWorld::addBodyBox(cocos2d::Sprite* sprite,
                           const std::string &bodyName,
                           const cocos2d::Size& size,
                           cocos2d::PhysicsMaterial material) {
@@ -310,13 +312,14 @@ Physics2DBody* PhysicsBox2DWorld::addBodyBox(cocos2d::Sprite* sprite,
     auto pBody = std::make_shared<PhysicsBox2DBody>();
     pBody->setBody(body);
     pBody->setSprite(sprite);
+    pBody->setName(bodyName);
     
     _bodyMap[body] = pBody;
     _bodyMapByName[bodyName] = pBody;
-    return pBody.get();
+    return pBody;
 }
 
-Physics2DBody* PhysicsBox2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
+std::shared_ptr<Physics2DBody> PhysicsBox2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
                              const std::string &bodyName,
                              float radius,
                              cocos2d::PhysicsMaterial material)  {
@@ -347,19 +350,20 @@ Physics2DBody* PhysicsBox2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
     auto pBody = std::make_shared<PhysicsBox2DBody>();
     pBody->setBody(body);
     pBody->setSprite(sprite);
+    pBody->setName(bodyName);
     
     _bodyMap[body] = pBody;
     _bodyMapByName[bodyName] = pBody;
-    return pBody.get();
+    return pBody;
 }
 
 void PhysicsBox2DWorld::removeBody(Physics2DBody *body) {
     ((PhysicsBox2DBody* ) body)->setDeleteFlag(true);
 }
 
-Physics2DBody* PhysicsBox2DWorld::findBody(const std::string& name) {
+std::shared_ptr<Physics2DBody> PhysicsBox2DWorld::findBody(const std::string& name) {
     if (_bodyMapByName.count(name) != 0) {
-        return _bodyMapByName[name].get();
+        return _bodyMapByName[name];
     }
     
     return nullptr;
@@ -379,9 +383,9 @@ void PhysicsBox2DWorld::drawDebug() {
     
 }
 
-Physics2DBody* PhysicsBox2DWorld::findBody(b2Body *b2Body) {
+std::shared_ptr<Physics2DBody> PhysicsBox2DWorld::findBody(b2Body *b2Body) {
     if (_bodyMap.count(b2Body) != 0) {
-        return _bodyMap[b2Body].get();
+        return _bodyMap[b2Body];
     }
     
     return nullptr;

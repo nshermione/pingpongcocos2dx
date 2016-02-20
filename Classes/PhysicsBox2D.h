@@ -62,17 +62,17 @@ public:
     PhysicsBox2DWorld();
     ~PhysicsBox2DWorld();
     void init(cocos2d::Scene *scene, float gravityX, float gravityY);
-    Physics2DBody* addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string &bodyPrototype);
-    Physics2DBody* addBodyBox(cocos2d::Sprite* sprite,
+    std::shared_ptr<Physics2DBody> addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string &bodyPrototype);
+    std::shared_ptr<Physics2DBody> addBodyBox(cocos2d::Sprite* sprite,
                                       const std::string &bodyName,
                                       const cocos2d::Size& size,
                                       cocos2d::PhysicsMaterial material);
-    Physics2DBody* addBodyCircle(cocos2d::Sprite* sprite,
+    std::shared_ptr<Physics2DBody>addBodyCircle(cocos2d::Sprite* sprite,
                                          const std::string &bodyName, 
                                          float radius,
                                          cocos2d::PhysicsMaterial material);
-    Physics2DBody* findBody(const std::string& name);
-    Physics2DBody* findBody(b2Body *b2Body);
+    std::shared_ptr<Physics2DBody> findBody(const std::string& name);
+    std::shared_ptr<Physics2DBody> findBody(b2Body *b2Body);
     void removeBody(Physics2DBody *body);
     void loadBodies(const std::string &plist);
     void registerContactListener(Physics2DContactListener* listener);

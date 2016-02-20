@@ -29,10 +29,11 @@ Ball::Ball()
 }
 
 Ball::~Ball() {
-    SAFE_DELETE_POINTER(physicsBody);
+    
 }
 
 bool Ball::init(cocos2d::Sprite *sprite, const std::string& name) {
+    GameObject::init(name);
     reset();
     setSprite(sprite);
     setName(name);

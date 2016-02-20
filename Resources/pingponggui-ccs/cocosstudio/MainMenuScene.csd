@@ -47,7 +47,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="settingButton" ActionTag="-809109867" Tag="8" IconVisible="False" LeftMargin="842.9999" RightMargin="83.0001" TopMargin="253.2680" BottomMargin="326.7320" TouchEnable="True" FontSize="36" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="117" Scale9Height="38" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="settingButton" ActionTag="-809109867" VisibleForFrame="False" Tag="8" IconVisible="False" LeftMargin="843.0001" RightMargin="82.9999" TopMargin="342.0908" BottomMargin="237.9092" TouchEnable="True" FontSize="36" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="117" Scale9Height="38" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="210.0000" Y="60.0000" />
             <Children>
               <AbstractNodeData Name="Text_2" ActionTag="-1609834279" Tag="79" IconVisible="False" LeftMargin="47.6467" RightMargin="47.3533" TopMargin="9.8676" BottomMargin="6.1324" FontSize="36" LabelText="Settings" OutlineSize="3" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -64,10 +64,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="947.9999" Y="356.7320" />
+            <Position X="948.0001" Y="267.9092" />
             <Scale ScaleX="1.0000" ScaleY="1.0760" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8345" Y="0.5574" />
+            <PrePosition X="0.8345" Y="0.4186" />
             <PreSize X="0.1849" Y="0.0938" />
             <FontResource Type="Normal" Path="Marker Felt.ttf" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
@@ -77,7 +77,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="quitButton" ActionTag="-500367959" Tag="9" IconVisible="False" LeftMargin="843.0000" RightMargin="83.0000" TopMargin="382.5144" BottomMargin="197.4856" TouchEnable="True" FontSize="36" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="141" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="quitButton" ActionTag="-500367959" Tag="9" IconVisible="False" LeftMargin="843.0000" RightMargin="83.0000" TopMargin="344.3986" BottomMargin="235.6014" TouchEnable="True" FontSize="36" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="141" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="210.0000" Y="60.0000" />
             <Children>
               <AbstractNodeData Name="Text_3" ActionTag="969903253" Tag="80" IconVisible="False" LeftMargin="73.6436" RightMargin="73.3564" TopMargin="6.9076" BottomMargin="9.0924" FontSize="36" LabelText="Quit" OutlineSize="3" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -94,10 +94,40 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="948.0000" Y="227.4856" />
+            <Position X="948.0000" Y="265.6014" />
             <Scale ScaleX="1.0000" ScaleY="1.0760" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8345" Y="0.3554" />
+            <PrePosition X="0.8345" Y="0.4150" />
+            <PreSize X="0.1849" Y="0.0938" />
+            <FontResource Type="Normal" Path="Marker Felt.ttf" Plist="" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Normal" Path="button_bg_disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="button_bg_pressed.png" Plist="" />
+            <NormalFileData Type="Normal" Path="button_bg.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="storeButton" ActionTag="-1678808087" Tag="53" IconVisible="False" LeftMargin="843.0000" RightMargin="83.0000" TopMargin="230.5440" BottomMargin="349.4560" TouchEnable="True" FontSize="36" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="117" Scale9Height="38" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="210.0000" Y="60.0000" />
+            <Children>
+              <AbstractNodeData Name="Text_2" ActionTag="-714988447" Tag="54" IconVisible="False" LeftMargin="65.1467" RightMargin="64.8533" TopMargin="9.8676" BottomMargin="6.1324" FontSize="36" LabelText="Store" OutlineSize="3" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="80.0000" Y="44.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="105.1467" Y="28.1324" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5007" Y="0.4689" />
+                <PreSize X="0.3810" Y="0.7333" />
+                <FontResource Type="Normal" Path="Marker Felt.ttf" Plist="" />
+                <OutlineColor A="255" R="56" G="45" B="19" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="948.0000" Y="379.4560" />
+            <Scale ScaleX="1.0000" ScaleY="1.0760" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8345" Y="0.5929" />
             <PreSize X="0.1849" Y="0.0938" />
             <FontResource Type="Normal" Path="Marker Felt.ttf" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />

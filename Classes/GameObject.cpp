@@ -7,6 +7,7 @@
 //
 
 #include "GameObject.h"
+#include "GameObjectPool.h"
 
 START_GAME_NS
 
@@ -17,9 +18,16 @@ GameObject::GameObject()
 }
 
 GameObject::~GameObject() {
-    
 }
 
+void GameObject::init(std::string name) {
+    setName(name);
+    GameObjectPool::getInstance()->add(this);
+}
+
+void GameObject::release() {
+    GameObjectPool::getInstance()->removeAndCleanup(this, true);
+}
 
 const std::string& GameObject::getName() {
     return _name;

@@ -8,11 +8,13 @@
 
 #include "Goal.h"
 #include "Physics.h"
+#include "EndRoundPopup.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
 
 void Goal::init(cocos2d::Sprite *sprite, const std::string& name) {
+    GameObject::init(name);
     setSprite(sprite);
     setName(name);
     
@@ -27,7 +29,7 @@ void Goal::init(cocos2d::Sprite *sprite, const std::string& name) {
     physicsBody->setContactTestBitmask(0xFFFFFFFF);
     
     // collision check
-    auto listener = new Physics2DContactListener(physicsBody);
+    auto listener = new Physics2DContactListener(physicsBody.get());
     listener->onContactBegin = CC_CALLBACK_1(Goal::onContactBegin, this);
     world->registerContactListener(listener);
 }
@@ -51,6 +53,15 @@ bool Goal::onContactBegin(std::shared_ptr<Physics2DContact> contact) {
         // play sound yay
         auto audio = SimpleAudioEngine::getInstance();
         audio->playEffect("yay.wav");
+        
+        auto openEndRoundPopup = [this] (float dt) {
+            auto popup = EndRoundPopup::create();
+            auto scene = getSprite()->getScene();
+            popup->open(scene);
+            popup->start(50, 20);
+        };
+        
+        getSprite()->scheduleOnce(openEndRoundPopup, 2, "openEndRoundPopup");
         
         return true;
     }

@@ -7,6 +7,7 @@
 #include "Block.h"
 #include "Chump.h"
 #include "Goal.h"
+#include "Portal.h"
 
 
 
@@ -42,6 +43,9 @@ private:
     
     Goal playerGoal;
     Goal enemyGoal;
+    
+    Portal playerPortal;
+    Portal enemyPortal;
     
 };
 

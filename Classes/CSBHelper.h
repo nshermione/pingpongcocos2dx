@@ -10,7 +10,7 @@
 #define CSBHelper_h
 
 #include "cocos2d.h"
-
+#include "ui/CocosGUI.h"
 #include "GameMacro.h"
 
 START_GAME_NS

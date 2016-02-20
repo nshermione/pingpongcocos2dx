@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="Store" Type="Scene" ID="c2b71ebf-e43c-436b-97b9-f7ef1b48109c" Version="3.10.0.0" />
+  <PropertyGroup Name="StoreScene" Type="Scene" ID="c2b71ebf-e43c-436b-97b9-f7ef1b48109c" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -27,13 +27,23 @@
             <FileData Type="Normal" Path="store_bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="itemListView" ActionTag="414551999" Tag="29" IconVisible="False" LeftMargin="186.0004" RightMargin="149.9996" TopMargin="89.6107" BottomMargin="50.3893" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="30" RightEage="30" TopEage="30" BottomEage="3" Scale9OriginX="-30" Scale9OriginY="-3" Scale9Width="60" Scale9Height="33" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="20" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
+          <AbstractNodeData Name="itemListView" ActionTag="414551999" Tag="29" IconVisible="False" LeftMargin="185.6474" RightMargin="150.3526" TopMargin="90.5396" BottomMargin="49.4604" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="30" RightEage="30" TopEage="30" BottomEage="3" Scale9OriginX="-30" Scale9OriginY="-3" Scale9Width="60" Scale9Height="33" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="20" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
             <Size X="800.0000" Y="500.0000" />
             <Children>
-              <AbstractNodeData Name="item" ActionTag="-2061586406" Tag="45" IconVisible="False" BottomMargin="400.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Enable="True" LeftEage="42" RightEage="42" TopEage="10" BottomEage="10" Scale9OriginX="42" Scale9OriginY="10" Scale9Width="44" Scale9Height="13" ctype="PanelObjectData">
+              <AbstractNodeData Name="item" ActionTag="-2061586406" Tag="45" IconVisible="False" BottomMargin="400.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="42" RightEage="42" TopEage="10" BottomEage="10" Scale9OriginX="-42" Scale9OriginY="-10" Scale9Width="84" Scale9Height="20" ctype="PanelObjectData">
                 <Size X="800.0000" Y="100.0000" />
                 <Children>
-                  <AbstractNodeData Name="avatar" ActionTag="2050168661" Tag="62" IconVisible="False" LeftMargin="10.5604" RightMargin="709.4396" TopMargin="9.0000" BottomMargin="11.0000" Scale9Enable="True" LeftEage="10" RightEage="10" TopEage="2" BottomEage="2" Scale9OriginX="10" Scale9OriginY="2" Scale9Width="12" Scale9Height="4" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Image_3" ActionTag="-575618268" Tag="57" IconVisible="False" LeftEage="42" RightEage="42" TopEage="10" BottomEage="10" Scale9OriginX="42" Scale9OriginY="10" Scale9Width="716" Scale9Height="80" ctype="ImageViewObjectData">
+                    <Size X="800.0000" Y="100.0000" />
+                    <AnchorPoint />
+                    <Position />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="store_bg_listview.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="avatar" ActionTag="2050168661" Tag="62" IconVisible="False" LeftMargin="10.5604" RightMargin="709.4396" TopMargin="9.0000" BottomMargin="11.0000" LeftEage="10" RightEage="10" TopEage="2" BottomEage="2" Scale9OriginX="10" Scale9OriginY="2" Scale9Width="580" Scale9Height="76" ctype="ImageViewObjectData">
                     <Size X="80.0000" Y="80.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="50.5604" Y="51.0000" />
@@ -43,9 +53,19 @@
                     <PreSize X="0.1000" Y="0.8000" />
                     <FileData Type="Normal" Path="item_bg.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="itemDetail" ActionTag="1491639158" Tag="68" IconVisible="False" LeftMargin="102.9600" RightMargin="112.0400" TopMargin="9.0000" BottomMargin="11.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Enable="True" LeftEage="10" RightEage="10" TopEage="2" BottomEage="2" Scale9OriginX="10" Scale9OriginY="2" Scale9Width="12" Scale9Height="4" ctype="PanelObjectData">
+                  <AbstractNodeData Name="itemDetail" ActionTag="1491639158" Tag="68" IconVisible="False" LeftMargin="102.9600" RightMargin="112.0400" TopMargin="9.0000" BottomMargin="11.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="10" RightEage="10" TopEage="2" BottomEage="2" Scale9OriginX="-10" Scale9OriginY="-2" Scale9Width="20" Scale9Height="4" ctype="PanelObjectData">
                     <Size X="585.0000" Y="80.0000" />
                     <Children>
+                      <AbstractNodeData Name="Image_2" ActionTag="-975182419" Tag="56" IconVisible="False" LeftMargin="-4.2540" RightMargin="-10.7460" TopMargin="0.0578" BottomMargin="-0.0578" LeftEage="10" RightEage="10" TopEage="2" BottomEage="2" Scale9OriginX="10" Scale9OriginY="2" Scale9Width="580" Scale9Height="76" ctype="ImageViewObjectData">
+                        <Size X="600.0000" Y="80.0000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="295.7460" Y="39.9422" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5055" Y="0.4993" />
+                        <PreSize X="1.0256" Y="1.0000" />
+                        <FileData Type="Normal" Path="item_bg.png" Plist="" />
+                      </AbstractNodeData>
                       <AbstractNodeData Name="description123" ActionTag="-2019268341" Tag="96" IconVisible="False" LeftMargin="12.9120" RightMargin="465.0880" TopMargin="7.4738" BottomMargin="45.5262" FontSize="24" LabelText="Description:" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="107.0000" Y="27.0000" />
                         <AnchorPoint ScaleY="0.5000" />
@@ -99,7 +119,6 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1287" Y="0.5100" />
                     <PreSize X="0.7312" Y="0.8000" />
-                    <FileData Type="Normal" Path="item_bg.png" Plist="" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
@@ -159,7 +178,6 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition Y="0.8000" />
                 <PreSize X="1.0000" Y="0.2000" />
-                <FileData Type="Normal" Path="store_bg_listview.png" Plist="" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
@@ -167,10 +185,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="586.0004" Y="300.3893" />
+            <Position X="585.6474" Y="299.4604" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5158" Y="0.4694" />
+            <PrePosition X="0.5155" Y="0.4679" />
             <PreSize X="0.7042" Y="0.7813" />
             <SingleColor A="255" R="169" G="129" B="24" />
             <FirstColor A="255" R="150" G="150" B="255" />
@@ -189,9 +207,19 @@
             <OutlineColor A="255" R="57" G="43" B="9" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="moneyBar" ActionTag="1556129542" Tag="154" IconVisible="False" LeftMargin="796.7271" RightMargin="157.2729" TopMargin="590.0607" BottomMargin="9.9393" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="60" RightEage="60" TopEage="13" BottomEage="13" Scale9OriginX="60" Scale9OriginY="13" Scale9Width="62" Scale9Height="14" ctype="PanelObjectData">
+          <AbstractNodeData Name="moneyBar" ActionTag="1556129542" Tag="154" IconVisible="False" LeftMargin="796.7271" RightMargin="157.2729" TopMargin="590.0607" BottomMargin="9.9393" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="60" RightEage="60" TopEage="13" BottomEage="13" Scale9OriginX="-60" Scale9OriginY="-13" Scale9Width="120" Scale9Height="26" ctype="PanelObjectData">
             <Size X="182.0000" Y="40.0000" />
             <Children>
+              <AbstractNodeData Name="Image_1" ActionTag="-1441650784" Tag="55" IconVisible="False" LeftEage="60" RightEage="60" TopEage="13" BottomEage="13" Scale9OriginX="60" Scale9OriginY="13" Scale9Width="62" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="182.0000" Y="40.0000" />
+                <AnchorPoint />
+                <Position />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="1.0000" Y="1.0000" />
+                <FileData Type="Normal" Path="money_bar.png" Plist="" />
+              </AbstractNodeData>
               <AbstractNodeData Name="Image_14" ActionTag="-639538816" Tag="155" IconVisible="False" LeftMargin="15.4820" RightMargin="149.5180" TopMargin="7.9011" BottomMargin="9.0989" LeftEage="5" RightEage="5" TopEage="7" BottomEage="7" Scale9OriginX="5" Scale9OriginY="7" Scale9Width="7" Scale9Height="9" ctype="ImageViewObjectData">
                 <Size X="17.0000" Y="23.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -221,7 +249,6 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.7013" Y="0.0155" />
             <PreSize X="0.1602" Y="0.0625" />
-            <FileData Type="Normal" Path="money_bar.png" Plist="" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />

@@ -118,6 +118,11 @@ void PhysicsCocos2DBody::setName(const std::string& name) {
     _name = name;
 }
 
+bool PhysicsCocos2DBody::isDeleted() {
+    // TODO: will implement later
+    return false;
+}
+
 // PhysicsCocos2DWorld
 
 PhysicsCocos2DWorld::PhysicsCocos2DWorld() {
@@ -135,7 +140,7 @@ void PhysicsCocos2DWorld::init(cocos2d::Scene *scene, float gravityX, float grav
     _world->setGravity(Vec2(gravityX, gravityY));
 }
 
-Physics2DBody* PhysicsCocos2DWorld::addBodyBox(cocos2d::Sprite* sprite,
+std::shared_ptr<Physics2DBody> PhysicsCocos2DWorld::addBodyBox(cocos2d::Sprite* sprite,
                                                       const std::string &bodyName,
                                                       const Size& size,
                                                       PhysicsMaterial material) {
@@ -147,13 +152,14 @@ Physics2DBody* PhysicsCocos2DWorld::addBodyBox(cocos2d::Sprite* sprite,
     auto pBody = std::make_shared<PhysicsCocos2DBody>();
     pBody->setBody(physicsBody);
     pBody->setSprite(sprite);
+    pBody->setName(bodyName);
     
     _bodies.push_back(pBody);
     _bodyMapByName[bodyName] = pBody;
-    return pBody.get();
+    return pBody;
 }
 
-Physics2DBody* PhysicsCocos2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
+std::shared_ptr<Physics2DBody> PhysicsCocos2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
                                                const std::string &bodyName,
                                                float radius,
                                                PhysicsMaterial material) {
@@ -165,13 +171,14 @@ Physics2DBody* PhysicsCocos2DWorld::addBodyCircle(cocos2d::Sprite* sprite,
     auto pBody = std::make_shared<PhysicsCocos2DBody>();
     pBody->setBody(physicsBody);
     pBody->setSprite(sprite);
+    pBody->setName(bodyName);
     
     _bodies.push_back(pBody);
     _bodyMapByName[bodyName] = pBody;
-    return pBody.get();
+    return pBody;
 }
 
-Physics2DBody* PhysicsCocos2DWorld::addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string &bodyPrototype) {
+std::shared_ptr<Physics2DBody> PhysicsCocos2DWorld::addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string &bodyPrototype) {
     auto loader = PhysicsShapeCache::getInstance();
     auto body = loader->createBodyWithName(bodyPrototype);
     
@@ -179,15 +186,16 @@ Physics2DBody* PhysicsCocos2DWorld::addBody(cocos2d::Sprite* sprite, const std::
     auto pBody = std::make_shared<PhysicsCocos2DBody>();
     pBody->setBody(body);
     pBody->setSprite(sprite);
+    pBody->setName(bodyName);
     
     _bodies.push_back(pBody);
     _bodyMapByName[bodyName] = pBody;
-    return pBody.get();
+    return pBody;
 }
 
-Physics2DBody* PhysicsCocos2DWorld::findBody(const std::string& name) {
+std::shared_ptr<Physics2DBody> PhysicsCocos2DWorld::findBody(const std::string& name) {
     if (_bodyMapByName.count(name) != 0) {
-        return _bodyMapByName[name].get();
+        return _bodyMapByName[name];
     }
     
     return nullptr;

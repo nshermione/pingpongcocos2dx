@@ -1,5 +1,6 @@
 #include "PlayScene.h"
 #include "PauseScene.h"
+#include "EndRoundPopup.h"
 
 USING_NS_GAME;
 USING_NS_CC;
@@ -45,6 +46,15 @@ bool Play::init(std::string csbFile)
     
     block = (Sprite *) _rootNode->getChildByName(enemyTeam + "Block");
     enemyBlock.init(block, enemyTeam + "Block");
+    
+    // init portals
+    auto pPortal = (Sprite *) _rootNode->getChildByName(playerTeam + "Portal");
+    auto pPortalCollider = (Sprite *) _rootNode->getChildByName(playerTeam + "PortalCollider");
+    auto ePortal = (Sprite *) _rootNode->getChildByName(enemyTeam + "Portal");
+    auto ePortalCollider = (Sprite *) _rootNode->getChildByName(enemyTeam + "PortalCollider");
+    
+    playerPortal.init(pPortal, playerTeam + "Portal", ePortal, ballSprite, pPortalCollider);
+    enemyPortal.init(ePortal, enemyTeam + "Portal", pPortal, ballSprite, ePortalCollider);
     
     // init chumps
     auto botEdge = (Sprite *) _rootNode->getChildByName("botEdge");

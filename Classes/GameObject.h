@@ -21,6 +21,9 @@ public:
     GameObject();
     GameObject(cocos2d::Sprite* sprite);
     ~GameObject();
+    
+    void init(std::string name);
+    void release();
 
     /* 
      Properties

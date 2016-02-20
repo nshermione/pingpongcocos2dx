@@ -16,14 +16,14 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="bg_1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="gameOverLabel" ActionTag="1216688485" Tag="6" IconVisible="False" LeftMargin="418.0000" RightMargin="418.0000" TopMargin="135.6225" BottomMargin="428.3775" FontSize="72" LabelText="Game Over" OutlineSize="4" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="gameOverLabel" ActionTag="1216688485" Tag="6" IconVisible="False" LeftMargin="416.0000" RightMargin="416.0000" TopMargin="131.6225" BottomMargin="424.3775" FontSize="72" LabelText="Game Over" OutlineSize="4" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="304.0000" Y="84.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="568.0000" Y="466.3775" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.7287" />
-            <PreSize X="0.2641" Y="0.1187" />
+            <PreSize X="0.2676" Y="0.1312" />
             <FontResource Type="Normal" Path="Marker Felt.ttf" Plist="" />
             <OutlineColor A="255" R="71" G="58" B="23" />
             <ShadowColor A="255" R="110" G="110" B="110" />

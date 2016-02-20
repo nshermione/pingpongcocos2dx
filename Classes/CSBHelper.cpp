@@ -10,8 +10,10 @@
 #include "cocostudio/CocoStudio.h"
 
 USING_NS_CC;
+USING_NS_CC_UI;
 
 START_GAME_NS
+
 
 // PATCH - sprite from csb file use content scale factor
 void fixSpriteContentScale(Node* parentNode) {

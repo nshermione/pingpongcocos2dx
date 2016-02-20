@@ -29,10 +29,10 @@ public:
     void registerAI();
     
 protected:
-    Physics2DBody* physicsBody;
+    std::shared_ptr<Physics2DBody> physicsBody;
     cocos2d::Sprite* _topEdge;
     cocos2d::Sprite* _botEdge;
-    Physics2DBody* _ballBody;
+    std::shared_ptr<Physics2DBody> _ballBody;
 };
 
 

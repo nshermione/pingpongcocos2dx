@@ -19,6 +19,8 @@
         <Image Name="button_bg_pressed.png" />
         <Image Name="check.png" />
         <Image Name="chump3.png" />
+        <Image Name="endround_bg.png" />
+        <Project Name="EndRoundPopup.csd" Type="Layer" />
         <Project Name="EnterNameScene.csd" Type="Scene" />
         <Project Name="GameOverScene.csd" Type="Scene" />
         <Image Name="home_disable.png" />
@@ -33,17 +35,21 @@
         <Image Name="middle_line.png" />
         <Image Name="money_bar.png" />
         <Image Name="money_icon.png" />
+        <Image Name="money_icon_big.png" />
         <Project Name="PauseScene.csd" Type="Scene" />
         <Image Name="pingpong_table.png" />
         <Project Name="PlayScene.csd" Type="Scene" />
         <Image Name="portal.png" />
         <Image Name="purple_goal.png" />
+        <Project Name="SettingsScene.csd" Type="Scene" />
         <Project Name="SplashScene.csd" Type="Scene" />
-        <Project Name="Store.csd" Type="Scene" />
+        <Image Name="star_icon_big.png" />
         <Image Name="store_bg.png" />
         <Image Name="store_bg_listview.png" />
+        <Project Name="StoreScene.csd" Type="Scene" />
         <Image Name="table_bg.png" />
         <TTF Name="waltograph42.ttf" />
+        <Image Name="white.png" />
         <Image Name="wood_chump.png" />
       </RootFolder>
     </Group>

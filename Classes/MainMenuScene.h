@@ -17,6 +17,7 @@ private:
     void quitGame();
     void playGame();
     void settings();
+    void goToStore();
 };
 
 #endif // __MainMenu_SCENE_H__

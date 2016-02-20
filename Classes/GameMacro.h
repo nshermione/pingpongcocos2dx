@@ -37,6 +37,23 @@
 #ifndef GameMacro_h
 #define GameMacro_h
 
+
+/** @def STATIC_CREATE_INSTANCE(__TYPE__)
+ * Define a create function for a specific type
+ *
+ * @param __TYPE__  class type to add create()
+ */
+
+#define STATIC_INSTANCE(__TYPE__) \
+static __TYPE__* _instance; \
+static __TYPE__* getInstance() \
+{ \
+if (_instance == nullptr) { \
+    _instance = new(std::nothrow) __TYPE__(); \
+}\
+return _instance; \
+}
+
 /** @def CREATE_FUNC_SCENE(__TYPE__, csbFile)
  * Define a create function for a specific type, such as Layer.
  *
@@ -126,7 +143,6 @@ return scene; \
  */
 #define SAFE_DELETE_POINTER(pointer) if(pointer != nullptr) { delete pointer; }
 
-
 /** Global functions
  * Define global functions
  *
@@ -138,5 +154,7 @@ std::string string_snprintf(const std::string &pattern, Args ... args) {
     snprintf( buf.get(), size, pattern.c_str(), args ... );
     return std::string( buf.get(), buf.get() + size - 1 );
 }
+
+
 
 #endif /* GameMacro_h */

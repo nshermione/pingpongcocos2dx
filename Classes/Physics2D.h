@@ -34,6 +34,7 @@ public:
     virtual void enableCCD() = 0;
     virtual const std::string& getName() = 0;
     virtual void setName(const std::string& name) = 0;
+    virtual bool isDeleted() = 0;
     
     void setSprite(cocos2d::Sprite *sprite) { _bodySprite = sprite; }
     cocos2d::Sprite* getSprite() { return _bodySprite; };
@@ -83,16 +84,18 @@ public:
     virtual void init(cocos2d::Scene *scene, float gravityX, float gravityY) {
         _scene = scene;
     }
-    virtual Physics2DBody* addBody(cocos2d::Sprite* sprite, const std::string &bodyName, const std::string& bodyPrototype) = 0;
-    virtual Physics2DBody* addBodyBox(cocos2d::Sprite* sprite,
+    virtual std::shared_ptr<Physics2DBody> addBody(cocos2d::Sprite* sprite,
+                                              const std::string &bodyName,
+                                              const std::string& bodyPrototype) = 0;
+    virtual std::shared_ptr<Physics2DBody> addBodyBox(cocos2d::Sprite* sprite,
                                              const std::string &bodyName,
                                              const cocos2d::Size& size,
                                              cocos2d::PhysicsMaterial material) = 0;
-    virtual Physics2DBody* addBodyCircle(cocos2d::Sprite* sprite,
+    virtual std::shared_ptr<Physics2DBody> addBodyCircle(cocos2d::Sprite* sprite,
                                              const std::string &bodyName,
                                              float radius,
                                              cocos2d::PhysicsMaterial material) = 0;
-    virtual Physics2DBody* findBody(const std::string& name) = 0;
+    virtual std::shared_ptr<Physics2DBody> findBody(const std::string& name) = 0;
     virtual void removeBody(Physics2DBody *body) = 0;
     virtual void loadBodies(const std::string &plist) = 0;
     virtual void registerContactListener(Physics2DContactListener* listener) = 0;
