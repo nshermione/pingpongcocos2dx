@@ -201,7 +201,9 @@ Physics2DBody* PhysicsBox2DContact::getOtherBody() {
 
 PhysicsBox2DWorld::PhysicsBox2DWorld()
 :_world(nullptr)
-,_contactListener(new Box2DContactListener(this)) {
+,_contactListener(new Box2DContactListener(this))
+,_paused(false)
+{
     
 }
 
@@ -225,7 +227,11 @@ void PhysicsBox2DWorld::init(cocos2d::Scene *scene, float gravityX, float gravit
 }
 
 void PhysicsBox2DWorld::update(float dt) {
-    _world->Step(dt, 8, 3);
+    auto timeStep = _paused ? 0 : dt;
+    _world->Step(timeStep, 8, 3);
+    
+    if (_paused)
+        return;
 
     for(auto it = _bodyMap.begin(); it != _bodyMap.end();) {
         auto physicsBody = (*it).second;
@@ -389,6 +395,14 @@ std::shared_ptr<Physics2DBody> PhysicsBox2DWorld::findBody(b2Body *b2Body) {
     }
     
     return nullptr;
+}
+
+void PhysicsBox2DWorld::pause() {
+    _paused = true;
+}
+
+void PhysicsBox2DWorld::resume() {
+    _paused = false;
 }
 
 END_GAME_NS

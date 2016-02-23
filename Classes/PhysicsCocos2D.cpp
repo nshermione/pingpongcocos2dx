@@ -125,7 +125,9 @@ bool PhysicsCocos2DBody::isDeleted() {
 
 // PhysicsCocos2DWorld
 
-PhysicsCocos2DWorld::PhysicsCocos2DWorld() {
+PhysicsCocos2DWorld::PhysicsCocos2DWorld()
+:_paused(false)
+{
     
 }
 
@@ -216,6 +218,14 @@ void PhysicsCocos2DWorld::registerContactListener(Physics2DContactListener* list
 
 void PhysicsCocos2DWorld::drawDebug() {
     _world->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+}
+
+void PhysicsCocos2DWorld::pause() {
+    _world->setSpeed(0);
+}
+
+void PhysicsCocos2DWorld::resume() {
+    _world->setSpeed(1.0f);
 }
 
 END_GAME_NS

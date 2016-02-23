@@ -77,6 +77,8 @@ public:
     void loadBodies(const std::string &plist);
     void registerContactListener(Physics2DContactListener* listener);
     void drawDebug();
+    void pause();
+    void resume();
     
 private:
     void update(float dt);
@@ -84,6 +86,7 @@ private:
     std::unordered_map<b2Body*, std::shared_ptr<PhysicsBox2DBody>> _bodyMap;
     std::unordered_map<std::string, std::shared_ptr<PhysicsBox2DBody>> _bodyMapByName;
     b2ContactListener *_contactListener;
+    bool _paused;
 };
 
 

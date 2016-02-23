@@ -70,11 +70,14 @@ public:
     void loadBodies(const std::string &plist);
     void registerContactListener(Physics2DContactListener* listener);
     void drawDebug();
+    void pause();
+    void resume();
     
 private:
     cocos2d::PhysicsWorld *_world;
     std::vector<std::shared_ptr<Physics2DBody>> _bodies;
     std::unordered_map<std::string, std::shared_ptr<Physics2DBody>> _bodyMapByName;
+    bool _paused;
 };
 
 END_GAME_NS
