@@ -11,7 +11,9 @@
 
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
+
 #include "GameMacro.h"
+#include "Physics.h"
 
 START_GAME_NS
 
@@ -19,11 +21,12 @@ class GameObject {
     
 public:
     GameObject();
-    GameObject(cocos2d::Sprite* sprite);
     ~GameObject();
     
-    void init(std::string name);
-    void release();
+    virtual void init(std::string name);
+    virtual void release();
+    virtual void pause();
+    virtual void resume();
 
     /* 
      Properties
@@ -40,6 +43,7 @@ public:
 protected:
     cocos2d::Sprite* _sprite;
     std::string _name;
+    Physics2DBody *_physicsBody;
 };
 
 

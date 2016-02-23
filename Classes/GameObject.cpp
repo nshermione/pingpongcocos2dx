@@ -13,7 +13,8 @@ START_GAME_NS
 
 GameObject::GameObject()
 :_name("")
-,_sprite(NULL){
+,_sprite(nullptr),
+_physicsBody(nullptr){
     
 }
 
@@ -27,6 +28,17 @@ void GameObject::init(std::string name) {
 
 void GameObject::release() {
     GameObjectPool::getInstance()->removeAndCleanup(this, true);
+}
+
+void GameObject::pause() {
+    if (getSprite() != nullptr)
+        getSprite()->pause();
+    
+}
+
+void GameObject::resume() {
+    if (getSprite() != nullptr)
+        getSprite()->resume();
 }
 
 const std::string& GameObject::getName() {
