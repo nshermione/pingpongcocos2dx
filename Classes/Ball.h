@@ -43,7 +43,6 @@ protected:
     float totalSpeed;
     float totalTime;
     
-    std::shared_ptr<Physics2DBody> physicsBody;
 };
 
 #endif /* Ball_h */

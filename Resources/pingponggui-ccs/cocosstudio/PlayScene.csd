@@ -17,6 +17,17 @@
             <FileData Type="Normal" Path="bg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
+          <AbstractNodeData Name="startPoint" ActionTag="-1643030638" Tag="27" IconVisible="False" LeftMargin="549.9899" RightMargin="548.0101" TopMargin="326.0200" BottomMargin="275.9800" ctype="SpriteObjectData">
+            <Size X="38.0000" Y="38.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="568.9899" Y="294.9800" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5009" Y="0.4609" />
+            <PreSize X="0.0335" Y="0.0594" />
+            <FileData Type="Normal" Path="start_point.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
           <AbstractNodeData Name="topEdge" ActionTag="652436351" Tag="28" IconVisible="False" LeftMargin="17.1650" RightMargin="8.8350" TopMargin="-1.1281" BottomMargin="561.1281" Scale9Width="1" Scale9Height="1" ctype="ImageViewObjectData">
             <Size X="1110.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -153,17 +164,6 @@
             <FileData Type="Normal" Path="chump3.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="arrow" ActionTag="169550659" Tag="24" IconVisible="False" LeftMargin="550.2633" RightMargin="549.7367" TopMargin="315.2760" BottomMargin="266.7240" ctype="SpriteObjectData">
-            <Size X="36.0000" Y="58.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="568.2633" Y="295.7240" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5002" Y="0.4621" />
-            <PreSize X="0.0317" Y="0.0906" />
-            <FileData Type="Normal" Path="arrow.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
-          </AbstractNodeData>
           <AbstractNodeData Name="purpleBlock" ActionTag="-283946324" Tag="25" IconVisible="False" LeftMargin="437.0623" RightMargin="640.9377" TopMargin="213.5205" BottomMargin="368.4795" ctype="SpriteObjectData">
             <Size X="58.0000" Y="58.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -201,7 +201,7 @@
             <Size X="1.0000" Y="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="704.2792" Y="425.0000" />
-            <Scale ScaleX="11.0000" ScaleY="10.6000" />
+            <Scale ScaleX="6.9600" ScaleY="6.5600" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.6200" Y="0.6641" />
             <PreSize X="0.0009" Y="0.0016" />
@@ -219,27 +219,16 @@
             <FileData Type="Normal" Path="portal.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="purplePortalCollider" ActionTag="1161880688" Tag="116" IconVisible="False" LeftMargin="439.4742" RightMargin="695.5258" TopMargin="473.1001" BottomMargin="165.8999" ctype="SpriteObjectData">
+          <AbstractNodeData Name="purplePortalCollider" ActionTag="1161880688" Tag="116" IconVisible="False" LeftMargin="439.6760" RightMargin="695.3240" TopMargin="473.3021" BottomMargin="165.6979" ctype="SpriteObjectData">
             <Size X="1.0000" Y="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="439.9742" Y="166.3999" />
-            <Scale ScaleX="11.0000" ScaleY="10.6000" />
+            <Position X="440.1760" Y="166.1979" />
+            <Scale ScaleX="6.9612" ScaleY="6.5612" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3873" Y="0.2600" />
+            <PrePosition X="0.3875" Y="0.2597" />
             <PreSize X="0.0009" Y="0.0016" />
             <FileData Type="Normal" Path="blank.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="ball" ActionTag="578193936" Tag="13" IconVisible="False" LeftMargin="550.0037" RightMargin="553.9963" TopMargin="329.0386" BottomMargin="278.9614" ctype="SpriteObjectData">
-            <Size X="32.0000" Y="32.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="566.0037" Y="294.9614" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4982" Y="0.4609" />
-            <PreSize X="0.0282" Y="0.0500" />
-            <FileData Type="Normal" Path="ball.png" Plist="" />
-            <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="moneyBar" ActionTag="-768278576" Tag="102" IconVisible="False" LeftMargin="833.2437" RightMargin="120.7563" TopMargin="11.3330" BottomMargin="588.6670" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="60" RightEage="60" TopEage="13" BottomEage="13" Scale9OriginX="-60" Scale9OriginY="-13" Scale9Width="120" Scale9Height="26" ctype="PanelObjectData">
             <Size X="182.0000" Y="40.0000" />

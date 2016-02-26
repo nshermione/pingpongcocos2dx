@@ -19,6 +19,7 @@ _physicsBody(nullptr){
 }
 
 GameObject::~GameObject() {
+    GameObjectPool::getInstance()->remove(this);
 }
 
 void GameObject::init(std::string name) {
@@ -27,7 +28,14 @@ void GameObject::init(std::string name) {
 }
 
 void GameObject::release() {
-    GameObjectPool::getInstance()->removeAndCleanup(this, true);
+    if (
+        getSprite() != nullptr
+        && ((_physicsBody != nullptr && _physicsBody->getSprite() != nullptr)
+            || _physicsBody == nullptr))
+        getSprite()->removeFromParent();
+    
+    if (_physicsBody != nullptr)
+        Physics::getWorld2D()->removeBody(_physicsBody.get());
 }
 
 void GameObject::pause() {

@@ -35,8 +35,8 @@ void Chump::init(cocos2d::Sprite *sprite,
     std::string bodyName = flipped? "chump3_flip" : "chump3";
 
     auto world = Physics::getWorld2D();
-    physicsBody = world->addBody(sprite, name, bodyName);
-    physicsBody->setDynamic(false);
+    _physicsBody = world->addBody(sprite, name, bodyName);
+    _physicsBody->setDynamic(false);
     
     if (isPlayed) {
         registerTouchEvents();
@@ -59,7 +59,10 @@ void Chump::init(cocos2d::Sprite *sprite,
         
         dy *= getSprite()->getScale();
         
-        physicsBody->movePosition(cocos2d::Vec2(0, dy));
+        _physicsBody->movePosition(cocos2d::Vec2(0, dy));
+
+        if (dy != 0)
+            getSprite()->stopAllActions();
     };
     
     sprite->schedule(limitMoveRange, 0.016f, "limitChumpMoveRange");
@@ -75,17 +78,16 @@ void Chump::registerTouchEvents() {
     
     listener->onTouchMoved = [this] (Touch* touch, Event* event) {
         auto target = event->getCurrentTarget();
-        auto prevPos = physicsBody->getPosition();
+        auto prevPos = _physicsBody->getPosition();
         auto dy = touch->getDelta().y;
 
         // Same scale as chump sprite
         dy *= target->getScaleY();
         
-        physicsBody->movePosition(cocos2d::Vec2(0, dy)); 
+        _physicsBody->movePosition(cocos2d::Vec2(0, dy));
     };
 
     auto eventDispatcher = sprite->getEventDispatcher();
-    
     
     eventDispatcher->addEventListenerWithSceneGraphPriority(listener, sprite);
 }
@@ -94,9 +96,11 @@ void Chump::registerAI() {
     auto world = Physics::getWorld2D();
     _ballBody = world->findBody("ball");
     
+    
+    
     auto AIUpdate = [this] (float dt) {
         auto ballPos = _ballBody->getPosition();
-        auto chumpPos = physicsBody->getPosition();
+        auto chumpPos = _physicsBody->getPosition();
         auto dy = (ballPos.y - chumpPos.y);
         
         auto action = MoveBy::create(0.15f, Vec2(0, dy));

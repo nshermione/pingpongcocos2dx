@@ -9,6 +9,7 @@
 #include "Goal.h"
 #include "Physics.h"
 #include "EndRoundPopup.h"
+#include "Match.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -19,17 +20,17 @@ void Goal::init(cocos2d::Sprite *sprite, const std::string& name) {
     setName(name);
     
     auto world = Physics::getWorld2D();
-    auto physicsBody = world->addBodyBox(sprite,
+    _physicsBody = world->addBodyBox(sprite,
                                          name,
                                          sprite->getContentSize(),
                                          PhysicsMaterial(0.1f, 1.0f, 1.0f));
     
-    physicsBody->setDynamic(false);
-    physicsBody->setCollisionBitmask(0x0001);
-    physicsBody->setContactTestBitmask(0xFFFFFFFF);
+    _physicsBody->setDynamic(false);
+    _physicsBody->setCollisionBitmask(0x0001);
+    _physicsBody->setContactTestBitmask(0xFFFFFFFF);
     
     // collision check
-    auto listener = new Physics2DContactListener(physicsBody.get());
+    auto listener = new Physics2DContactListener(_physicsBody.get());
     listener->onContactBegin = CC_CALLBACK_1(Goal::onContactBegin, this);
     world->registerContactListener(listener);
 }
@@ -42,26 +43,24 @@ bool Goal::onContactBegin(std::shared_ptr<Physics2DContact> contact) {
             return false;
         }
         
+        // effect
         auto parentSprite = ballSprite->getParent();
         auto position = ballSprite->getPosition();
         auto disappear = ParticleSystemQuad::create("disappear.plist");
         parentSprite->addChild(disappear);
         disappear->setPosition(position);
         
+        // remove ball
         Physics::getWorld2D()->removeBody(ball);
+        ballSprite->removeFromParent();
         
-        // play sound yay
-        auto audio = SimpleAudioEngine::getInstance();
-        audio->playEffect("yay.wav");
-        
-        auto openEndRoundPopup = [this] (float dt) {
-            auto popup = EndRoundPopup::create();
-            auto scene = getSprite()->getScene();
-            popup->open(scene);
-            popup->start(50, 20);
+        // end round
+        auto endRoundCallback = [this] (float dt) {
+            auto match = Match::getInstance();
+            match->endRound(this->getName());
         };
         
-        getSprite()->scheduleOnce(openEndRoundPopup, 2, "openEndRoundPopup");
+        getSprite()->scheduleOnce(endRoundCallback, 2, "openEndRoundPopup");
         
         return true;
     }

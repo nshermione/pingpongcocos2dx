@@ -39,7 +39,7 @@ void EndRoundPopup::start(int gold, int star) {
             curGold = gold;
             this->unschedule("goldUpdate");
         }
-        std::string sign = curGold >= 0? "+" : "-";
+        std::string sign = curGold >= 0? "+" : "";
         goldLabel->setString(sign + std::to_string(curGold));
     };
     
@@ -50,7 +50,7 @@ void EndRoundPopup::start(int gold, int star) {
             curStar = star;
             this->unschedule("starUpdate");
         }
-        std::string sign = curStar >= 0? "+" : "-";
+        std::string sign = curStar >= 0? "+" : "";
         starLabel->setString(sign + std::to_string(curStar));
     };
     

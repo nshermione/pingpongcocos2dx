@@ -36,21 +36,10 @@
 						<key>polygons</key>
 						<array>
 							<array>	
-								<string>{ 5.000,41.000 }</string>	
-								<string>{ -5.000,57.000 }</string>	
-								<string>{ -4.000,32.000 }</string>
-							</array>
-							<array>	
-								<string>{ 4.000,-43.000 }</string>	
-								<string>{ -4.000,-33.000 }</string>	
-								<string>{ -4.000,-58.000 }</string>
-							</array>
-							<array>	
+								<string>{ -60.000,57.000 }</string>	
 								<string>{ -60.000,-58.000 }</string>	
 								<string>{ -4.000,-58.000 }</string>	
-								<string>{ -4.000,32.000 }</string>	
-								<string>{ -5.000,57.000 }</string>	
-								<string>{ -60.000,57.000 }</string>
+								<string>{ -4.000,57.000 }</string>
 							</array>
 							<array>	
 								<string>{ 55.000,-32.000 }</string>	
@@ -89,16 +78,6 @@
 								<string>{ 60.000,57.000 }</string>	
 								<string>{ 4.000,57.000 }</string>	
 								<string>{ 4.000,-58.000 }</string>
-							</array>
-							<array>	
-								<string>{ -3.000,41.000 }</string>	
-								<string>{ 4.000,32.000 }</string>	
-								<string>{ 4.000,57.000 }</string>
-							</array>
-							<array>	
-								<string>{ -2.000,-42.000 }</string>	
-								<string>{ 4.000,-58.000 }</string>	
-								<string>{ 4.000,-33.000 }</string>
 							</array>
 							<array>	
 								<string>{ -55.000,-32.000 }</string>	

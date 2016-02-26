@@ -9,9 +9,9 @@
 	<key>angleVariance</key>
 	<real>0.0</real>
 	<key>blendFuncDestination</key>
-	<real>1</real>
+	<integer>1</integer>
 	<key>blendFuncSource</key>
-	<real>770</real>
+	<integer>770</integer>
 	<key>configName</key>
 	<string>trail</string>
 	<key>duration</key>

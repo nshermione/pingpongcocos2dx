@@ -16,13 +16,11 @@ bool Portal::inPortal = false;
 void Portal::init(cocos2d::Sprite *sprite,
                   const std::string& name,
                   cocos2d::Sprite *oppositeSprite,
-                  cocos2d::Sprite *ballSprite,
                   cocos2d::Sprite *portalCollider) {
     GameObject::init(name);
     setSprite(sprite);
     setName(name);
     _oppositeSprite = oppositeSprite;
-    _ballSprite = ballSprite;
     _portalCollider = portalCollider;
     
     auto world = Physics::getWorld2D();
@@ -36,11 +34,13 @@ void Portal::init(cocos2d::Sprite *sprite,
     
     
     sprite->schedule(CC_CALLBACK_1(Portal::ballCollisionCheck, this), 0.016, "ballCollisionCheck");
+    
 }
 
 void Portal::ballCollisionCheck(float dt) {
-    
+    _ballSprite = (Sprite*) getSprite()->getParent()->getChildByName("ball");
     if (
+        _ballSprite != nullptr &&
         !_ballBody->isDeleted() &&
         _portalCollider->getBoundingBox().intersectsRect(_ballSprite->getBoundingBox())) {
         

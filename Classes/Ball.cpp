@@ -20,8 +20,7 @@ float VERY_FAST_SPEED = 25;
 float EXTREMELY_SPEED = 35;
 
 Ball::Ball()
-:physicsBody(nullptr)
-,currentTrail(nullptr)
+:currentTrail(nullptr)
 ,trail1(nullptr)
 ,trail2(nullptr)
 {
@@ -58,22 +57,21 @@ void Ball::initPhysics() {
     auto sprite = getSprite();
     auto world = Physics::getWorld2D();
     
-    physicsBody = world->addBody(sprite, getName(), "ball");
+    _physicsBody = world->addBody(sprite, getName(), "ball");
     
-    //set the body isn't affected by the physics world's gravitational force
-    physicsBody->setDynamic(true);
-    physicsBody->setGravity(false);
-    physicsBody->setCollisionBitmask(0x0001);
-    physicsBody->setContactTestBitmask(0xFFFFFFFF);
-    physicsBody->setGroup(0);
+    _physicsBody->setDynamic(true);
+    _physicsBody->setGravity(false);
+    _physicsBody->setCollisionBitmask(0x0001);
+    _physicsBody->setContactTestBitmask(0xFFFFFFFF);
+    _physicsBody->setGroup(0);
     
-    if (physicsBody->isSupportCCD()) {
-        physicsBody->enableCCD();
+    if (_physicsBody->isSupportCCD()) {
+        _physicsBody->enableCCD();
     }
     
     //set initial velocity of physicsBody
-    physicsBody->setVelocity(Vec2(cocos2d::random(-NORMAL_SPEED, NORMAL_SPEED),
-                                  cocos2d::random(-NORMAL_SPEED/3, NORMAL_SPEED/3)));
+    _physicsBody->setVelocity(Vec2(0,
+                                  cocos2d::random(-NORMAL_SPEED, NORMAL_SPEED)));
 
 }
 
@@ -113,11 +111,15 @@ void Ball::initParticle() {
 }
 
 void Ball::setVelocity(float vel) {
-    if (physicsBody != nullptr) {
-        auto velocity = physicsBody->getVelocity();
+    if (_physicsBody != nullptr) {
+        auto velocity = _physicsBody->getVelocity();
+        if (velocity.length() < 1) {
+            velocity.scale(1024);
+        }
+
         velocity.normalize();
         velocity.scale(vel);
-        physicsBody->setVelocity(velocity);
+        _physicsBody->setVelocity(velocity);
         
         //update trail
         if (currentTrail != nullptr) {

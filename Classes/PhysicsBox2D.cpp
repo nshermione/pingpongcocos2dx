@@ -242,11 +242,10 @@ void PhysicsBox2DWorld::update(float dt) {
         auto b =  physicsBody->getBody();
         // Remove deleted bodies
         if (physicsBody->isDeleted() && b->GetUserData() != NULL) {
-            cocos2d::Sprite *sprite = (cocos2d::Sprite *)b->GetUserData();
-            sprite->removeFromParentAndCleanup(false);
             _bodyMap.erase(it++);
             _bodyMapByName.erase(physicsBody->getName());
             _world->DestroyBody(b);
+            physicsBody.reset();
             continue;
         }
         // Move sprite
@@ -365,6 +364,13 @@ std::shared_ptr<Physics2DBody> PhysicsBox2DWorld::addBodyCircle(cocos2d::Sprite*
 
 void PhysicsBox2DWorld::removeBody(Physics2DBody *body) {
     ((PhysicsBox2DBody* ) body)->setDeleteFlag(true);
+}
+
+void PhysicsBox2DWorld::removeAllBodies() {
+    for(auto it = _bodyMap.begin(); it != _bodyMap.end(); it++)  {
+        auto body = it->second;
+        body->setDeleteFlag(true);
+    }
 }
 
 std::shared_ptr<Physics2DBody> PhysicsBox2DWorld::findBody(const std::string& name) {

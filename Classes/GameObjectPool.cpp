@@ -28,11 +28,19 @@ void GameObjectPool::remove(GameObject* obj) {
     removeAndCleanup(obj, true);
 }
 
+void GameObjectPool::removeAll() {
+    for (auto it = _objects.begin(); it != _objects.end(); ++it) {
+        auto obj = it->second;
+        obj = nullptr;
+    }
+    _objects.clear();
+}
+
 void GameObjectPool::removeAndCleanup(GameObject* obj, bool cleanup) {
     if (_objects.count(obj->getName()) > 0) {
         _objects.erase(obj->getName());
         if (cleanup) {
-            delete obj;
+            obj = nullptr;
         }
     }
 }
@@ -43,6 +51,18 @@ GameObject* GameObjectPool::find(std::string objName) {
     }
     
     return nullptr;
+}
+
+void GameObjectPool::map(std::function<void(GameObject*)> mapFunction) {
+    for (auto it = _objects.begin(); it != _objects.end(); it++) {
+        try {
+            auto obj = it->second;
+            mapFunction(obj);
+        } catch (std::exception e) {
+            cocos2d::log("Unhandle Exception: %s", e.what());
+            continue;
+        }
+    }
 }
 
 END_GAME_NS

@@ -207,6 +207,10 @@ void PhysicsCocos2DWorld::removeBody(Physics2DBody *body) {
     body->getSprite()->removeFromParentAndCleanup(true);
 }
 
+void PhysicsCocos2DWorld::removeAllBodies() {
+    _world->removeAllBodies();
+}
+
 void PhysicsCocos2DWorld::loadBodies(const std::string &plist) {
     auto loader = PhysicsShapeCache::getInstance();
     loader->addShapesWithFile(plist);

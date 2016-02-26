@@ -2,12 +2,7 @@
 #define __Play_SCENE_H__
 
 #include "game.h"
-#include "Table.h"
-#include "Ball.h"
-#include "Block.h"
-#include "Chump.h"
-#include "Goal.h"
-#include "Portal.h"
+#include "Match.h"
 
 
 
@@ -24,28 +19,13 @@ protected:
 private:
     void goToPauseScene();
     void goToGameOverScene();
+    void onEnterTransitionDidFinish();
     
     // UI
     void updatePlayerUI();
-    void updateClockUI(float dt);
     
     cocos2d::Scene* _scene;
-    
-    PlayClock playClock;
-    Table table;
-    Ball ball;
-    
-    Block playerBlock;
-    Block enemyBlock;
-    
-    Chump playerChump;
-    Chump enemyChump;
-    
-    Goal playerGoal;
-    Goal enemyGoal;
-    
-    Portal playerPortal;
-    Portal enemyPortal;
+    Match* match;
     
 };
 

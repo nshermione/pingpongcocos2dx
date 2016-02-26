@@ -43,7 +43,7 @@ public:
 protected:
     cocos2d::Sprite* _sprite;
     std::string _name;
-    Physics2DBody *_physicsBody;
+    std::shared_ptr<Physics2DBody> _physicsBody;
 };
 
 

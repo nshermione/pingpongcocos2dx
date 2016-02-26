@@ -67,6 +67,7 @@ public:
                                          cocos2d::PhysicsMaterial material);
     std::shared_ptr<Physics2DBody> findBody(const std::string& name);
     void removeBody(Physics2DBody *body);
+    void removeAllBodies();
     void loadBodies(const std::string &plist);
     void registerContactListener(Physics2DContactListener* listener);
     void drawDebug();

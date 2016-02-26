@@ -29,7 +29,6 @@ public:
     void registerAI();
     
 protected:
-    std::shared_ptr<Physics2DBody> physicsBody;
     cocos2d::Sprite* _topEdge;
     cocos2d::Sprite* _botEdge;
     std::shared_ptr<Physics2DBody> _ballBody;

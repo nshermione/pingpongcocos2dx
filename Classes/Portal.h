@@ -20,7 +20,6 @@ public:
     void init(cocos2d::Sprite *sprite,
               const std::string& name,
               cocos2d::Sprite *oppositeSprite,
-              cocos2d::Sprite *ballSprite,
               cocos2d::Sprite *portalCollider);
     
 protected:

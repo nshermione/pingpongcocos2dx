@@ -27,6 +27,9 @@ bool Splash::init(std::string csbFile)
     auto world = Physics::createWorld2D(PhysicsBox2DType);
     world->loadBodies("box2dphysicsbody.plist");
     
+    auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+    audio->playEffect("intro.wav");
+    
     return true;
 }
 

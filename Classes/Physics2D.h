@@ -97,9 +97,12 @@ public:
                                              cocos2d::PhysicsMaterial material) = 0;
     virtual std::shared_ptr<Physics2DBody> findBody(const std::string& name) = 0;
     virtual void removeBody(Physics2DBody *body) = 0;
+    virtual void removeAllBodies() = 0;
     virtual void loadBodies(const std::string &plist) = 0;
     virtual void registerContactListener(Physics2DContactListener* listener) = 0;
     virtual void drawDebug() = 0;
+    virtual void pause() = 0;
+    virtual void resume() = 0;
     
 protected:
     cocos2d::Scene *_scene;

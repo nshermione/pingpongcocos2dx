@@ -17,11 +17,13 @@ class Popup : public BaseScene {
 public:
     virtual void open(cocos2d::Node* parent);
     virtual void close();
+    std::function<void()> onClose;
     
 private:
     
     void pauseRecursive(cocos2d::Node* _node, bool _pause);
     cocos2d::Node *_parent;
+    
     
 };
 

@@ -37,6 +37,10 @@ void Popup::close() {
     pauseRecursive(_parent, false);
     _parent->removeChild(this);
     _parent = nullptr;
+    
+    if (onClose != nullptr) {
+        onClose();
+    }
 }
 
 

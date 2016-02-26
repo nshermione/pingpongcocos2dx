@@ -20,7 +20,7 @@
         <Image Name="check.png" />
         <Image Name="chump3.png" />
         <Image Name="endround_bg.png" />
-        <Project Name="EndRoundPopup.csd" Type="Layer" />
+        <Project Name="StartRoundPopup.csd" Type="Layer" />
         <Project Name="EnterNameScene.csd" Type="Scene" />
         <Project Name="GameOverScene.csd" Type="Scene" />
         <Image Name="home_disable.png" />
@@ -44,6 +44,7 @@
         <Project Name="SettingsScene.csd" Type="Scene" />
         <Project Name="SplashScene.csd" Type="Scene" />
         <Image Name="star_icon_big.png" />
+        <Image Name="start_point.png" />
         <Image Name="store_bg.png" />
         <Image Name="store_bg_listview.png" />
         <Project Name="StoreScene.csd" Type="Scene" />
@@ -51,6 +52,7 @@
         <TTF Name="waltograph42.ttf" />
         <Image Name="white.png" />
         <Image Name="wood_chump.png" />
+        <Project Name="EndRoundPopup.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

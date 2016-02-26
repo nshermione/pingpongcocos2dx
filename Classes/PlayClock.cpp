@@ -12,12 +12,20 @@ START_GAME_NS
 
 PlayClock::PlayClock()
 : totalTime(0)
-, _paused(true) {
+, _paused(false) {
     
 }
 
 PlayClock::~PlayClock() {
     
+}
+
+void PlayClock::init(float speed) {
+    GameObject::init("playclock");
+    auto sprite = cocos2d::Sprite::create();
+    sprite->setName("playclock");
+    setSprite(sprite);
+    _speed = speed;
 }
 
 void PlayClock::start() {
@@ -26,6 +34,10 @@ void PlayClock::start() {
 
 void PlayClock::pause() {
     _paused = true;
+}
+
+void PlayClock::resume() {
+    _paused = false;
 }
 
 void PlayClock::reset() {

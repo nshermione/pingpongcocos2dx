@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="EndRoundPopup" Type="Layer" ID="9781abd8-df27-456e-9a26-f37fb2213434" Version="3.10.0.0" />
+  <PropertyGroup Name="EndRoundPopup_0" Type="Layer" ID="34fac961-9f56-466f-b207-651a41c74841" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />

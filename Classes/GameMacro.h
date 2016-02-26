@@ -143,6 +143,12 @@ return scene; \
  */
 #define SAFE_DELETE_POINTER(pointer) if(pointer != nullptr) { delete pointer; }
 
+/** @def NOT_IN_STR(pointer)
+ * Define alias for std::string::npos
+ */
+#define NOT_IN_STR std::string::npos
+
+
 /** Global functions
  * Define global functions
  *

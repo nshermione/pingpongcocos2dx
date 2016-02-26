@@ -19,7 +19,9 @@ public:
     static GameObjectPool* getInstance();
     void add(GameObject* obj);
     void remove(GameObject* obj);
+    void removeAll();
     void removeAndCleanup(GameObject* obj, bool cleanup);
+    void map(std::function<void(GameObject*)> mapFunction);
     GameObject* find(std::string objName);
     
 private:

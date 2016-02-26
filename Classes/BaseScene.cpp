@@ -17,6 +17,7 @@ bool BaseScene::init(std::string csbFile)
     // Init scene here
     this->_rootNode = CSBHelper::createNode(csbFile);
     this->addChild(_rootNode);
+    
     // End init scene
     return true;
 }
